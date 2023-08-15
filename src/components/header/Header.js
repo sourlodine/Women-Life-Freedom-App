@@ -116,7 +116,7 @@ export default function Header() {
                   <div className="modal_body text-center">
                     <p className="text-[#ffffffcc] text-[16px] leading-7 pb-6">Please select a wallet to connect for start Minting your NFTs</p>
                     <div className="connect-section">
-                      <div className="bg-[#ffffff0d] px-[30px] py-[15px] backdrop-filter-[10px] text-left flex text-white/90 items-center mb-[20px] justify-between" onClick={() => connectToMetamask()}>
+                      <div className="bg-[#ffffff0d] px-[30px] py-[15px] backdrop-filter-[10px] text-left flex text-white/90 items-center mb-[20px] justify-between" >
                         <img src={MetaMask} alt="MetaMask" className="" />
                         <div className="text-start w-[180px]">MetaMask</div>
                         <div className="text-xl">
