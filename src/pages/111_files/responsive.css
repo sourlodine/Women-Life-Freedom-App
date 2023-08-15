@@ -1,0 +1,1879 @@
+@charset "utf-8";
+
+/** 
+*
+* -----------------------------------------------------------------------------
+* Template : Bithu - Metaverse Web3 IGO/IDO Token Launchpad Figma Template
+* Author : uigigs
+* Author URI : http://www.uigigs.com/
+*
+* -----------------------------------------------------------------------------
+*
+**/
+@media only screen and (min-width: 992px) and (max-width: 1700px){
+    .buthu_mint1_body_right{
+        padding-top: 10px;
+    }
+    .buthu_mint1_body_right h4{
+        font-size: 17px;
+    }
+    .buthu_mint1_body_right h1{
+        font-size: 40px;
+        line-height: 158%;
+    }
+    .buthu_mint1_body_right_timer ul li{
+        font-size: 35px;
+        line-height: 158%;
+    }
+    .buthu_mint1_body_right_timer ul li span{
+        font-size: 22px;
+    }
+    .buthu_mint1_body_right_timer{
+        margin: 20px 0px;
+    }
+    .buthu_mint1_body_right h5{
+        font-size: 15px;
+    }
+    .buthu_mint1_body_right_btns{
+        margin-top: 30px;
+    }
+    .buthu_mint1_body_left_content{
+        max-width: 250px;
+    }
+    .buthu_mint1_body_left .mint_count_list ul li{
+        height: 30px;
+    }
+    .buthu_mint1_body_left .mint_count_list ul li h5, .mint_count_list ul li .buthu_mint1_body_left .mint_quantity_sect input{
+        font-size: 12px;
+    }
+    .buthu_mint1_body_left .buthu_mint1_body_left p{
+        font-size: 12px;
+    }
+    .buthu_mint1_body_left .buthu_mint1_body_left p{
+        margin-top: 10px;
+    }
+    .buthu_mint1_body_left .mint_count_list{
+        margin: 15px 0px;
+    }
+    
+    .mint_item_card_text h4{
+        font-size: 14px;
+        margin: 10px 0px;
+    }
+    .mint_item_card_text p{
+        font-size: 12px;
+        margin-top: 0px;
+    }
+    .mint_item_card_text .btn-mid-green{
+        height: 50px;
+        margin-top: 10px;
+    }
+    .mint_item_card1 .mint_item_card_text .btn-mid-green{
+        height: 50px;
+        margin-top: 35px;
+    }
+    .mint_item_card_img{
+        width: 50%;
+        margin: auto;
+    }
+    
+    .mint_item_card{
+        min-height: 340px;
+    }
+    .mint2_text .buthu_mint1_body_right_timer ul li{
+        font-size: 24px;
+    }
+    .mint2_text .buthu_mint1_body_right_timer ul li span{
+        font-size: 17px;
+    }
+    .mint2_text h4{
+        font-size: 18px;
+    }
+    .mint_card_sect{
+        margin-top: 20px;
+    }
+    .buthu_mint2_body_content{
+        padding-top: 50px;
+    }
+    
+    .coming_soon_timer .timer ul li{
+        height: 70px;
+        max-width: 70px;
+        font-size: 38px;
+    }
+    .coming_soon_timer .timer ul li span{
+    font-size: 14px;
+    }
+    .coming_soon_timer{
+        max-width: 400px;
+        margin: auto;
+    }
+    .buthu_cooming_soon_body_content h5{
+        font-size: 14px;
+        margin-top: 42px;
+    }
+    .comming_son_notify_me_form{
+        margin-top: 20px;
+    }
+    .buthu_comming_soon_btns{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    
+    .buthu_cooming_soon_body_content h2 {
+        margin-bottom: 20px;
+        margin-top: 60px;
+        font-size: 35px;
+    }
+    
+    
+    .v5-home-content{
+        padding-top: 160px;
+    }
+    .v5-home-content-left h2{
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+    .v5-home-content-left h3 {
+        color: #FFFFFF;
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+    .v5-home-content-left ul{
+        margin-top: 25px;
+    }
+    .v5-home-content-left ul li{
+        font-size: 14px;
+        line-height: 25px;
+    }
+    
+    .v5-home-content-left .btn-mid-green, .v5-home-content-left .btn-mid-transparent {
+        height: 55px;
+        width: 170px;
+        font-size: 14px;
+    }
+    .v5-home-content-right{
+        padding-top: 0px;
+    }
+    .autoslideshow-container{
+        max-width: 300px;
+        margin: auto;
+    }
+    
+    .v5-home-content-left{
+        padding-left: 100px;
+    }
+    .v5-home-container span.v5-home-thunder-icon{
+        left: -20px;
+    }
+    .v5-home-container span.v5-home-coin-icon{
+        right: -50px;
+    }
+    
+    .v5-about-content{
+        padding-top: 150px;
+    }
+    .v5-about-left-text p{
+        font-size: 14px;
+        line-height: 25px;
+    }
+    .v5-about-right ul li{
+        margin-bottom: 130px;
+    }
+    .v5-roadmap-content{
+        padding-top: 120px;
+    }
+    
+    .v5-team-content{
+        padding-top: 110px;
+    }
+    .v5-team-inner-cards{
+        padding-top: 20px;
+    }
+    
+    .v5-team-inner-cards ul li{
+        min-height: 150px;
+    }
+    .v5-team-inner-cards ul li span{
+        width: 50%;
+    }
+    .v5-team-inner-cards ul li.t2, .v5-team-inner-cards ul li.t5{
+        margin-top: 150px;
+    }
+    .v5-team-inner-cards ul li .team-hov-info p{
+        margin-bottom: 30px;
+    }
+    .v5-team-inner-cards ul li.t7{
+        margin-top: -90px;
+    }
+    
+    .v5-faq-inner .bithu_faq_questions .accordion{
+        height: 55px;
+        font-size: 21px;
+    }
+    .v5-faq-content{
+        padding-top: 120px;
+    }
+    .v5-faq-inner{
+        margin-top: -30px;
+    }
+    .v5-faq-inner .bithu_faq_questions .accordion-panel p{
+        font-size: 13px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+    
+    .v5-mint-left-img{
+        max-width: 300px;
+    }
+    .v5-mint-content{
+        padding-top: 160px;
+    }
+    
+    .v5-mint-right-inner{
+        max-width: 310px;
+        margin-top: -15px;
+    }
+    .v5-mint-right-inner p{
+        font-size: 14px;
+    }
+    .v5-faq-inner .bithu_faq_questions{
+        margin-top: 35px;
+    }
+    
+    
+}
+@media (max-width: 1400px){
+    .mint_right_menu_list ul li a{
+        line-height: 35px;
+    }
+    .mint_home_menu{
+        margin-top: 40px;
+    }
+    .mint_menu_right{
+        padding-top: 123px;
+    }
+    .mint_right_menu_list1{
+        margin-bottom: 25px;
+    }
+}
+    
+@media (min-width: 1400px){
+    .container{
+        max-width: 1200px;
+        padding: 0px 20px;
+    }
+} 
+
+@media (min-width: 991px) {
+    .home_tab_content {
+        animation: v5-slider 0.5s;
+        position: absolute;
+        width: 100%;
+
+    }
+
+    @keyframes v5-slider {
+        from {
+            right: -100%;
+        }
+
+        to {
+            right: 0%;
+        }
+    }
+}
+
+@media only screen and (max-width: 1366px) {
+   .blog-list-content {
+        padding-bottom: 80px;
+    }
+    .main-footer-content {
+        padding-top: 90px;
+    }
+
+    .bithu_v2_owl_carousel_sect{
+        overflow-x: auto;
+    }
+    .mint_menu_left{
+        padding-left: 100px;
+        padding-right: 50px;
+    }
+    .v5-home-content-left{
+        padding-left: 150px;
+    }
+    .v5-home-content{
+        padding-top: 115px;
+    }
+    .v5-home-container span.v5-home-thunder-icon{
+        left: 100px;
+    }
+    .v5-home-container span.v5-home-coin-icon{
+        right: 10px;
+    }
+    @keyframes icon-coin {
+
+        0%,
+        100% {
+            bottom: 130px;
+        }
+
+        50% {
+            bottom: 110px;
+        }
+    }
+    .v5-about-left-text{
+        margin-top: 23px;
+    }
+    .v5-about-left-text p{
+        font-size: 12px;
+        line-height: 20px;
+    }
+    .v5-about-right ul li{
+        margin-bottom: 100px;
+    }
+    .v5-about-right ul li h5{
+        font-size: 30px;
+    }
+    .v5-about-right ul li h6{
+        font-size: 14px;
+        line-height: 30px;
+    }
+    
+    .v5-roadmap-text ul li {
+        font-size: 12px;
+        line-height: 136%;
+        margin-bottom: 10px;
+    }
+    .v5-roadmap-text h3{
+        font-size: 20px;
+    }
+    
+    .v5-team-inner-cards ul li .team-hov-info h5{
+        font-size: 15px;
+    }
+    .v5-team-inner-cards ul li .team-hov-info p{
+        font-size: 12px;
+    }
+    
+    .v5-team-inner-cards ul li .team-hov-info .social-icons a{
+        font-size: 14px;
+    }
+    .v5-team-inner-cards ul li .team-hov-info{
+        padding: 16px;
+    }
+    .v5-team-inner-cards ul li{
+        max-width: 130px;
+        min-height: 130px;
+    }
+    .v5-team-inner-cards ul{
+        max-width: 390px;
+        margin: auto;
+    }
+    .v5-team-inner-cards ul li.t2, .v5-team-inner-cards ul li.t5{
+        margin-top: 130px;
+    }
+    .buthu_h5_body .bithu_title_section h3{
+        font-size: 30px;
+    }
+    
+    .v5-home-container span.v5-home-thunder-icon, .v5-home-container span.v5-home-star-icon, .v5-home-container span.v5-home-coin-icon{
+        width: 50px;
+    }
+    
+    
+    
+    
+}
+@media only screen and (max-width: 1199px) {
+    .bithu_title_section h2{
+        margin-bottom: 10px;
+    }
+    .bithu_title_section h3{
+        font-size: 40px;
+        line-height: 1.35;
+    }
+    .bottom_footer_right ul li + li{
+        padding-left: 20px;
+    }
+    .v1_about_us_right_text{
+        margin-top: 30px;
+    }
+    .bithu_owl_carousel_content ul li{
+        height: 240px;
+        width: 240px;
+    }
+    .bithu_owl_carousel_content ul li img{
+        width: 40%;
+    }
+    .bithu_v1_baner_left h2{
+        font-size: 50px;
+        line-height: 65px;
+    }
+    .bithu_v1_baner_left h3{
+        font-size: 34px;
+        line-height: 38px;
+        margin-bottom: 40px;
+    }
+    .how_to_mint_content ul li p{
+        margin-left: 20px;
+    }
+    
+    .bithu_menu_list{
+        margin-right: 30px;
+    }
+    .blog-detail-conent1 {
+        padding-bottom: 60px;
+    }
+    .banner-conent3 .banner-title {
+        font-size: 50px;
+    }
+    .bithu_v3_baner_sect .banner-image2 {
+        left: 0;
+    }
+    .v1_about_us_section .ab-content .ab-item-box .ab-text a {
+        font-size: 18px;
+    }
+    .how_to_mint_content ul li p {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .v4_roadmap_content{
+        padding: 0px;
+    }
+    .v4roadmap_text ul li{
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .v4roadmap_text_left{
+        padding-right: 40px;
+    }
+    .v4roadmap_text_right{
+        padding-left: 40px;
+    }
+    .v4roadmap_img_card{
+        margin-top: -10px;
+    }
+    .bithu_v4_baner_left h2 span .cat_walk_round_shape{
+        top: 10px;
+    }
+    .v5-home-content-left{
+        padding-left: 70px;
+    }
+    .v5-home-container span.v5-home-thunder-icon{
+        left: 0px;
+    }
+    .v5-home-thunder-icon, .v5-home-star-icon, .v5-home-coin-icon{
+        display: none;
+    }
+    
+    .mint_right_menu_list1_content{
+        padding-right: 25%;
+    }
+    .mint_right_menu_list h5{
+        margin-bottom: 10px;
+    }
+    .mint_right_menu_list2 .mint_social_links ul li {
+        margin-bottom: 12px;
+    }
+    .mint_right_menu_list ul li a{
+        line-height: 30px;
+        font-size: 14px;
+    }
+    .mint_right_menu_list2 .mint_social_links ul{
+        padding-top: 5px;
+    }
+    .mint_right_menu_list h6{
+        margin-bottom: 0px;
+    }
+    .about-story-left{
+        padding-right: 20px;
+    }
+    
+    .about-story-left h2{
+        font-size: 38px;
+        line-height: 53px;
+        margin-bottom: 17px;
+    }
+    .about-story-left p{
+        font-size: 14px;
+        line-height: 26px;
+    }
+    .about-story-left button{
+        margin-top: 20px;
+    }
+    
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px){
+    .v4_baner_img_card1{
+        left: 0px;
+    }
+    .v4about_us_text{
+        font-size: 14px;
+        line-height: 158%;
+        margin-top: 25px;
+    }
+    .v1_about_us_img_card1{
+        left: 10px;
+        top: 75px;
+        height: 295px;
+        width: 240px;
+    }
+
+    .bottom_footer_right ul {
+        justify-content: right;
+    }
+    .v1_about_us_img_card2 {
+        height: 255px;
+        width: 205px;
+    }
+    .v1_about_us_img2{
+        height: 170px;
+    }
+    .v1_about_us_img1{
+        height: 190px;
+    }
+    
+    .about_us_text_card h3 {
+        font-size: 19px;
+        line-height: 40px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .about_us_text_card h3 span{
+        max-width: 40px;
+    }
+
+    .bithu_roadmap_section .bithu_roadmap_content {
+        width: 93%;
+    }
+    .v5-faq-inner .bithu_faq_questions .accordion {
+        font-size: 18px;
+        line-height: 28px;
+    }  
+    .mint_right_menu_list2 .mint_social_links ul li{
+        margin-right: 17px;
+    }
+    
+    
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .v1_about_us_img_card1 {
+        left: 10px;
+        top: 75px;
+        height: 216px;
+        width: 160px;
+        padding: 16px;
+    }
+    .v1_about_us_img1 {
+        height: 135px;
+    }
+    .v1_about_us_img1_shapes_left .shape_1{
+        height: 12px;
+        width: 88px;
+    }
+    .v1_about_us_img1_shapes_right .shape_3{
+        height: 23px;
+        width: 23px;
+    }
+    
+    .v1_about_us_img_card2 {
+        height: 216px;
+        width: 160px;
+        padding: 16px;
+    }
+    .v1_about_us_img2 {
+        height: 135px;
+    }
+    .v1_about_us_img2_shapes_left .shape_1{
+        height: 12px;
+        width: 88px;
+    }
+    .v1_about_us_img2_shapes_right .shape_3{
+        height: 23px;
+        width: 23px;
+    }
+    .about_us_text_card{
+        padding: 27px;
+        min-height: 310px;
+    }
+    .about_us_text_card h3{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        font-size: 18px;
+    }
+    
+    .v4_about_us_sect{
+        min-height: 550px;
+    }
+    .v4_about_us_left ul li{
+        width: 100%;
+        margin: 20px 0px;
+    }
+    .v4_about_us_right{
+        padding-top: 80px;
+    }
+    .v4_about_us_left ul{
+        padding-top: 25px;
+    }
+    .v4about_us_text{
+        margin-top: 20px;
+    }
+    .v4about_us_text p{
+        font-size: 14px;
+        line-height: 158%;
+    }
+    
+    .buthu_mint1_body_right h1{
+        font-size: 40px;
+    }
+    .buthu_mint1_body_right h4, .buthu_mint1_body_right h5{
+        font-size: 18px;
+    }
+    .buthu_mint1_body_right_timer ul li{
+        font-size: 36px;
+    }
+    .buthu_mint1_body_right_timer ul li span{
+        font-size: 20px;
+    }
+    .buthu_mint1_body_left{
+        padding-right: 20px;
+    }
+    .buthu_mint1_body_right_btns button{
+        width: 48%;
+        font-size: 13px;
+    }
+    
+    .mint2_text .buthu_mint1_body_right_timer ul li{
+        font-size: 24px;
+    }
+    .mint2_text h4{
+        font-size: 16px;
+    }
+    .mint2_text .buthu_mint1_body_right_timer ul li span{
+        font-size: 14px;
+    }
+    .mint2_text .buthu_mint1_body_right_timer ul li:before{
+        right: -16px;
+    }
+    .mint2_counter h4, .mint2_whitlst h4{
+        margin-bottom: 20px;
+    }
+    
+    .bithu_roadmap_section .bithu_roadmap_item .bithu_roadmap_content .bithu_roadmap_counter .roadmap_parcentage{
+        font-size: 31px;
+        width: 130px;
+        min-height: 120px;
+    }
+    .bithu_roadmap_section .bithu_roadmap_item .bithu_roadmap_content .bithu_roadmap_counter span{
+        font-size: 55px;
+        line-height: 158%;
+        margin-bottom: 5px;
+    }
+    .bithu_roadmap_section .bithu_roadmap_item .roadmap_img{
+        min-height: 100%;
+    }
+}
+@media only screen and (max-width: 991px) {
+    .buthu_coming_soon_body{
+        min-height: 694px;
+        height: auto;
+        padding-top: 85px;
+        padding-bottom: 0px;
+    }
+    .bithu-mint-section{
+        padding-bottom: 50px;
+    }
+    .bithu-footer .footer-main .footer_menu .bottom_footer_right ul li {
+        padding-right: 15px;
+    }
+    .bithu_v2_baner_sect {
+        padding-bottom: 80px;
+    }
+    .bithu_v2_main_footer {
+        margin-top: 260px;
+    }
+    .v1_team_overlay.team-section{
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+    .bithu-breadcrumbs-section {
+        padding-bottom: 50px;
+    }
+    .bithu-breadcrumbs-section .breadcrumbs-form{
+        justify-content: flex-start;
+    }
+    .how_to_mint_content ul li h4 {
+        line-height: 95px;
+    }
+    .bithu_faq_sect.bithu-faq-section{
+        padding-top: 60px;
+        padding-bottom: 80px;
+    }
+    .v2_about_us_section {
+        padding-top: 75px;
+    }
+    .about_us_text_card_sect {
+        margin-top: 60px;
+    }
+    .about_us_text_card_sect.md-mt-0{
+        margin-top: 0;
+    }
+    .v1_roadmap_sect{
+        padding-bottom: 80px;
+    }
+    .bottom_footer_left {
+        padding-bottom: 10px;
+    }
+    .how_to_mint_content ul li h4{
+        font-size: 65px;
+    }
+    .how_to_mint_content ul li p {
+        font-size: 18px;
+        line-height: 27px;
+        margin-left: 15px;
+    }
+    .bithu_total_counter_sect ul li h3{
+        font-size: 35px;
+    }
+    .bithu_total_counter_sect ul li h4{
+        font-size: 16px;
+    }
+    .bithu_title_section h2{
+        margin-bottom: 5px;
+    }
+    .bithu_title_section h3{
+        font-size: 34px;
+    }
+    .bithu_v1_baner_left{
+        margin-top: 0px;
+        justify-content: flex-start;
+    }
+    .bithu_v1_footer_sect.footer-sec1 .list-btn{
+        margin-left: 0;
+    }
+    .main-footer-content .footer_newsletter .footer-button {
+        max-width: 400px;
+    }
+    .bithu_v3_baner_sect .banner-image1 {
+        left: 80px;
+    }
+    .bithu_v3_baner_sect .banner-image-area3 {
+        padding-top: 20px;
+    }
+    .bithu_v3_baner_sect{
+        padding-bottom: 80px;
+    }
+    .bithu_v1_baner_right{
+        margin: auto;
+        padding: 0px 68px;
+        max-width: 568px;
+        width: 100%;
+        margin-top: 0px;
+        margin-bottom: 150px;
+    }
+    .bithu_v1_baner_right_img{
+        width: 55%;
+    }
+    .bottom_footer_right{
+        max-width: 300px;
+    }
+    .bottom_footer_right ul li a{
+        font-size: 14px;
+    }
+    .bottom_footer_left .copiright_text a{
+        font-size: 14px;
+        padding-left: 22px;
+    }
+    .footer_logo{
+        max-width: 100px;
+    }
+    .our_partnar_content ul li img {
+        width: 70%;
+    }
+    .bithu_v2_baner_content h2{
+        font-size: 50px;
+    }
+    .bithu_v2_baner_content h3,
+    .bithu_v2_baner_content .bithu_v2_timer h4, .bithu_v2_baner_content .bithu_v2_timer ul li, .bithu_v2_baner_content .bithu_v2_timer ul strong{
+        font-size: 35px;
+    }
+    .faq_bear_img{
+        display: none;
+    }
+    
+    .bithu_menu_list, .bithu_menu_right_sect button.join_btn{
+        display: none;
+    }
+    .menu_bar{
+        display: block;
+    }
+    .bithu_menu_right_buttons{
+        justify-content: flex-end;
+    }
+    .bithu_menu_left_sect, .bithu_menu_right_sect{
+        width: auto;
+    }
+    .bithu_menu_right_buttons{
+        min-width: auto;
+    }
+    
+    .header_social_links{
+        display: none;
+    }
+    .main-footer-content .menu-title {
+        margin-bottom: 30px;
+        padding-top: 20px;
+    }
+    .v1_about_us_section {
+        padding-top: 65px;
+    }
+    .bithu_team_card h3,
+    .bithu_faq_questions .accordion {
+        font-size: 18px;
+        line-height: 28px;
+    }
+    .bithu_v4_baner_sect{
+        padding-bottom: 120px;
+    }
+    .v4_baner_img_card2{
+        right: 0px;
+    }
+    .cat_imgs_sect ul li{
+        width: 250px;
+        height: 250px;
+    }
+    
+    
+    .buthu_mint_body{
+        height: auto;
+    }
+    .mint_menu_left{
+        padding-left: 50px;
+    }
+    .mint_menu_left_bg{
+        width: 50%;
+    }
+    .mint_right_menu_content{
+        flex-direction: column;
+    }
+    .mint_right_menu_list2{
+        margin-top: 30px;
+    }
+    .mint_menu_left{
+        max-width: 300px;
+    }
+    .mint_menu_right{
+        padding-bottom: 50px;
+    }
+    .mint_right_menu_list1{
+        margin-bottom: 0px;
+    }
+    .bithu_roadmap_section .bithu_roadmap_item .bithu_roadmap_content .bithu_roadmap_text a{
+        font-size: 20px;
+        margin-bottom: 15px;
+        line-height: 158%;
+    }
+    .bithu_roadmap_section .bithu_roadmap_item .bithu_roadmap_content .bithu_roadmap_text p{
+        font-size: 14px;
+        line-height: 158%;
+    }
+    .buthu_comming_soon_btns{
+        margin-top: 50px;
+    }
+    
+    .buthu_h5_body{
+        overflow: auto;
+        height: auto;
+    }
+    .bithu-h5-slider .home5-slide-btns button{
+        font-size: 14px;
+    }
+    
+    .v5-home-content{
+        height: auto;
+        padding-top: 130px;
+        padding-bottom: 300px;
+    }
+    .v5-home-content-left{
+        max-width: 375px;
+        margin: auto;
+        padding-left: 0px;
+    }
+    .v5-home-content-left h2{
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+    .v5-home-content-left h3 {
+        color: #FFFFFF;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    .v5-home-content-left ul{
+        margin-top: 30px;
+    }
+    .v5-home-content-left ul li{
+        font-size: 14px;
+        line-height: 25px;
+    }
+    
+    .btn-mid-green, .btn-mid-transparent {
+        height: 55px;
+        width: 170px;
+        font-size: 14px;
+    }
+    .v5-home-content-right{
+        padding-top: 0px;
+    }
+    .autoslideshow-container{
+        max-width: 300px;
+        margin: auto;
+    }
+    .v5-home-container span.v5-home-thunder-icon{
+        left: -20px;
+    }
+    .v5-home-container span.v5-home-coin-icon{
+        right: -50px;
+    }
+    .v5-home-content-right{
+        padding-top: 70px;
+    }
+    .v5-about-content, .v5-team-content, .v5-faq-content, .v5-roadmap-content, .v5-mint-content{
+        height: auto;
+        padding: 150px 0px;
+    }
+    
+    .v5-faq-inner{
+        padding-top: 0px;
+    }
+    .v5-mint-left{
+        padding-right: 0px;
+    }
+    .v5-mint-left-img{
+        margin: auto;
+    }
+    .v5-mint-right{
+        padding-left: 0px;
+    }
+    .v5-mint-right-inner{
+        margin: auto;
+    }
+    .v5-roadmap-iner{
+        position: relative;
+    }
+    
+    .v5-team-inner-cards ul li.t7{
+        margin-top: 50px;
+    }
+    .v5-team-inner-cards ul li span{
+        width: 50%;
+    }
+    
+    .v5-about-left-text{
+        max-width: 400px;
+    }
+    .v5-about-left-text p{
+        font-size: 14px;
+    }
+    .v5-about-right {
+        padding-top: 75px;
+        padding-bottom: 75px;
+        padding-left: 0px;
+        max-width: 400px;
+        margin: auto;
+    }
+    .v5-about-left {
+        padding-right: 0px;
+        max-width: 400px;
+        width: 100%;
+        margin: auto;
+    }
+    .v5-roadmap-text ul li{
+        font-size: 14px;
+        margin-bottom: 15px;
+        line-height: 158%;
+    }
+    
+    .bithu-h5-slider .slideshow-container{
+        height: auto;
+    }
+    
+    .mint_right_menu_list2 .mint_social_links ul li{
+        margin-bottom: 20px;
+    }
+    .mint_menu_left{
+        padding-left: 0px;
+        max-width: 100%;
+    }
+    .faq-body-content-left-sect {
+        padding-right: 0px;
+    }
+    .faq-tab-btns li{
+        font-size: 18px;
+        line-height: 50px;
+    }
+    
+    .contactus-right-sect{
+        padding-left: 40px;
+    }
+    
+    .contactinfo-text p{
+        font-size: 14px;
+        line-height: 30px;
+    }
+    .contuctus-body-section h4{
+        font-size: 22px;
+    }
+    .contuctus-body-section h2{
+        font-size: 38px;
+        line-height: 50px;
+    }
+    
+    .contuctus-form-sect form input{
+        height: 55px;
+    }
+    .about-story-left h2 {
+        font-size: 34px;
+        line-height: 40px;
+        margin-bottom: 17px;
+    }
+    .about-story-left p {
+        font-size: 12px;
+        line-height: 22px;
+        margin-bottom: 10px;
+    }
+    
+    .collections-body-right{
+        padding-left: 0px;
+    }
+    
+    .home_tab_content {
+        animation: v5-slider 2s;
+
+    }
+    @keyframes v5-slider {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+    
+}
+
+@media only screen and (max-width: 767px) {
+    
+    .bithu_v4_baner_left h2 span .cat_walk_round_shape{
+        top: 2px;
+    }
+    .how_to_mint_content ul{
+        flex-wrap: wrap;
+    }
+    .how_to_mint_content ul li{
+        width: 50%;
+    }
+    .v1_roadmap_contents_text p{
+        max-width: 100%;
+    }
+    .bithu_menu_sect,
+    .bithu_header {
+        height: 90px;
+    }
+    .bithu_v3_baner_sect .banner-image2{
+        display: none;
+    }
+    .blog-list-content .blog-item1 .blog-text1 {
+        padding: 32px 20px;
+    }
+    .blog-list-content .blog-item1 h4.title {
+        font-size: 20px;
+    }
+    .gamfi-navigation ul li a {;
+        padding: 10px 12px;
+    }
+    .gamfi-navigation ul li + li {
+        margin-left: 2px;
+    }
+    .main-footer-content .footer_newsletter .footer-button input {
+        height: 50px;
+        line-height: 50px;
+    }
+    .gamfi-navigation ul li:first-child a {
+        padding: 11px 11px 8px;
+    }
+    .v1_about_us_img_card1,
+    .v1_about_us_img_card2{
+        position: static;
+    }
+    .bithu_roadmap_section .bithu_roadmap_item .bithu_roadmap_content .bithu_roadmap_counter span {
+        font-size: 60px;
+    }
+    .banner-conent3 .banner-title {
+        font-size: 30px;
+        line-height: 34px;
+        margin-bottom: 30px;
+    }
+    .banner-conent3 .banner-subtitle {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    .bithu_roadmap_section .bithu_roadmap_content,
+    .bithu_roadmap_section .bithu_roadmap_item {
+        display: block;
+        margin-bottom: 30px;
+    }
+    .bithu_roadmap_section .bithu_roadmap_item .bithu_roadmap_content .bithu_roadmap_counter .roadmap_parcentage{
+        margin-bottom: 20px;
+        width: 100%;
+        margin-right: 0px;
+        min-height: 100px;
+    }
+    .bithu_roadmap_section .bithu_roadmap_content{
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .bithu_owl_carousel_content ul li{
+        height: 200px;
+        width: 200px;
+    }
+    .bithu_owl_carousel_content ul li img{
+        width: 40%;
+    }
+    .bithu_total_counter_sect ul{
+        flex-wrap: wrap;
+        padding: 15px 0px;
+    }
+    .bithu_total_counter_sect ul li{
+        width: 50%;
+        padding: 15px 0px;
+        text-align: center;
+    }
+    
+    .bithu_title_section h2{
+        font-size: 16px;
+    }
+    .bithu_title_section h2 span{
+        height: 10px;
+    }
+    .bithu_title_section h3{
+        font-size: 30px;
+        line-height: 45px;
+    }
+    .about_us_text_card{
+        margin-bottom: 30px;
+    }
+    .about_us_text_card p{
+        max-width: 100%;
+    }
+    .bithu_v1_baner_left h2 {
+        font-size: 40px;
+        line-height: 50px;
+        margin-bottom: 20px;
+    }
+    .bithu_v1_baner_left h3 {
+        font-size: 28px;
+        line-height: 38px;
+        margin-bottom: 25px;
+    }
+    .bithu_v1_baner_right{
+        padding-right: 0px;
+    }
+    .bithu_v1_baner_right_img_sect{
+        height: 480px;
+    }
+    .footer_bottom{
+        min-height: 140px;
+    }
+    .footer_bottom_content .footer_menu{
+        padding: 20px 0px;
+        flex-direction: column-reverse;
+    }
+    .footer_bottom_content .footer_shapes_right, .footer_bottom_content .footer_shapes_left, .bithu_v2_main_footer .v2_footer_shapes_left, .bithu_v2_main_footer .v2_footer_shapes_right {
+        display: none;
+    }
+    
+    .bact_to_top_btn{
+        position: absolute;
+        top: -45px;
+    }
+    .v2_bact_to_top_btn{
+        bottom: 0px;
+        top: inherit;
+    }
+    .bottom_footer_right{
+        margin: 10px auto 10px auto;
+    }
+    .our_partnar_content ul li {
+        height: 100px;
+    }
+    .v2_roadmap_divider{
+        display: none;
+    }
+    .v2_roadmap_card_sect.v2_roadmap_card_sect_even.v2_roadmap_card_sect_2{
+        margin-top: 0px;
+    }
+    .v2_roadmap_card_sect.v2_roadmap_card_sect_odd, .v2_roadmap_card_sect.v2_roadmap_card_sect_even{
+        margin: 0px;
+        width: 100%;
+        margin-bottom: 80px;
+    }
+    .bithu_menu_right_sect button.connect_btn{
+        display: none;
+    }
+    .blog-detail-conent1 .item-image{
+        margin-bottom: 30px;
+    }
+    .blog-detail-conent1 .blog-contact {
+        display: block;
+    }
+    .blog-detail-conent1 .previous-item{
+        margin-bottom: 30px;
+    }
+    .how_to_mint_content ul li p {
+        font-size: 18px;
+    }
+    
+    .v4_about_us_sect{
+        background-position: left;
+    }
+    .v4_about_us_left{
+        padding-right: 0px;
+    }
+    .v4_about_us_left ul li{
+        margin: 40px 0px;
+    }
+    .v4_about_us_right{
+        padding-top: 50px;
+        padding-bottom: 80px;
+    }
+    
+    .v4about_us_text{
+        margin-top: 20px;
+    }
+    .v4about_us_text p{
+        font-size: 14px;
+        line-height: 158%;
+    }
+    .v4roadmap_text_right, .v4roadmap_text_left{
+        padding: 0px;
+    }
+    .v4roadmap_img_card{
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    .v4roadmap_text ul li{
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    .cat_imgs_sect ul li{
+        width: 220px;
+        height: 220px;
+    }
+    
+    .buthu_mint1_body_left_content{
+        margin: auto;
+    }
+    .buthu_mint1_body_left{
+        padding-right: 0px;
+    }
+    
+    .mint2_counter, .mint2_whitlst{
+        align-items: flex-start;
+    }
+    .mint2_text{
+        min-height: 60px;
+    }
+    
+    .coming_soon_timer{
+        max-width: 330px;
+        margin: auto;
+    }
+    .coming_soon_timer .timer ul li{
+        width: 60px;
+        height: 60px;
+        font-size: 40px;
+    }
+    .coming_soon_timer .timer ul li span{
+        font-size: 13px;
+    }
+    .buthu_cooming_soon_body_content h2{
+        font-size: 25px;
+    }
+    
+    .mint_menu_inner{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .mint_right_menu_list2{
+        margin-left: 0;
+        margin-right: auto;
+        max-width: 271px;
+    }
+    
+    .mint_menu_left{
+        margin-left: 0;
+        margin-right: auto;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 100px;
+        max-width: 100%;
+    }
+    .mint_menu_right{
+        padding-left: 0px;
+        padding-top: 50px;
+    }
+    .mint_menu_inner{
+        padding: 0px 30px;
+        padding-bottom: 80px;
+    }
+    
+    .bithu_roadmap_section .bithu_roadmap_item .roadmap_img{
+        max-width: 100%;
+    }
+    .mint_menu_left_bg{
+        display: none;
+    }
+    
+    .bithu-h5-slider .home5-slide-btns{
+        flex-wrap: wrap;
+    }
+    .bithu-h5-slider .home5-slide-btns button{
+        width: 100%;
+        height: 60px;
+        border: none;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(4px);
+        padding-left: 20px;
+        text-align: left;
+        font-size: 16px;
+        display: none;
+    }
+    .bithu-h5-slider .home5-slide-btns button.active{
+        display: block;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        display: block;
+    }
+    
+    .bithu-h5-slider .home5-slide-btns.active button{
+        display: block;
+    }
+    .bithu-h5-slider .home5-slide-btns:after{
+        content: url(../images/icon/v5-bottom-menu-icon.svg);
+        position: absolute;
+        bottom: 15px;
+        right: 20px;
+        transform: rotate(180deg);
+    }
+    .bithu-h5-slider .home5-slide-btns.active:after{
+        transform: rotate(0deg);
+        bottom: 20px;
+    }
+    
+    .v5-home-container span.v5-home-coin-icon{
+        right: 0px;
+    }
+    .v5-about-left{
+        padding-right: 0px;
+    }
+    .v5-about-right{
+        padding-left: 0px;
+    }
+    
+    .mint_menu_right{
+        max-width: 100%;
+    }
+    
+    .faq-body-content-left{
+        min-height: 300px;
+    }
+    .contactus-right-sect{
+        padding-left: 0px;
+    }
+    .contuctus-form-sect form input{
+        margin-bottom: 12px;
+    }
+    .contuctus-body-section h2{
+        font-size: 34px;
+        line-height: 45px;
+    }
+    .contuctus-body-section h4{
+        font-size: 20px;
+    }
+    
+    .about-story-left{
+        max-width: 470px;
+        margin: auto;
+    }
+    .about-story-right{
+        max-width: 470px;
+        margin: auto;
+        margin-top: 50px;
+    }
+    .collections-body-right{
+        margin-top: 60px;
+    }
+    
+}
+
+
+@media only screen and (max-width: 575px) {
+    .v1_about_us_right_text{
+        margin-top: 10px;
+    }
+    .v1_about_us_right_text p {
+        font-size: 13px;
+        line-height: 24px;
+        padding-bottom: 10px;
+    }
+    .v1_about_us_left_sect{
+        max-width: 400px;
+        margin: auto;
+        min-height: 345px;
+    }
+    .v1_about_us_img_card1 {
+        left: 10%;
+        top: 75px;
+        height: 216px;
+        width: 160px;
+        padding: 16px;
+    }
+    .v1_about_us_img1 {
+        height: 135px;
+    }
+    .v1_about_us_img1_shapes_left .shape_1{
+        height: 12px;
+        width: 88px;
+    }
+    .v1_about_us_img1_shapes_right .shape_3{
+        height: 23px;
+        width: 23px;
+    }
+    
+    .v1_about_us_img_card2 {
+        right: 10%;
+        height: 216px;
+        width: 160px;
+        padding: 16px;
+    }
+    .v1_about_us_img2 {
+        height: 135px;
+    }
+    .v1_about_us_img2_shapes_left .shape_1{
+        height: 12px;
+        width: 88px;
+    }
+    .v1_about_us_img2_shapes_right .shape_3{
+        height: 23px;
+        width: 23px;
+    }
+    .bithu_title_section h3{
+        font-size: 30px;
+    }
+    .footer_social_links{
+        max-width: 425px;
+    }
+    .footer_social_links ul li{
+        height: 48px;
+        width: 12%;
+    }
+    .footer_social_links ul li a i{
+        font-size: 14px;
+    }
+    .footer_social_links ul li a img{
+        height: 14px;
+    }
+    .join_comunity_btns{
+        max-width: 400px;
+    }
+    .join_comunity_btns button.wishlist_btn{
+        width: 46%;
+        font-size: 14px;
+    }
+    .join_comunity_btns button.join_discord_btn{
+        width: 46%;
+        font-size: 14px;
+    }
+    
+    .bithu_v2_baner_content h2{
+        font-size: 38px;
+        line-height: 50px;
+    }
+    .bithu_v2_baner_content h3{
+        font-size: 25px;
+        line-height: 40px;
+    }
+    .bithu_v2_baner_content h3,
+    .bithu_v2_baner_content .bithu_v2_timer h4, .bithu_v2_baner_content .bithu_v2_timer ul li, .bithu_v2_baner_content .bithu_v2_timer ul strong{
+        font-size: 21px;
+    }
+    .v2_about_us_text p {
+        font-size: 13px;
+        line-height: 25px;
+        margin-bottom: 12px;
+    }
+    .bottom_footer_menulist ul{
+        flex-direction: column;
+    }
+    .bithu_v2_baner_content h2 {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    .bithu_v2_baner_content .bithu_v2_timer ul li {
+        padding-right: 16px;
+    }
+    .cat_imgs_sect ul li{
+        width: 170px;
+        height: 170px;
+    }
+    
+    
+    .buthu_mint1_body_right h1{
+        font-size: 45px;
+    }
+    .buthu_mint1_body_right h4, .buthu_mint1_body_right h5{
+        font-size: 18px;
+    }
+    .buthu_mint1_body_right_timer ul li{
+        font-size: 29px;
+    }
+    .buthu_mint1_body_right_timer ul li span{
+        font-size: 16px;
+    }
+    
+    .collections-body-left{
+        max-width: 270px;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .bithu_faq_questions .accordion{
+        font-size: 20px;
+        line-height: 25px;
+    }
+    .bithu_faq_questions .accordion-panel p{
+        font-size: 14px;
+        line-height: 25px;
+    }
+}
+
+@media only screen and (max-width: 480px){
+    .bithu_v4_baner_left h2 span .cat_walk_round_shape{
+        top: 0px;
+    }
+    .how_to_mint_content ul{
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+    .bithu_total_counter_sect ul{
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+    .bithu_total_counter_sect ul li,
+    .how_to_mint_content ul li{
+        width: 100%;
+    }
+    .blog-detail-conent1 .details-item1 .comment-item .blog-comments {
+        margin-left: 20px;
+    }
+    .bithu-breadcrumbs-section .breadcrumbs-form input[type="text"] {
+        width: 100%;
+    }
+    .bithu-breadcrumbs-section .breadcrumbs-form form i {
+        display: none;
+    }
+    .blog-detail-conent1 .details-item1 .comment-item .blog-comment {
+        padding: 30px 20px;
+    }
+    .blog-detail-conent1 .details-item1 .comment-item .blog-comment .blog-replay .replay-text{
+        padding-left: 0;
+    }
+    .blog-detail-conent1 .details-item1 .about-blog .about-menu {
+        display: block;
+        margin-bottom: 60px;
+    }
+    .blog-detail-conent1 .details-item1 .about-blog .about-menu .about-list .about-listing li{
+        margin-bottom: 20px;
+    }
+    .blog-detail-conent1 .details-item1 .about-blog .next-item {
+        padding-left: 10px;
+    }
+    .post-item .recent-content .recent-text {
+        padding-left: 0;
+    }
+    .bithu_mobile_menu {
+        padding: 0px;
+        width: 100%;
+    }
+    .bithu_mobile_menu_content{
+        width: 80%;
+    }
+    .categories-area {
+        padding: 30px 20px 8px;
+    }
+    .blog-detail-conent1 .details-item1 .about-blog .previous-item .previous-text h5,
+    .blog-detail-conent1 .details-item1 .about-blog .next-item h5{
+        font-size: 16px;
+    }
+    .banner-conent3 .bithu_v3_timer ul li {
+        font-size: 34px;
+    }
+    .blog-detail-conent1 .details-item1 .about-blog .previous-item .previous-text{
+        padding-left: 0;
+        margin-top: 15px;
+    }
+    .bithu_faq_questions .accordion {
+        font-size: 18px;
+    }
+    .our_partnar_content ul li {
+        width: 52%;
+    }
+
+    .bithu_v3_baner_sect .banner-count-inner.d-flex, 
+    .v1_about_us_section .ab-content.d-flex{
+        display: block !important;
+    }
+    .banner-count-inner .banner-btn-area{
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .v1_about_us_section .ab-content.d-flex .mr-30{
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+    .bithu_v3_baner_sect .banner-image3{
+        right: 0;
+    }
+    .bithu_v3_baner_sect .banner-image1 {
+        left: 0;
+    }
+    
+    .bithu_v1_baner_buttons{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .bithu_v1_baner_buttons button.mint_btn, .bithu_v1_baner_buttons button.widhlist_btn{
+        
+        margin: 0px;
+        margin-bottom: 20px;
+    }
+    .bithu_v1_baner_left h2{
+        font-size: 37px;
+    }
+    .bithu_v1_baner_left h3{
+        font-size: 22px;
+    }
+    .bithu_v1_baner_left ul li{
+        font-size: 14px;
+        line-height: 29px;
+    }
+    .mint_live_circle_sect{
+        height: 90px;
+        width: 90px;
+        top: -36px;
+        left: -40px;
+    }
+    .bithu_v1_baner_right{
+        padding-left: 34px;
+    }
+    
+    .bithu_menu_left_sect{
+        width: 40%;
+    }
+    
+    .blog-detail-conent1 .details-icon ul li {
+        padding-top: 25px;
+        margin-bottom: 0;
+    }
+    .blog-detail-conent1 h1 {
+        padding-top: 20px;
+    }
+    .blog-detail-conent1 .details-item1 .about-blog .previous-item,
+    .post-item .recent-content,
+    .blog-detail-conent1 .details-item1 .comment-item .blog-comment .blog-replay,
+    .blog-detail-conent1 .details-item1 .about-blog .about-menu .about-list .about-listing li {
+        display: block; 
+    }
+    .post-item .recent-content .recent-text {
+        padding-top: 10px;
+    }
+    .blog-detail-conent1 .details-item1 .comment-item .blog-comment .blog-replay .replay-image{
+        margin-bottom: 15px;
+    }
+    
+    .modal_share_button li{
+        height: 55px;
+        max-width: 55px;
+        width: 100%;
+        margin-bottom: 32px;
+    }
+    .v4_baner_img_card1{
+        left: 0px;
+        top: -70px;
+    }
+    .cat_imgs_sect ul li{
+        width: 150px;
+        height: 150px;
+    }
+    
+    .buthu_mint1_body_right_btns{
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .buthu_mint1_body_right_btns button{
+        margin-bottom: 30px;
+    }
+    .comming_son_notify_me_form form input{
+        width: 80%;
+    }
+    .comming_son_notify_me_form form button{
+        min-width: 120px;
+        font-size: 12px;
+    }
+    .buthu_comming_soon_btns{
+        flex-direction: column;
+    }
+    .buthu_comming_soon_btns button{
+        margin-bottom: 30px;
+    }
+    
+    .v1_about_us_section .ab-content .ab-item-box{
+        text-align: center;
+    }
+    
+    
+    .v5-home-content-left .v5-home-baner-buttons{
+        flex-direction: column;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .v5-home-content-left .v5-home-baner-buttons .btn-mid-green{
+        margin-bottom: 20px;
+        margin-right: 0px;
+    }
+    .v5-home-content-left h2{
+        font-size: 38px;
+    }
+    .v5-home-content-left ul li{
+        font-size: 13px;
+    }
+    .v5-about-right ul li h6{
+        font-size: 13px;
+    }
+    
+}
+@media (max-width: 425px){
+    .footer_social_links{
+        max-width: 425px;
+    }
+    .footer_social_links ul li{
+        height: 40px;
+        width: 12%;
+    }
+    .footer_social_links ul li a img{
+        height: 12px;
+    }
+    .footer_social_links ul li a i{
+        font-size: 12px;
+    }
+    .join_comunity_btns{
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .join_comunity_btns button.wishlist_btn{
+        width: 180px;
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+    .join_comunity_btns button.join_discord_btn{
+        width: 180px;
+        font-size: 14px;
+    }
+    
+    .modal_share_button li{
+        height: 55px;
+        max-width: 21%;
+        width: 100%;
+        margin-right: 0px;
+        margin-bottom: 32px;
+    }
+    .bithu_title_section h2{
+        font-size: 13px;
+    }
+
+    .v5-team-inner-cards ul{
+        flex-wrap: wrap;
+    }
+    .v5-team-inner-cards ul li{
+        height: 150px;
+        margin-bottom: 10px;
+    }
+    .v5-team-inner-cards ul li.t2, .v5-team-inner-cards ul li.t5{
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 375px) {
+    .v1_about_us_img_card1{
+        left: 15px;
+    }
+    .v1_about_us_img_card2{
+        right: 15px;
+        top: 245px;
+    }
+    .v1_about_us_left_sect{
+        height: 480px;
+    }
+    .about_us_text_card h3 {
+        font-size: 20px;
+        line-height: 40px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .about_us_text_card h3 span{
+        max-width: 40px;
+    }
+    .bithu_v1_baner_left h2{
+        font-size: 35px;
+    }
+    .bithu_v1_baner_left h3{
+        font-size: 22px;
+    }
+    .bithu_mobile_menu_content{
+        width: 90%;
+    }
+    .mint_right_menu_list1_content{
+        padding-right: 10%;
+    }
+}
+
+@media (max-width: 360px){
+    .bithu_v1_baner_left ul li{
+        font-size: 13px;
+    }
+    .bithu_mint_header{
+        padding: 0px 10px;
+    }
+    .mint_menu_btn{
+        margin-left: 15px;
+    }
+    .mint_menu_inner{
+        padding: 0px 20px;
+        padding-bottom: 80px;
+    }
+}
+

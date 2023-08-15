@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .container {
+    @apply w-full mx-auto max-w-[1200px];
+  }
+}
+
+.App {
+  text-align: center;
+  background-image: url("./assets/background.jpg");
+  width: 100%;
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.metaMaskModal {
+  background-image: url("https://uigaint.com/demo/html/bithu/assets/images/bg/modal_overlay.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 45px;
+  padding-bottom: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* Animation Button */
+
+.buttonfx{
+  background-color:#ffffff33;
+  display:flex;
+  min-width: 150px;
+  height:50px;
+  outline: none;
+  letter-spacing: 0.0625em;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all .5s;
+}
+
+/* //// Default effect: Slide from Top  //// */
+
+.buttonfx:before,
+.buttonfx:after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  background: #ffffff33; /* onhover background color */
+  z-index: -1;
+  transform: translate3D(0,-100%,0); /* move elements above button so they don't appear initially */
+  transition: all .5s;
+}
+
+.buttonfx:before{
+  background: #ffffff33; /* button default background color */
+  z-index: -2;
+  transform: translate3D(0,0,0);
+}
+
+.buttonfx:hover{
+  color: white;
+}
+
+.buttonfx:hover:after{
+  transform: translate3D(0,0,0);
+  transition: all .5s;
+}
+
+/* //// Slide Left  //// */
+
+.slideleft:after{
+  top: 0;
+  z-index: -1;
+  transform: translate3D(-101%,0,0);
+}
+
+.slideleft:hover:after{
+  transform: translate3D(0,0,0);
+  transition: all .4s;
+}
+
+/* #### Bounce classes #### */
+
+
+/*  */
