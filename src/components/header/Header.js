@@ -1,12 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Navigate, useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaWallet, FaTwitter, FaDiscord } from "react-icons/fa";
 import { MdClose, MdOutlineAdd } from "react-icons/md";
 import { AiOutlineMenu } from "react-icons/ai"
 import { BiChevronRight } from "react-icons/bi"
-import { ConnectButton } from '@rainbow-me/rainbowkit';
-
-
 import Logo from "../../assets/logo.png";
 import OpenSea from "../../pages/111_files/opensea.svg"
 import conentIamge from "../../pages/111_files/hov_shape_L_dark.svg"
@@ -18,7 +15,6 @@ import WalletConnect from "../../pages/111_files/WalletConnect.svg"
 
 
 export default function Header() {
-  const navigator = useNavigate();
   const [closeModal, setCloseModal] = useState(false);
   const [walletModal, setWalletModal] = useState(false);
 
@@ -36,6 +32,11 @@ export default function Header() {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [menuDropdown]);
+
+  const walletBtn = async () => {
+    await setWalletModal(true);
+    await setCloseModal(false);
+  }
 
 
   return (
@@ -62,7 +63,7 @@ export default function Header() {
           <div className="text-white lg:hidden text-3xl mr-5" onClick={() => setCloseModal(true)}>
             <AiOutlineMenu />
           </div>
-          <div className="p-2 justify-center text-white flex group" onClick={() => (setWalletModal(true), setCloseModal(false))}>
+          <div className="p-2 justify-center text-white flex group" onClick={() => walletBtn()}>
             <WalletButton />
           </div>
 
@@ -70,16 +71,16 @@ export default function Header() {
             <div className="fixed z-50 w-full h-full min-h-screen top-0 bg-black/70 left-0">
               <div className="bg-black min-h-screen absolute top-0 right-0 lg:hidden py-8 px-5 w-72">
                 <div className=" w-full flex justify-between items-center mb-10">
-                  <div ><img src={Logo} alt="logo" /></div>
+                  <div ><img src={Logo} alt="logo" className="w-20 h-16" /></div>
                   <div className="text-white float-right text-2xl" onClick={() => setCloseModal(false)}>
                     <MdClose />
                   </div>
                 </div>
-                <div className="text-white font-bold text-start text-lg px-5 mb-5">
+                <div className="text-white font-bold text-start text-lg px-5 mb-5 flex flex-col">
                   <Link to="/" className="cursor-pointer">HOME</Link>
-                  <Link to="/about" className="cursor-pointer">ABOUT</Link>
-                  <Link to="/" className="cursor-pointer">ROADMAP</Link>
+                  <Link to="/mint" className="cursor-pointer">Mint</Link>
                   <Link to="/" className="cursor-pointer">TEAM</Link>
+                  <Link to="/about" className="cursor-pointer">ABOUT</Link>
                 </div>
                 <div className="w-full">
                   <div className="flex mx-auto my-8 text-white gap-5 justify-center">
@@ -87,7 +88,7 @@ export default function Header() {
                     <div><Link className="text-2xl" to="/" target="_blank"><FaTwitter /></Link></div>
                     <div><Link className="text-2xl" to="/" target="_blank"><FaDiscord /></Link></div>
                   </div>
-                  <div className="p-2 mt-6 justify-center w-full text-white flex" onClick={() => (setWalletModal(true), setCloseModal(false))}>
+                  <div className="p-2 mt-6 justify-center w-full text-white flex group" onClick={() => walletBtn()}>
                     <WalletButton />
                   </div>
                 </div>
@@ -116,7 +117,7 @@ export default function Header() {
                   <div className="modal_body text-center">
                     <p className="text-[#ffffffcc] text-[16px] leading-7 pb-6">Please select a wallet to connect for start Minting your NFTs</p>
                     <div className="connect-section">
-                      <div className="bg-[#ffffff0d] px-[30px] py-[15px] backdrop-filter-[10px] text-left flex text-white/90 items-center mb-[20px] justify-between" >
+                      <div className="bg-[#ffffff0d] px-[30px] py-[15px] backdrop-filter-[10px] text-left flex text-white/90 items-center mb-[20px] justify-between">
                         <img src={MetaMask} alt="MetaMask" className="" />
                         <div className="text-start w-[180px]">MetaMask</div>
                         <div className="text-xl">

@@ -1,6 +1,6 @@
 import '../App.css';
-import React, { useState } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import Iamge from "../assets/freedom.webp";
 import Shape1 from "./111_files/hov_shape_L.svg";
@@ -36,9 +36,9 @@ export default function Home() {
         </p>
         <div className="items-center font-bold  overflow-hidden py-10">
           <button onClick={() => navigate("/mint")} className="mx-auto relative group bg-[#00FFA3] py-4 px-12 text-[16px] text-center leading-[22px] w-[200px] h-[60px] text-black font-bold hover:bg-[#00FFA3]/90 flex items-center">
-            <span className="absolute top-[7px] left-[7px] block"><img src={Shape1} alt="" /></span>
+            <span className="absolute top-[7px] left-[7px] block"><img src={Shape1} alt="Shape1" /></span>
             MINT NOW
-            <span className="duration-300 -right-10 absolute top-[7px] group-hover:right-[7px] block rotate-90 "><img src={Shape1} alt="" /></span>
+            <span className="duration-300 -right-10 absolute top-[7px] group-hover:right-[7px] block rotate-90 "><img src={Shape1} alt="Shape1" /></span>
           </button>
         </div>
       </div>

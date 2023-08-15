@@ -1,5 +1,5 @@
 import '../App.css';
-import React, { useState } from 'react';
+import React from 'react';
 
 
 
@@ -50,11 +50,11 @@ export default function About() {
                         </div>
                         <div className='w-1/2 justify-end gap-10 flex text-start'>
                             <div className='bg-[#212027] p-5'>
-                                <img src={Avatar1} alt='' />
+                                <img src={Avatar1} alt='Avatar1' />
                                 <div className='items-center  text-white'>
                                     <div className='flex gap-2 text-3xl font-blod items-center'>
                                         Berneice Tran
-                                        <img src={AbIcon1} alt='' />
+                                        <img src={AbIcon1} alt='AbIcon1' />
                                     </div>
                                     <div className='text-black/10'>
                                         Artist
@@ -62,11 +62,11 @@ export default function About() {
                                 </div>
                             </div>
                             <div className='bg-[#212027] p-5'>
-                                <img src={Avatar2} alt='' />
+                                <img src={Avatar2} alt='Avatar2' />
                                 <div className='items-center text-white'>
                                     <div className='flex gap-2 text-3xl font-blod items-center'>
                                         Leana Rosa
-                                        <img src={AbIcon2} alt='' />
+                                        <img src={AbIcon2} alt='AbIcon2' />
                                     </div>
                                     <div className='text-black/10'>
                                         Co-Artist

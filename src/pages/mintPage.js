@@ -1,6 +1,5 @@
 import '../App.css';
 import React, { useState } from 'react';
-import { FiMinus, FiPlus } from "react-icons/fi"
 import Slider from "react-slick";
 
 import Iamge1 from "./111_files/shape1.png";
@@ -34,7 +33,7 @@ export default function Home() {
   const incrementValue = (e) => {
     console.log(numberValue)
     let newNumber;
-    if (e == false) newNumber = numberValue - 1;
+    if (e === false) newNumber = numberValue - 1;
     else newNumber = numberValue + 1;
 
     if (newNumber < 0) newNumber = 0
@@ -46,34 +45,34 @@ export default function Home() {
       <div className="w-full mx-auto h-full min-h-screen ">
         <div className="lg:flex mx-auto max-w-[1200px] items-center justify-center h-full min-h-[calc(100vh-93px)] py-40 relative">
           <div className="lg:w-1/2 w-full relative block">
-            <div className=" py-[110px] z-10">
+            <div className=" py-[110px] z-[1]">
               <div className='hidden lg:block'>
                 <span className="absolute left-40 top-2 w-12 transform -translate-x-12 -translate-y-8">
-                  <img src={Iamge1} alt="" />
+                  <img src={Iamge1} alt="Iamge1" />
                 </span>
                 <span className="absolute left-[50%] -top-10 w-10 transform translate-x-12 -translate-y-8">
-                  <img src={Iamge2} alt="" />
+                  <img src={Iamge2} alt="Iamge2" />
                 </span>
-                <span className="absolute left-[37%] z-50 top-80 w-10 transform -translate-x-3/4 -translate-y-1/2">
-                  <img src={Iamge3} alt="" />
+                <span className="absolute left-[37%] z-[5] top-80 w-10 transform -translate-x-3/4 -translate-y-1/2">
+                  <img src={Iamge3} alt="Iamge3" />
                 </span>
-                <img className="absolute banner-image z-20 left-24 -top-9 w-72" src={Items1} alt="image" />
-                <img className="absolute banner-image z-10 -left-1 top-28 w-56" src={Items2} alt="image" />
-                <img className="absolute banner-image z-30 left-72 -bottom-10 w-60" src={Items3} alt="image" />
+                <img className="absolute z-[2] left-24 -top-9 w-72" src={Items1} alt="Items1" />
+                <img className="absolute z-[1] -left-1 top-28 w-56" src={Items2} alt="Items2" />
+                <img className="absolute z-[3] left-72 -bottom-10 w-60" src={Items3} alt="Items3" />
               </div>
               <div className='lg:hidden mx-auto mb-72 mt-80'>
                 <span className="ml-12 absolute left-20 top-32 w-12 transform -translate-x-12 -translate-y-8">
-                  <img src={Iamge1} alt="" />
+                  <img src={Iamge1} alt="Iamge1" />
                 </span>
                 <span className="ml-12 absolute left-[50%] top-36 w-10 transform translate-x-12 -translate-y-8">
-                  <img src={Iamge2} alt="" />
+                  <img src={Iamge2} alt="Iamge2" />
                 </span>
-                <span className="ml-12 absolute left-[37%] z-30 bottom-10 w-10 transform -translate-x-3/4 -translate-y-1/2">
-                  <img src={Iamge3} alt="" />
+                <span className="ml-12 absolute left-[37%] z-[3] bottom-10 w-10 transform -translate-x-3/4 -translate-y-1/2">
+                  <img src={Iamge3} alt="Iamge3" />
                 </span>
-                <img className="sm:ml-12 absolute banner-image z-20 left-3 sm:left-24 top-32 w-72" src={Items1} alt="image" />
-                <img className="ml-12 sm:block hidden absolute banner-image z-10 left-1 top-72 w-56" src={Items2} alt="image" />
-                <img className="ml-12 sm:block hidden absolute banner-image z-30 left-72 bottom-14 w-60" src={Items3} alt="image" />
+                <img className="sm:ml-12 absolute z-[2] left-3 sm:left-24 top-32 w-72" src={Items1} alt="Items1" />
+                <img className="ml-12 sm:block hidden absolute z-[1] left-1 top-72 w-56" src={Items2} alt="Items2" />
+                <img className="ml-12 sm:block hidden absolute z-[3] left-72 bottom-14 w-60" src={Items3} alt="Items3" />
               </div>
             </div>
           </div>
@@ -101,9 +100,9 @@ export default function Home() {
                 </div>
                 <div className=" items-center font-bold group overflow-hidden">
                   <button className="relative bg-[#00FFA3] py-4 px-12 text-[16px] text-center leading-[22px] w-[200px] h-[60px] text-black font-bold hover:bg-[#00FFA3]/90 flex items-center" >
-                    <span className="absolute top-[7px] left-[7px] block"><img src={Shape1} alt="" /></span>
+                    <span className="absolute top-[7px] left-[7px] block"><img src={Shape1} alt="Shape1" /></span>
                     MINT NOW
-                    <span className="duration-300 -right-10 absolute top-[7px] group-hover:right-[7px] block rotate-90 "><img src={Shape1} alt="" /></span>
+                    <span className="duration-300 -right-10 absolute top-[7px] group-hover:right-[7px] block rotate-90 "><img src={Shape1} alt="Shape1" /></span>
                   </button>
                 </div>
               </div>
@@ -116,52 +115,52 @@ export default function Home() {
         <div className='relative'>
           <Slider {...settings} className='items-center bg-slate-700 overflow-x-hidden flex justify-center'>
             <div className='p-3'>
-              <img className=' w-14 mx-auto' src={SliderImage1} />
+              <img className=' w-14 mx-auto' src={SliderImage1} alt='SliderImage1' />
             </div>
             <div className='p-3'>
-              <img className=' w-14 mx-auto' src={SliderImage2} />
+              <img className=' w-14 mx-auto' src={SliderImage2} alt='SliderImage1' />
             </div>
             <div className='p-3'>
-              <img className=' w-14 mx-auto' src={SliderImage3} />
+              <img className=' w-14 mx-auto' src={SliderImage3} alt='SliderImage1' />
             </div>
             <div className='p-3'>
-              <img className=' w-14 mx-auto' src={SliderImage5} />
+              <img className=' w-14 mx-auto' src={SliderImage5} alt='SliderImage1' />
             </div>
             <div className='p-3'>
-              <img className=' w-14 mx-auto' src={SliderImage1} />
+              <img className=' w-14 mx-auto' src={SliderImage1} alt='SliderImage1' />
             </div>
             <div className='p-3'>
-              <img className=' w-14 mx-auto' src={SliderImage2} />
+              <img className=' w-14 mx-auto' src={SliderImage2} alt='SliderImage1' />
             </div>
             <div className='p-3'>
-              <img className=' w-14 mx-auto' src={SliderImage3} />
+              <img className=' w-14 mx-auto' src={SliderImage3} alt='SliderImage1' />
             </div>
             <div className='p-3'>
-              <img className=' w-14 mx-auto' src={SliderImage5} />
+              <img className=' w-14 mx-auto' src={SliderImage5} alt='SliderImage1' />
             </div>
             <div className='p-3'>
-              <img className=' w-14 mx-auto' src={SliderImage1} />
+              <img className=' w-14 mx-auto' src={SliderImage1} alt='SliderImage1' />
             </div>
             <div className='p-3'>
-              <img className=' w-14 mx-auto' src={SliderImage2} />
+              <img className=' w-14 mx-auto' src={SliderImage2} alt='SliderImage1' />
             </div>
             <div className='p-3'>
-              <img className=' w-14 mx-auto' src={SliderImage3} />
+              <img className=' w-14 mx-auto' src={SliderImage3} alt='SliderImage1' />
             </div>
             <div className='p-3'>
-              <img className=' w-14 mx-auto' src={SliderImage5} />
+              <img className=' w-14 mx-auto' src={SliderImage5} alt='SliderImage1' />
             </div>
             <div className='p-3'>
-              <img className=' w-14 mx-auto' src={SliderImage1} />
+              <img className=' w-14 mx-auto' src={SliderImage1} alt='SliderImage1' />
             </div>
             <div className='p-3'>
-              <img className=' w-14 mx-auto' src={SliderImage2} />
+              <img className=' w-14 mx-auto' src={SliderImage2} alt='SliderImage1' />
             </div>
             <div className='p-3'>
-              <img className=' w-14 mx-auto' src={SliderImage3} />
+              <img className=' w-14 mx-auto' src={SliderImage3} alt='SliderImage1' />
             </div>
             <div className='p-3'>
-              <img className=' w-14 mx-auto' src={SliderImage5} />
+              <img className=' w-14 mx-auto' src={SliderImage5} alt='SliderImage1' />
             </div>
           </Slider>
         </div>
