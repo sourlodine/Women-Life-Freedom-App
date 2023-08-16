@@ -42,8 +42,8 @@ export default function Header() {
   return (
     <div className="w-full z-[5] h-[90px] absolute">
       <div className="container">
-        <div className="flex w-full mx-auto max-w-[1200px] px-10 lg:px-5 justify-between items-center">
-          <Link to="/"><img src={Logo} alt="logo" className="py-2 w-32 h-24" /></Link>
+        <div className="flex w-full mx-auto max-w-[1200px] py-2 px-10 lg:px-5 justify-between items-center">
+          <Link to="/"><img src={Logo} alt="logo" className="w-48" /></Link>
           <div className="w-full mx-auto items-center flex pl-20">
             <div className="items-center w-full text-white hidden lg:flex font-semibold gap-32 justify-between">
               <div className="flex gap-7 justify-start">
@@ -63,7 +63,7 @@ export default function Header() {
           <div className="text-white lg:hidden text-3xl mr-5" onClick={() => setCloseModal(true)}>
             <AiOutlineMenu />
           </div>
-          <div className="p-2 justify-center text-white flex group" onClick={() => walletBtn()}>
+          <div className="p-2 justify-center text-white md:flex group hidden" onClick={() => walletBtn()}>
             <WalletButton />
           </div>
 
@@ -71,7 +71,7 @@ export default function Header() {
             <div className="fixed z-50 w-full h-full min-h-screen top-0 bg-black/70 left-0">
               <div className="bg-black min-h-screen absolute top-0 right-0 lg:hidden py-8 px-5 w-72">
                 <div className=" w-full flex justify-between items-center mb-10">
-                  <div ><img src={Logo} alt="logo" className="w-20 h-16" /></div>
+                  <div ><img src={Logo} alt="logo" className="w-20" /></div>
                   <div className="text-white float-right text-2xl" onClick={() => setCloseModal(false)}>
                     <MdClose />
                   </div>
@@ -169,12 +169,12 @@ export default function Header() {
 
 const WalletButton = () => {
   return (
-    <button className="flex min-w-[150px] h-[50px] bg-[#ffffff33] buttonfx slideleft items-center justify-center">
-      <span className="w-[15px] h-[15px] absolute left-0 top-0 m-2"><img src={conentIamge} alt="" /></span>
+    <button className="flex min-w-[150px] h-[50px] buttonfx slideleft items-center justify-center">
+      <span className="w-[15px] h-[15px] absolute left-0 top-0 m-2"><img src={conentIamge} alt="conentIamge" /></span>
       <div className="px-5 py-1 flex items-center justify-center  gap-3 text-sm font-bold">
         <FaWallet /> CONNECT
       </div>
-      <span className="group-hover:right-0 duration-300 -right-10 w-[15px] h-[15px] absolute  top-0 m-2 rotate-90"><img src={conentIamge} alt="" /></span>
+      <span className="group-hover:right-0 duration-300 -right-10 w-[15px] h-[15px] absolute  top-0 m-2 rotate-90"><img src={conentIamge} alt="conentIamge" /></span>
     </button>
   )
 }

@@ -99,11 +99,14 @@ export default function Home() {
                   <span className="inline-block w-[60px] leading-[60px] text-white bg-[#ffffff0f] text-center font-bold cursor-pointer select-none" onClick={() => incrementValue(true)}>+</span>
                 </div>
                 <div className=" items-center font-bold group overflow-hidden">
-                  <button className="relative bg-[#00FFA3] py-4 px-12 text-[16px] text-center leading-[22px] w-[200px] h-[60px] text-black font-bold hover:bg-[#00FFA3]/90 flex items-center" >
-                    <span className="absolute top-[7px] left-[7px] block"><img src={Shape1} alt="Shape1" /></span>
-                    MINT NOW
-                    <span className="duration-300 -right-10 absolute top-[7px] group-hover:right-[7px] block rotate-90 "><img src={Shape1} alt="Shape1" /></span>
+                  <button className="flex min-w-[150px] h-[50px] buttonfx1 slideleft1 text-black items-center justify-center" onClick={() => navigate("/mint")} >
+                    <span className="w-[15px] h-[15px] absolute left-0 top-0 m-2"><img src={Shape1} alt="Shape1" /></span>
+                    <div className="px-5 py-1 flex items-center justify-center gap-3 text-sm font-bold">
+                      MINT NOW
+                    </div>
+                    <span className="group-hover:right-0 duration-300 -right-10 w-[15px] h-[15px] absolute  top-0 m-2 rotate-90"><img src={Shape1} alt="Shape1" /></span>
                   </button>
+
                 </div>
               </div>
               <div className="text-white uppercase text-[18px] mt-14 font-bold">

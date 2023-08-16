@@ -15,11 +15,11 @@ export default function About() {
     return (
         <>
             <div className="w-full mx-auto h-full min-h-screen max-w-[1200px]">
-                <div className='pt-28'>
-                    <div className='gap-20 justify-center flex'>
-                        <div className='w-1/2 justify-start'>
-                            <div className='flex ga-8 mb-10'>
-                                <div className='text-xl text-green-500 font-bold'>
+                <div className='flex flex-col w-full h-full min-h-screen items-center justify-center px-5'>
+                    <div className='gap-10 flex w-full -mt-48'>
+                        <div className='w-1/2 text-start'>
+                            <div className='w-full text-start flex ga-8 mb-10'>
+                                <div className='text-xl text-white font-bold'>
                                     THE STORY
                                 </div>
                                 <img src="./111_files/title_shapes.svg" alt='' />
@@ -49,9 +49,9 @@ export default function About() {
                             </div>
                         </div>
                         <div className='w-1/2 justify-end gap-10 flex text-start'>
-                            <div className='bg-[#212027] p-5'>
+                            <div className='bg-[#434057] p-5'>
                                 <img src={Avatar1} alt='Avatar1' />
-                                <div className='items-center  text-white'>
+                                <div className='items-center text-white'>
                                     <div className='flex gap-2 text-3xl font-blod items-center'>
                                         Berneice Tran
                                         <img src={AbIcon1} alt='AbIcon1' />
@@ -61,7 +61,7 @@ export default function About() {
                                     </div>
                                 </div>
                             </div>
-                            <div className='bg-[#212027] p-5'>
+                            <div className='bg-[#434057] p-5'>
                                 <img src={Avatar2} alt='Avatar2' />
                                 <div className='items-center text-white'>
                                     <div className='flex gap-2 text-3xl font-blod items-center'>

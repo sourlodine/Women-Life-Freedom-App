@@ -10,7 +10,7 @@
 
 .App {
   text-align: center;
-  background-image: url("./assets/background.jpg");
+  background-color: #212121;
   width: 100%;
   background-size: cover;
   background-position: top center;
@@ -114,6 +114,50 @@
   transition: all .5s;
 }
 
+.buttonfx1{
+  background-color:#ffffff77;
+  display:flex;
+  min-width: 200px;
+  height:50px;
+  outline: none;
+  letter-spacing: 0.0625em;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all .5s;
+}
+
+.buttonfx1:before,
+.buttonfx1:after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  background: #ffffff77; /* onhover background color */
+  z-index: -1;
+  transform: translate3D(0,-100%,0); /* move elements above button so they don't appear initially */
+  transition: all .5s;
+}
+
+.buttonfx1:before{
+  background: #ffffff99; /* button default background color */
+  z-index: -2;
+  transform: translate3D(0,0,0);
+}
+
+.buttonfx1:hover{
+  color: white;
+  background-color : #ffffff99;
+}
+
+.buttonfx1:hover:after{
+  transform: translate3D(0,0,0);
+  transition: all .5s;
+}
+
 /* //// Slide Left  //// */
 
 .slideleft:after{
@@ -123,6 +167,18 @@
 }
 
 .slideleft:hover:after{
+  transform: translate3D(0,0,0);
+  transition: all .4s;
+}
+
+
+.slideleft1:after{
+  top: 0;
+  z-index: -1;
+  transform: translate3D(-101%,0,0);
+}
+
+.slideleft1:hover:after{
   transform: translate3D(0,0,0);
   transition: all .4s;
 }
