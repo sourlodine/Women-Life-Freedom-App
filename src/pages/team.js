@@ -3,7 +3,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineTwitter, AiOutlineInstagram } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
-import { BsInfoCircle } from "react-icons/bs";
 import Shape2 from "./111_files/title_shapes2.svg"
 import conentIamge from "./111_files/hov_shape_L_dark.svg"
 
