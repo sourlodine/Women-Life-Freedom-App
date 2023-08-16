@@ -32,14 +32,14 @@ export default function Team() {
   ]
   return (
     <div className="w-full mx-auto h-full min-h-screen ">
-      <div className="flex-col mx-auto container justify-center h-full min-h-screen relative pt-20">
+      <div className="flex-col mx-auto container justify-center h-full min-h-screen relative pt-28 pb-5">
         <div className='pt-10'>
           <div className='justify-center items-center flex'>
             <img src={Shape2} alt='Shape2' className='' />
             <div className='text-white/80 text-[18px] font-bold px-5'>TEAM MEMBERS</div>
             <img src={Shape2} alt='Shape2' className='rotate-180' />
           </div>
-          <div className='py-6 justify-center items-center flex text-white text-[48px] font-bold'>
+          <div className='py-3 justify-center items-center flex text-white text-[48px] font-bold'>
             MEET THE CREW
           </div>
         </div>

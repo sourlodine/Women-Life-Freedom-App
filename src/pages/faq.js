@@ -91,8 +91,8 @@ export default function FAQ() {
   }
 
   return (
-    <div className="w-full mx-auto h-full min-h-screen ">
-      <div className="lg:flex container justify-center h-full min-h-screen relative pt-28 pb-10 lg:pb-0 px-10">
+    <div className="w-full mx-auto container h-full min-h-screen ">
+      <div className="lg:flex justify-center h-full min-h-screen relative pt-40 pb-10 lg:pb-0 px-10">
         <div className="lg:w-1/2 w-full flex flex-col text-start">
           <div className='w-full flex flex-col text-white'>
             <div className='flex items-center gap-5 justify-start font-bold py-5 text-xl'>
