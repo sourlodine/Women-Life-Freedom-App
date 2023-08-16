@@ -148,11 +148,7 @@ export default function Header() {
                         </div>
                       </div>
                       <p className="text-[#ffffffcc] text-[16px] leading-7 text-center">
-                        By connecting your wallet, you agree to our
-                        <a href="https://uigaint.com/demo/html/bithu/index5.html#">
-                          Terms of Service</a>
-                        and our
-                        <a href="https://uigaint.com/demo/html/bithu/index5.html#">Privacy Policy</a>.
+                        By connecting your wallet, you agree to our <a href="https://uigaint.com/demo/html/bithu/index5.html#"> Terms of Service </a> and our <a href="https://uigaint.com/demo/html/bithu/index5.html#"> Privacy Policy</a>.
                       </p>
                     </div>
                   </div>
