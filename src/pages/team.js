@@ -1,5 +1,5 @@
 import '../App.css';
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineTwitter, AiOutlineInstagram } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -11,18 +11,10 @@ import conentIamge from "./111_files/hov_shape_L_dark.svg"
 import SliderImage1 from "../assets/nfts/nft01.png";
 import SliderImage2 from "../assets/nfts/nft02.png";
 import SliderImage3 from "../assets/nfts/nft03.png";
-import SliderImage4 from "../assets/nfts/nft04.png";
-import SliderImage5 from "../assets/nfts/nft05.png";
 import SliderImage6 from "../assets/nfts/nft06.png";
-import SliderImage7 from "../assets/nfts/nft07.png";
 import SliderImage8 from "../assets/nfts/nft08.png";
-import SliderImage9 from "../assets/nfts/nft09.png";
-import SliderImage10 from "../assets/nfts/nft10.png";
 import SliderImage11 from "../assets/nfts/nft11.png";
-import SliderImage12 from "../assets/nfts/nft12.png";
-import SliderImage13 from "../assets/nfts/nft13.png";
 import SliderImage14 from "../assets/nfts/nft14.png";
-import SliderImage15 from "../assets/nfts/nft15.png";
 import SliderImage16 from "../assets/nfts/nft16.png";
 
 
