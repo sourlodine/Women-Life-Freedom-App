@@ -1,20 +1,25 @@
 import '../App.css';
 import React, { useState } from 'react';
 import Slider from "react-slick";
+import Shape1 from "./111_files/hov_shape_L_dark.svg";
 
-import Iamge1 from "./111_files/shape1.png";
-import Iamge2 from "./111_files/shape2.png";
-import Iamge3 from "./111_files/shape3.png";
-import Items1 from "./111_files/item1.png";
-import Items2 from "./111_files/item2.png";
-import Items3 from "./111_files/item3.png";
-import Shape1 from "./111_files/hov_shape_L.svg";
-
-
-import SliderImage1 from "./111_files/slider-img.png";
-import SliderImage2 from "./111_files/slider-img2.png";
-import SliderImage3 from "./111_files/slider-img3.png";
-import SliderImage5 from "./111_files/slider-img5.png";
+import MintBG from "../assets/mint-bg.png"
+import SliderImage1 from "../assets/nfts/nft01.png";
+import SliderImage2 from "../assets/nfts/nft02.png";
+import SliderImage3 from "../assets/nfts/nft03.png";
+import SliderImage4 from "../assets/nfts/nft04.png";
+import SliderImage5 from "../assets/nfts/nft05.png";
+import SliderImage6 from "../assets/nfts/nft06.png";
+import SliderImage7 from "../assets/nfts/nft07.png";
+import SliderImage8 from "../assets/nfts/nft08.png";
+import SliderImage9 from "../assets/nfts/nft09.png";
+import SliderImage10 from "../assets/nfts/nft10.png";
+import SliderImage11 from "../assets/nfts/nft11.png";
+import SliderImage12 from "../assets/nfts/nft12.png";
+import SliderImage13 from "../assets/nfts/nft13.png";
+import SliderImage14 from "../assets/nfts/nft14.png";
+import SliderImage15 from "../assets/nfts/nft15.png";
+import SliderImage16 from "../assets/nfts/nft16.png";
 
 
 const settings = {
@@ -27,11 +32,10 @@ const settings = {
   arrows: false
 };
 
-export default function Home() {
+export default function Mint() {
   const [numberValue, setNumberValue] = useState(1);
 
   const incrementValue = (e) => {
-    console.log(numberValue)
     let newNumber;
     if (e === false) newNumber = numberValue - 1;
     else newNumber = numberValue + 1;
@@ -43,46 +47,19 @@ export default function Home() {
   return (
     <>
       <div className="w-full mx-auto h-full min-h-screen ">
-        <div className="lg:flex mx-auto max-w-[1200px] items-center justify-center h-full min-h-[calc(100vh-93px)] py-40 relative">
+        <div className="lg:flex mx-auto max-w-[1200px] items-center justify-center h-full min-h-[calc(100vh-142px)] relative pt-28">
           <div className="lg:w-1/2 w-full relative block">
-            <div className=" py-[110px] z-[1]">
-              <div className='hidden lg:block'>
-                <span className="absolute left-40 top-2 w-12 transform -translate-x-12 -translate-y-8">
-                  <img src={Iamge1} alt="Iamge1" />
-                </span>
-                <span className="absolute left-[50%] -top-10 w-10 transform translate-x-12 -translate-y-8">
-                  <img src={Iamge2} alt="Iamge2" />
-                </span>
-                <span className="absolute left-[37%] z-[5] top-80 w-10 transform -translate-x-3/4 -translate-y-1/2">
-                  <img src={Iamge3} alt="Iamge3" />
-                </span>
-                <img className="absolute z-[2] left-24 -top-9 w-72" src={Items1} alt="Items1" />
-                <img className="absolute z-[1] -left-1 top-28 w-56" src={Items2} alt="Items2" />
-                <img className="absolute z-[3] left-72 -bottom-10 w-60" src={Items3} alt="Items3" />
-              </div>
-              <div className='lg:hidden mx-auto mb-72 mt-80'>
-                <span className="ml-12 absolute left-20 top-32 w-12 transform -translate-x-12 -translate-y-8">
-                  <img src={Iamge1} alt="Iamge1" />
-                </span>
-                <span className="ml-12 absolute left-[50%] top-36 w-10 transform translate-x-12 -translate-y-8">
-                  <img src={Iamge2} alt="Iamge2" />
-                </span>
-                <span className="ml-12 absolute left-[37%] z-[3] bottom-10 w-10 transform -translate-x-3/4 -translate-y-1/2">
-                  <img src={Iamge3} alt="Iamge3" />
-                </span>
-                <img className="sm:ml-12 absolute z-[2] left-3 sm:left-24 top-32 w-72" src={Items1} alt="Items1" />
-                <img className="ml-12 sm:block hidden absolute z-[1] left-1 top-72 w-56" src={Items2} alt="Items2" />
-                <img className="ml-12 sm:block hidden absolute z-[3] left-72 bottom-14 w-60" src={Items3} alt="Items3" />
-              </div>
+            <div className="z-[1] ">
+              <img src={MintBG} alt='MintBG' className='w-full px-10 sm:px-2 sm:w-[500px] mx-auto ImageB1' />
             </div>
           </div>
-          <div className="lg:w-1/2 w-full block px-2">
-            <div className="text-white text-start md:ml-10">
+          <div className="lg:w-1/2 w-full px-4 mx-auto">
+            <div className="text-white justify-center lg:text-start lg:ml-10">
               <h4 className="text-2xl font-bold mb-5">WHITELIST : <span className="text-rose-600">SOLDOUT</span></h4>
               <h1 className="text-[60px] font-bold mb-8">MINT IS LIVE NOW</h1>
               <div className="font-bold mb-10">
                 <h5 className="text-xl mb-2">PUBLIC MINT END IN</h5>
-                <div className=" text-3xl timer_1 flex items-center gap-2">
+                <div className=" text-3xl justify-center lg:justify-start flex items-center gap-2">
                   <div className="days">-366</div>
                   <span className='text-[#ffffff33] items-center'> : </span>
                   <div className="hours">23</div>
@@ -92,13 +69,13 @@ export default function Home() {
                   <div className="seconds">46</div>
                 </div>
               </div>
-              <div className="flex items-center">
-                <div className='items-center flex mr-[30px]'>
+              <div className=" mx-auto block sm:flex justify-center lg:justify-start items-center ">
+                <div className='items-center justify-center sm:justify-start flex sm:mr-[30px]'>
                   <span className="inline-block w-[60px] leading-[60px] text-white bg-[#ffffff0f] text-center font-bold cursor-pointer select-none" onClick={() => incrementValue(false)}>-</span>
                   <input className='px-3 w-20 h-[60px] outline-none text-center bg-transparent border-[#ffffff0f] border-t-2 border-b-2 border-r-0' type='umber' value={numberValue} onChange={(e) => setNumberValue(e.target.value)} />
                   <span className="inline-block w-[60px] leading-[60px] text-white bg-[#ffffff0f] text-center font-bold cursor-pointer select-none" onClick={() => incrementValue(true)}>+</span>
                 </div>
-                <div className=" items-center font-bold group overflow-hidden">
+                <div className=" items-center font-bold justify-center flex sm:justify-start group overflow-hidden pt-5 sm:pt-0">
                   <button className="flex min-w-[150px] h-[50px] buttonfx1 slideleft1 text-black items-center justify-center" onClick={() => navigate("/mint")} >
                     <span className="w-[15px] h-[15px] absolute left-0 top-0 m-2"><img src={Shape1} alt="Shape1" /></span>
                     <div className="px-5 py-1 flex items-center justify-center gap-3 text-sm font-bold">
@@ -109,61 +86,61 @@ export default function Home() {
 
                 </div>
               </div>
-              <div className="text-white uppercase text-[18px] mt-14 font-bold">
+              <div className="text-white uppercase text-[18px] my-14 font-bold">
                 PUBLIC MINT 0.09 ETH + GAS <br /> FLOOR PRICE 2.08 ETH
               </div>
             </div>
           </div>
         </div>
         <div className='relative'>
-          <Slider {...settings} className='items-center bg-slate-700 overflow-x-hidden flex justify-center'>
-            <div className='p-3'>
-              <img className=' w-14 mx-auto' src={SliderImage1} alt='SliderImage1' />
+          <Slider {...settings} className='items-center overflow-x-hidden flex justify-center'>
+            <div className='pt-2'>
+              <img className='w-32 rounded-sm mx-auto' src={SliderImage1} alt='SliderImage1' />
             </div>
-            <div className='p-3'>
-              <img className=' w-14 mx-auto' src={SliderImage2} alt='SliderImage1' />
+            <div className='pt-2'>
+              <img className='w-32 rounded-sm mx-auto' src={SliderImage2} alt='SliderImage1' />
             </div>
-            <div className='p-3'>
-              <img className=' w-14 mx-auto' src={SliderImage3} alt='SliderImage1' />
+            <div className='pt-2'>
+              <img className='w-32 rounded-sm mx-auto' src={SliderImage3} alt='SliderImage1' />
             </div>
-            <div className='p-3'>
-              <img className=' w-14 mx-auto' src={SliderImage5} alt='SliderImage1' />
+            <div className='pt-2'>
+              <img className='w-32 rounded-sm mx-auto' src={SliderImage4} alt='SliderImage1' />
             </div>
-            <div className='p-3'>
-              <img className=' w-14 mx-auto' src={SliderImage1} alt='SliderImage1' />
+            <div className='pt-2'>
+              <img className='w-32 rounded-sm mx-auto' src={SliderImage5} alt='SliderImage1' />
             </div>
-            <div className='p-3'>
-              <img className=' w-14 mx-auto' src={SliderImage2} alt='SliderImage1' />
+            <div className='pt-2'>
+              <img className='w-32 rounded-sm mx-auto' src={SliderImage6} alt='SliderImage1' />
             </div>
-            <div className='p-3'>
-              <img className=' w-14 mx-auto' src={SliderImage3} alt='SliderImage1' />
+            <div className='pt-2'>
+              <img className='w-32 rounded-sm mx-auto' src={SliderImage7} alt='SliderImage1' />
             </div>
-            <div className='p-3'>
-              <img className=' w-14 mx-auto' src={SliderImage5} alt='SliderImage1' />
+            <div className='pt-2'>
+              <img className='w-32 rounded-sm mx-auto' src={SliderImage8} alt='SliderImage1' />
             </div>
-            <div className='p-3'>
-              <img className=' w-14 mx-auto' src={SliderImage1} alt='SliderImage1' />
+            <div className='pt-2'>
+              <img className='w-32 rounded-sm mx-auto' src={SliderImage9} alt='SliderImage1' />
             </div>
-            <div className='p-3'>
-              <img className=' w-14 mx-auto' src={SliderImage2} alt='SliderImage1' />
+            <div className='pt-2'>
+              <img className='w-32 rounded-sm mx-auto' src={SliderImage10} alt='SliderImage1' />
             </div>
-            <div className='p-3'>
-              <img className=' w-14 mx-auto' src={SliderImage3} alt='SliderImage1' />
+            <div className='pt-2'>
+              <img className='w-32 rounded-sm mx-auto' src={SliderImage11} alt='SliderImage1' />
             </div>
-            <div className='p-3'>
-              <img className=' w-14 mx-auto' src={SliderImage5} alt='SliderImage1' />
+            <div className='pt-2'>
+              <img className='w-32 rounded-sm mx-auto' src={SliderImage12} alt='SliderImage1' />
             </div>
-            <div className='p-3'>
-              <img className=' w-14 mx-auto' src={SliderImage1} alt='SliderImage1' />
+            <div className='pt-2'>
+              <img className='w-32 rounded-sm mx-auto' src={SliderImage13} alt='SliderImage1' />
             </div>
-            <div className='p-3'>
-              <img className=' w-14 mx-auto' src={SliderImage2} alt='SliderImage1' />
+            <div className='pt-2'>
+              <img className='w-32 rounded-sm mx-auto' src={SliderImage14} alt='SliderImage1' />
             </div>
-            <div className='p-3'>
-              <img className=' w-14 mx-auto' src={SliderImage3} alt='SliderImage1' />
+            <div className='pt-2'>
+              <img className='w-32 rounded-sm mx-auto' src={SliderImage15} alt='SliderImage1' />
             </div>
-            <div className='p-3'>
-              <img className=' w-14 mx-auto' src={SliderImage5} alt='SliderImage1' />
+            <div className='pt-2'>
+              <img className='w-32 rounded-sm mx-auto' src={SliderImage16} alt='SliderImage1' />
             </div>
           </Slider>
         </div>
