@@ -1,5 +1,6 @@
 import '../App.css';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Slider from "react-slick";
 import Shape1 from "./111_files/hov_shape_L_dark.svg";
 
@@ -33,6 +34,7 @@ const settings = {
 };
 
 export default function Mint() {
+  const navigate = useNavigate();
   const [numberValue, setNumberValue] = useState(1);
 
   const incrementValue = (e) => {
