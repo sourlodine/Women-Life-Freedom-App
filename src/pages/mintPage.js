@@ -1,8 +1,11 @@
 import '../App.css';
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import Slider from "react-slick";
+import { MdOutlineAdd } from "react-icons/md";
+
+
 import Shape1 from "./111_files/hov_shape_L_dark.svg";
+import conentIamge from "../pages/111_files/hov_shape_L_dark.svg"
 
 import MintBG from "../assets/mint-bg.png"
 import SliderImage1 from "../assets/nfts/nft01.png";
@@ -34,8 +37,20 @@ const settings = {
 };
 
 export default function Mint() {
-  const navigate = useNavigate();
   const [numberValue, setNumberValue] = useState(1);
+  const [mintNumber, setMintNumber] = useState(1);
+  const [mintModal, setMintModal] = useState(false);
+  const [walletStyle, setWalletStyle] = useState("ETH")
+  const [budget, setBudget] = useState(0.15);
+  const [remaining, setRemaining] = useState(budget);
+
+  const closeMintModal = () => {
+    setMintModal(false);
+    setRemaining(budget);
+    setMintNumber(1);
+    setWalletStyle("ETH");
+    setBudget(0.15);
+  }
 
   const incrementValue = (e) => {
     let newNumber;
@@ -44,6 +59,21 @@ export default function Mint() {
 
     if (newNumber < 0) newNumber = 0
     setNumberValue(newNumber);
+  }
+
+  const mintValue = (e) => {
+    let newNumber = 0;
+    let totalBudget = 0;
+    if (e === false) {
+      newNumber = mintNumber - 1;
+    } else {
+      newNumber = mintNumber + 1;
+    }
+
+    if (newNumber < 0) newNumber = 0
+    totalBudget = Math.round(newNumber * budget * 100) / 100;
+    setMintNumber(newNumber);
+    setRemaining(totalBudget.toFixed(2))
   }
 
   return (
@@ -78,14 +108,13 @@ export default function Mint() {
                   <span className="inline-block w-[60px] leading-[60px] text-white bg-[#ffffff0f] text-center font-bold cursor-pointer select-none" onClick={() => incrementValue(true)}>+</span>
                 </div>
                 <div className=" items-center font-bold justify-center flex sm:justify-start group overflow-hidden pt-5 sm:pt-0">
-                  <button className="flex min-w-[150px] h-[50px] buttonfx1 slideleft1 text-black items-center justify-center" onClick={() => navigate("/mint")} >
+                  <button className="flex min-w-[150px] h-[50px] buttonfx1 slideleft1 text-black items-center justify-center" onClick={() => setMintModal(true)} >
                     <span className="w-[15px] h-[15px] absolute left-0 top-0 m-2"><img src={Shape1} alt="Shape1" /></span>
                     <div className="px-5 py-1 flex items-center justify-center gap-3 text-sm font-bold">
                       MINT NOW
                     </div>
                     <span className="group-hover:right-0 duration-300 -right-10 w-[15px] h-[15px] absolute  top-0 m-2 rotate-90"><img src={Shape1} alt="Shape1" /></span>
                   </button>
-
                 </div>
               </div>
               <div className="text-white uppercase text-[18px] my-14 font-bold">
@@ -147,6 +176,85 @@ export default function Mint() {
           </Slider>
         </div>
       </div >
+      {mintModal &&
+        <div className="fixed z-50 w-full h-full min-h-screen top-0 bg-black/90 transition-opacity">
+          <div className="w-full h-screen bg-cover flex md:px-8 py-20 justify-center items-center" >
+            <div className="bg-[#171C21] w-full max-w-[440px] metaMaskModal overflow-hidden relative mt-[50px] ">
+              <div className="backdrop-filter-[5px] ">
+                <div  >
+                  <button className="bg-[#ffffff1a] w-20 h-20 absolute -top-10 -right-10 text-white rotate-45">
+                    <div className="text-white" onClick={() => closeMintModal()}>
+                      <div className="mt-12 ml-9 text-xl">
+                        <MdOutlineAdd />
+                      </div>
+                    </div>
+                  </button>
+                  <div className="modal_header">
+                    <div className="text-white text-[24px] mb-[26px] max-w-[280px] text-center leading-7 uppercase mx-auto font-bold">COLLECT YOUR NFT BEFORE END</div>
+                  </div>
+                  <div className="modal_body text-center">
+                    <div className='text-center'>
+                      <img src={SliderImage16} alt='SliderImage16' className='max-w-[200px] mx-auto' />
+                    </div>
+
+                    <div className='my-[30px] text-center'>
+                      <div>
+                        <div className='flex items-center justify-between h-14 border-b-[1px] border-b-[#ffffff1a]'>
+                          <div className='text-[16px] text-right text-white leading-5 font-semibold'>
+                            Remaining
+                          </div>
+                          <div className='text-[16px] text-right text-white leading-5 font-semibold'>
+                            2341/9999
+                          </div>
+                        </div>
+                        <div className='flex items-center justify-between h-14 border-b-[1px] border-b-[#ffffff1a]'>
+                          <div className='text-[16px] text-right text-white leading-5 font-semibold'>
+                            Price
+                          </div>
+                          <div className='text-[16px] text-right text-white leading-5 font-semibold'>
+                            {budget} {walletStyle}
+                          </div>
+                        </div>
+                        <div className='flex items-center justify-between h-14 border-b-[1px] border-b-[#ffffff1a]'>
+                          <div className='text-[16px] text-right text-white leading-5 font-semibold'>
+                            Remaining
+                          </div>
+
+                          <div className='max-w-[106px] w-full h-full items-center justify-between flex'>
+                            <div className='bg-transparent select-none cursor-pointer p-0 font-semibold text-base leading-[22px] text-center uppercase text-white' onClick={() => mintValue(false)} >-</div>
+                            <input value={mintNumber} onChange={(e) => setMintNumber(e.target.value)} className='max-w-[58px] w-full h-full border-l-[1px] border-l-[#ffffff1a] border-r-[1px] border-r-[#ffffff1a] flex items-center justify-center bg-transparent px-[19px] outline-none text-base leading-[22px] text-center uppercase text-white' />
+                            <div className='bg-transparent select-none cursor-pointer p-0 font-semibold text-base leading-[22px] text-center uppercase text-white' onClick={() => mintValue(true)}>+</div>
+                          </div>
+
+                          <div className='text-[16px] text-right text-white leading-5 font-semibold gap-1'>
+                            {remaining} {walletStyle}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div className=" items-center w-full  font-bold justify-center flex sm:justify-start group overflow-hidden pt-5 sm:pt-0">
+                      <button className="flex min-w-[150px] w-full h-[50px] buttonfx1 slideleft1 text-black items-center justify-center" >
+                        <span className="w-[15px] h-[15px] absolute left-0 top-0 m-2"><img src={Shape1} alt="Shape1" /></span>
+                        <div className="px-5 py-1 flex items-center justify-center gap-3 text-sm font-bold">
+                          MINT NOW
+                        </div>
+                        <span className="group-hover:right-0 duration-300 -right-10 w-[15px] h-[15px] absolute  top-0 m-2 rotate-90"><img src={Shape1} alt="Shape1" /></span>
+                      </button>
+                    </div>
+                    <p className="text-[#ffffffcc] text-[14px] leading-7 text-center py-2">
+                      Presale & Whitelist : Soldout
+                    </p>
+                  </div>
+                  <span className="absolute bottom-3 left-3 -rotate-90"><img src={conentIamge} alt="" /></span>
+                  <span className="absolute bottom-3 right-3 rotate-180"><img src={conentIamge} alt="" /></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
 
     </>
 
