@@ -54,9 +54,9 @@ export default function Header() {
                 <Link to="/faq" className="cursor-pointer">FAQ</Link>
               </div>
               <div className="flex items-center gap-5 justify-end ">
-                <div><Link className="text-2xl" to="/" target="_blank"><img src={OpenSea} alt="opensea" /></Link></div>
-                <div><Link className="text-2xl" to="/" target="_blank"><FaTwitter /></Link></div>
-                <div><Link className="text-2xl" to="/" target="_blank"><FaDiscord /></Link></div>
+                <div><Link className="text-2xl" to="https://opensea.io/" target="_blank"><img src={OpenSea} alt="opensea" /></Link></div>
+                <div><Link className="text-2xl" to="https://twitter.com/0x_WLF" target="_blank"><FaTwitter /></Link></div>
+                <div><Link className="text-2xl" to="https://discord.com/" target="_blank"><FaDiscord /></Link></div>
                 <button className="menu_bar"><i className="fa-solid fa-bars"></i></button>
               </div>
             </div>
@@ -86,9 +86,9 @@ export default function Header() {
                 </div>
                 <div className="w-full">
                   <div className="flex mx-auto my-8 text-white gap-5 justify-center">
-                    <div><Link className="text-2xl" to="/" target="_blank"><img src={OpenSea} alt="opensea" /></Link></div>
-                    <div><Link className="text-2xl" to="/" target="_blank"><FaTwitter /></Link></div>
-                    <div><Link className="text-2xl" to="/" target="_blank"><FaDiscord /></Link></div>
+                    <div><Link className="text-2xl" to="https://opensea.io/" target="_blank"><img src={OpenSea} alt="opensea" /></Link></div>
+                    <div><Link className="text-2xl" to="https://twitter.com/0x_WLF" target="_blank"><FaTwitter /></Link></div>
+                    <div><Link className="text-2xl" to="https://discord.com/" target="_blank"><FaDiscord /></Link></div>
                   </div>
                   <div className="p-2 mt-6 justify-center w-full text-white flex group" onClick={() => walletBtn()}>
                     <WalletButton />

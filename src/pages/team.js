@@ -8,8 +8,8 @@ import conentIamge from "./111_files/hov_shape_L_dark.svg"
 
 import Team1 from "../assets/teams/team1.png";
 import Team2 from "../assets/teams/team2.png";
-import SliderImage3 from "../assets/nfts/nft03.png";
-import SliderImage8 from "../assets/nfts/nft16.png";
+// import SliderImage3 from "../assets/nfts/nft03.png";
+// import SliderImage8 from "../assets/nfts/nft16.png";
 
 
 export default function Team() {
