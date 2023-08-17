@@ -17,8 +17,9 @@ export default function Team() {
   const teamData = [
     { name: "Teymour Davoudi", avatar: Team1, title: "Creator", description: "Iranian-American university student with a passion for web3 and blockchain technology", twitter: "https://x.com/txymour?s=21", instagram: "https://instagram.com/teyymour?igshid=MjEwN2IyYWYwYw==", linkedIn: "https://www.linkedin.com/in/teymour-davoudi-6332b7251" },
     { name: "Harry Anderson", avatar: Team2, title: "Developer", description: "A talented developer who jumped into the blockchain with confidence and passion for web3", twitter: "https://x.com/evilgon0214", instagram: "", linkedIn: "https://www.linkedin.com/in/evilgon/" },
-    { name: "Team3", avatar: SliderImage3, title: "Marketing Manager", description: "A marketing manager who has spent more than 3 years developing the NFT essential technology and market", twitter: "https://x.com/", instagram: "https://instagram.com/", linkedIn: "https://www.linkedin.com/" },
-    { name: "Team4", avatar: SliderImage8, title: "Designer", description: "Innovative professional passionate about designing digital products with cutting-edge design", twitter: "https://x.com/", instagram: "https://instagram.com/", linkedIn: "https://www.linkedin.com/" },
+
+    // { name: "Team3", avatar: SliderImage3, title: "Marketing Manager", description: "A marketing manager who has spent more than 3 years developing the NFT essential technology and market", twitter: "https://x.com/", instagram: "https://instagram.com/", linkedIn: "https://www.linkedin.com/" },
+    // { name: "Team4", avatar: SliderImage8, title: "Designer", description: "Innovative professional passionate about designing digital products with cutting-edge design", twitter: "https://x.com/", instagram: "https://instagram.com/", linkedIn: "https://www.linkedin.com/" },
 
   ]
   return (
@@ -31,12 +32,12 @@ export default function Team() {
             <img src={Shape2} alt='Shape2' className='rotate-180' />
           </div>
         </div>
-        <div className='mt-6'>
-          <div className='px-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid lg:grid-cols-4 gap-8'>
+        <div className='mt-6 '>
+          <div className='px-2 flex flex-wrap justify-center items-center'>
             {teamData.map((item, index) => {
               return (
-                <div key={index} className=''>
-                  <div className='bg-[#ffffff0d] backdrop-blur max-w-[100%] py-8 relative flex items-center justify-center flex-col group rounded-lg'>
+                <div key={index} className='w-full sm:w-1/2 md:w-1/2 xl:w-1/4 p-4'>
+                  <div className='bg-[#ffffff0d] backdrop-blur w-[270px] py-8 mx-auto relative flex items-center justify-center flex-col group rounded-lg'>
                     <span className="w-[24px] h-[24px] absolute left-0 top-0 m-2 group-hover:opacity-100 opacity-0 duration-500"><img src={conentIamge} alt="conentIamge" /></span>
                     <span className="w-[24px] h-[24px] absolute right-0 top-0 m-2 rotate-90 group-hover:opacity-100 opacity-0 duration-500"><img src={conentIamge} alt="conentIamge" /></span>
                     <img src={item.avatar} alt='avartar' className='w-32 h-32 object-cover rounded-lg' />

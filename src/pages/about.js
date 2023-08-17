@@ -49,7 +49,7 @@ export default function About() {
                             </div>
                         </div>
                         <div className='w-1/2 justify-end gap-10 flex text-start'>
-                            <div className='bg-[#434057] p-5'>
+                            <div className='bg-[#ffffff0d] p-5'>
                                 <img src={Avatar1} alt='Avatar1' />
                                 <div className='items-center text-white'>
                                     <div className='flex gap-2 text-3xl font-blod items-center'>
@@ -61,7 +61,7 @@ export default function About() {
                                     </div>
                                 </div>
                             </div>
-                            <div className='bg-[#434057] p-5'>
+                            <div className='bg-[#ffffff0d] p-5'>
                                 <img src={Avatar2} alt='Avatar2' />
                                 <div className='items-center text-white'>
                                     <div className='flex gap-2 text-3xl font-blod items-center'>
