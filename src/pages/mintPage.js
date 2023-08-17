@@ -38,7 +38,6 @@ const settings = {
 
 export default function Mint() {
   const [numberValue, setNumberValue] = useState(1);
-  const [mintNumber, setMintNumber] = useState(1);
   const [mintModal, setMintModal] = useState(false);
   const [walletStyle, setWalletStyle] = useState("ETH")
   const [budget, setBudget] = useState(0.15);
@@ -47,34 +46,23 @@ export default function Mint() {
   const closeMintModal = () => {
     setMintModal(false);
     setRemaining(budget);
-    setMintNumber(1);
+    setNumberValue(1);
     setWalletStyle("ETH");
     setBudget(0.15);
   }
 
   const incrementValue = (e) => {
-    let newNumber;
+    let newNumber = 0;
+    let totalBudget = 0;
     if (e === false) newNumber = numberValue - 1;
     else newNumber = numberValue + 1;
 
     if (newNumber < 0) newNumber = 0
-    setNumberValue(newNumber);
-  }
-
-  const mintValue = (e) => {
-    let newNumber = 0;
-    let totalBudget = 0;
-    if (e === false) {
-      newNumber = mintNumber - 1;
-    } else {
-      newNumber = mintNumber + 1;
-    }
-
-    if (newNumber < 0) newNumber = 0
     totalBudget = Math.round(newNumber * budget * 100) / 100;
-    setMintNumber(newNumber);
+    setNumberValue(newNumber);
     setRemaining(totalBudget.toFixed(2))
   }
+
 
   return (
     <>
@@ -221,9 +209,9 @@ export default function Mint() {
                           </div>
 
                           <div className='max-w-[106px] w-full h-full items-center justify-between flex'>
-                            <div className='bg-transparent select-none cursor-pointer p-0 font-semibold text-base leading-[22px] text-center uppercase text-white' onClick={() => mintValue(false)} >-</div>
-                            <input value={mintNumber} onChange={(e) => setMintNumber(e.target.value)} className='max-w-[58px] w-full h-full border-l-[1px] border-l-[#ffffff1a] border-r-[1px] border-r-[#ffffff1a] flex items-center justify-center bg-transparent px-[19px] outline-none text-base leading-[22px] text-center uppercase text-white' />
-                            <div className='bg-transparent select-none cursor-pointer p-0 font-semibold text-base leading-[22px] text-center uppercase text-white' onClick={() => mintValue(true)}>+</div>
+                            <div className='bg-transparent select-none cursor-pointer p-0 font-semibold text-base leading-[22px] text-center uppercase text-white' onClick={() => incrementValue(false)} >-</div>
+                            <input value={numberValue} onChange={(e) => setNumberValue(e.target.value)} className='max-w-[58px] w-full h-full border-l-[1px] border-l-[#ffffff1a] border-r-[1px] border-r-[#ffffff1a] flex items-center justify-center bg-transparent px-[19px] outline-none text-base leading-[22px] text-center uppercase text-white' />
+                            <div className='bg-transparent select-none cursor-pointer p-0 font-semibold text-base leading-[22px] text-center uppercase text-white' onClick={() => incrementValue(true)}>+</div>
                           </div>
 
                           <div className='text-[16px] text-right text-white leading-5 font-semibold gap-1'>
