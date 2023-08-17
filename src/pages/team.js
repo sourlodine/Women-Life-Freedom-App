@@ -16,7 +16,7 @@ export default function Team() {
 
   const teamData = [
     { name: "Teymour Davoudi", avatar: Team1, title: "Creator", description: "Iranian-American university student with a passion for web3 and blockchain technology", twitter: "https://x.com/txymour?s=21", instagram: "https://instagram.com/teyymour?igshid=MjEwN2IyYWYwYw==", linkedIn: "https://www.linkedin.com/in/teymour-davoudi-6332b7251" },
-    { name: "Harry Evilgon", avatar: Team2, title: "Developer", description: "A talented developer who jumped into the blockchain with confidence and passion for web3", twitter: "https://x.com/evilgon0214", instagram: "", linkedIn: "https://www.linkedin.com/in/evilgon/" },
+    { name: "Harry Anderson", avatar: Team2, title: "Developer", description: "A talented developer who jumped into the blockchain with confidence and passion for web3", twitter: "https://x.com/evilgon0214", instagram: "", linkedIn: "https://www.linkedin.com/in/evilgon/" },
     { name: "Team3", avatar: SliderImage3, title: "Marketing Manager", description: "A marketing manager who has spent more than 3 years developing the NFT essential technology and market", twitter: "https://x.com/", instagram: "https://instagram.com/", linkedIn: "https://www.linkedin.com/" },
     { name: "Team4", avatar: SliderImage8, title: "Designer", description: "Innovative professional passionate about designing digital products with cutting-edge design", twitter: "https://x.com/", instagram: "https://instagram.com/", linkedIn: "https://www.linkedin.com/" },
 
