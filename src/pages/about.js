@@ -99,7 +99,6 @@ export default function About() {
   const teamData = [
     { name: "Teymour Davoudi", avatar: Team1, title: "Creator", description: "Iranian-American university student with a passion for web3 and blockchain technology", twitter: "https://x.com/txymour?s=21", instagram: "https://instagram.com/teyymour?igshid=MjEwN2IyYWYwYw==", linkedIn: "https://www.linkedin.com/in/teymour-davoudi-6332b7251" },
     { name: "Harry Anderson", avatar: Team2, title: "Developer", description: "", twitter: "https://x.com/evilgon0214", instagram: "", linkedIn: "https://www.linkedin.com/in/evilgon/" },
-
     // { name: "Team3", avatar: SliderImage3, title: "Marketing Manager", description: "A marketing manager who has spent more than 3 years developing the NFT essential technology and market", twitter: "https://x.com/", instagram: "https://instagram.com/", linkedIn: "https://www.linkedin.com/" },
     // { name: "Team4", avatar: SliderImage8, title: "Designer", description: "Innovative professional passionate about designing digital products with cutting-edge design", twitter: "https://x.com/", instagram: "https://instagram.com/", linkedIn: "https://www.linkedin.com/" },
 
@@ -109,8 +108,8 @@ export default function About() {
     <>
       <div className="w-full mx-auto h-full min-h-screen max-w-[1200px]">
         <div className='flex flex-col w-full h-full  justify-center px-5'>
-          <div className='gap-10 justify-center text-start lg:flex  mt-44 mb-4 px-6'>
-            <div className='w-full lg:w-1/2 justify-start'>
+          <div className='gap-10 justify-center text-start lg:flex mt-44 px-6'>
+            <div className='w-full lg:w-1/2 justify-start mb-12'>
               <div className='w-full text-start flex ga-8 mb-10'>
                 <div className='text-3xl text-white font-bold'>
                   THE STORY
@@ -128,7 +127,7 @@ export default function About() {
                 The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original a latin professor.
               </div>
             </div>
-            <div className='w-full lg:w-1/2 justify-end gap-10 flex flex-col text-start'>
+            <div className='w-full lg:w-1/2 justify-end gap-10 flex flex-col text-start mb-12'>
               <div className='text-3xl text-white font-bold'>FAQ</div>
               <div className="relative w-full mx-auto">
                 <div onClick={() => dropDownText1()} className='cursor-pointer text-white/60 hover:text-white bg-[#ffffff0d] backdrop-filter h-[76px] flex items-center justify-between px-[29px] py-[24px] font-bold text-[24px] mt-[10px]'>
