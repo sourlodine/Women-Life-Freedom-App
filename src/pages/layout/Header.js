@@ -51,7 +51,6 @@ export default function Header() {
                 <Link to="/mint" className="cursor-pointer">MINT</Link>
                 <Link to="/team" className="cursor-pointer">TEAM</Link>
                 <Link to="/about" className="cursor-pointer">ABOUT</Link>
-                <Link to="/faq" className="cursor-pointer">FAQ</Link>
               </div>
               <div className="flex items-center gap-5 justify-end ">
                 <div><Link className="text-2xl" to="https://opensea.io/" target="_blank"><img src={OpenSea} alt="opensea" /></Link></div>
@@ -82,7 +81,6 @@ export default function Header() {
                   <Link to="/mint" className="cursor-pointer">MINT</Link>
                   <Link to="/team" className="cursor-pointer">TEAM</Link>
                   <Link to="/about" className="cursor-pointer">ABOUT</Link>
-                  <Link to="/faq" className="cursor-pointer">FAQ</Link>
                 </div>
                 <div className="w-full">
                   <div className="flex mx-auto my-8 text-white gap-5 justify-center">
