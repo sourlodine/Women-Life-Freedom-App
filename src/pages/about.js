@@ -14,8 +14,6 @@ export default function About() {
   const [currentDropDown2, setCurrentDropDown2] = useState(false);
   const [currentDropDown3, setCurrentDropDown3] = useState(false);
   const [currentDropDown4, setCurrentDropDown4] = useState(false);
-  const [currentDropDown5, setCurrentDropDown5] = useState(false);
-  const [currentDropDown6, setCurrentDropDown6] = useState(false);
 
   const dropDownText1 = () => {
     dropDownText(1);
@@ -37,15 +35,6 @@ export default function About() {
     setCurrentDropDown4(!currentDropDown4)
   }
 
-  const dropDownText5 = () => {
-    dropDownText(5);
-    setCurrentDropDown5(!currentDropDown5)
-  }
-
-  const dropDownText6 = () => {
-    dropDownText(6);
-    setCurrentDropDown6(!currentDropDown6)
-  }
 
   const dropDownText = (e) => {
     switch (e) {
@@ -53,43 +42,21 @@ export default function About() {
         setCurrentDropDown2(false);
         setCurrentDropDown3(false);
         setCurrentDropDown4(false);
-        setCurrentDropDown5(false);
-        setCurrentDropDown6(false);
         break;
       case 2:
         setCurrentDropDown1(false);
         setCurrentDropDown3(false);
         setCurrentDropDown4(false);
-        setCurrentDropDown5(false);
-        setCurrentDropDown6(false);
         break;
       case 3:
         setCurrentDropDown1(false);
         setCurrentDropDown2(false);
         setCurrentDropDown4(false);
-        setCurrentDropDown5(false);
-        setCurrentDropDown6(false);
         break;
       case 4:
         setCurrentDropDown1(false);
         setCurrentDropDown2(false);
         setCurrentDropDown3(false);
-        setCurrentDropDown5(false);
-        setCurrentDropDown6(false);
-        break;
-      case 5:
-        setCurrentDropDown1(false);
-        setCurrentDropDown2(false);
-        setCurrentDropDown3(false);
-        setCurrentDropDown4(false);
-        setCurrentDropDown6(false);
-        break;
-      case 6:
-        setCurrentDropDown1(false);
-        setCurrentDropDown2(false);
-        setCurrentDropDown3(false);
-        setCurrentDropDown4(false);
-        setCurrentDropDown5(false);
         break;
       default:
         break;
@@ -106,7 +73,7 @@ export default function About() {
 
   return (
     <>
-      <div className="w-full mx-auto h-full min-h-screen max-w-[1200px]">
+      <div className="w-full mx-auto h-full min-h-[820px] max-w-[1200px]">
         <div className='flex flex-col w-full h-full  justify-center px-5'>
           <div className='gap-10 justify-center text-start lg:flex mt-44 px-6'>
             <div className='w-full lg:w-1/2 justify-start mb-12'>
@@ -127,11 +94,11 @@ export default function About() {
                 The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original a latin professor.
               </div>
             </div>
-            <div className='w-full lg:w-1/2 justify-end gap-10 flex flex-col text-start mb-12'>
+            <div className='w-full lg:w-1/2 justify-start gap-10 flex flex-col text-start mb-12'>
               <div className='text-3xl text-white font-bold'>FAQ</div>
               <div className="relative w-full mx-auto">
-                <div onClick={() => dropDownText1()} className='cursor-pointer text-white/60 hover:text-white bg-[#ffffff0d] backdrop-filter h-[76px] flex items-center justify-between px-[29px] py-[24px] font-bold text-[24px] mt-[10px]'>
-                  What is MiNFT ?
+                <div onClick={() => dropDownText1()} className='cursor-pointer text-white/60 hover:text-white bg-[#ffffff0d] backdrop-filter h-[76px] flex items-center justify-between px-[32px] py-[24px] font-bold text-[24px] mt-[10px]'>
+                  When Drop?
                   <div className='text-[24px]'>
                     {currentDropDown1 ?
                       <FiMinus />
@@ -141,12 +108,11 @@ export default function About() {
                 </div>
                 <div className={`${currentDropDown1 ? "py-[24px]" : ""} px-[29px] text-start text-white/60 bg-[#ffffff0d] backdrop-filter duration-300`}>
                   <span className={`${currentDropDown1 ? " h-full flex" : "hidden"}`}>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    We aim to have our first drop around mid-October or earlier.
                   </span>
                 </div>
-
-                <div onClick={() => dropDownText2()} className='cursor-pointer text-white/60 hover:text-white bg-[#ffffff0d] backdrop-filter h-[76px] flex items-center justify-between px-[29px] py-[24px] font-bold text-[24px] mt-[10px]'>
-                  How we can buy and invest NFT ?
+                <div onClick={() => dropDownText2()} className='cursor-pointer text-white/60 hover:text-white bg-[#ffffff0d] backdrop-filter h-[76px] flex items-center justify-between px-[32px] py-[24px] font-bold text-[24px] mt-[10px]'>
+                  Who is behind the project?
                   <div className='text-[24px]'>
                     {currentDropDown2 ?
                       <FiMinus />
@@ -156,12 +122,11 @@ export default function About() {
                 </div>
                 <div className={`${currentDropDown2 ? "py-[24px]" : ""} px-[29px] text-start text-white/60 bg-[#ffffff0d] backdrop-filter duration-300`}>
                   <span className={`${currentDropDown2 ? " h-full flex" : "h-0 hidden"}`}>
-                    It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur cites of the word in classical literature.
+                    Please refer to the “team” page of the website.
                   </span>
                 </div>
-
-                <div onClick={() => dropDownText3()} className='cursor-pointer text-white/60 hover:text-white bg-[#ffffff0d] backdrop-filter h-[76px] flex items-center justify-between px-[29px] py-[24px] font-bold text-[24px] mt-[10px]'>
-                  Why we should choose MiNFT ?
+                <div onClick={() => dropDownText3()} className='cursor-pointer text-white/60 hover:text-white bg-[#ffffff0d] backdrop-filter h-[76px] flex items-center justify-between px-[32px] py-[24px] font-bold text-[24px] mt-[10px]'>
+                  How will the mint work?
                   <div className='text-[24px]'>
                     {currentDropDown3 ?
                       <FiMinus />
@@ -171,12 +136,11 @@ export default function About() {
                 </div>
                 <div className={`${currentDropDown3 ? "py-[24px]" : ""} px-[29px] text-start text-white/60 bg-[#ffffff0d] backdrop-filter duration-300`}>
                   <span className={`${currentDropDown3 ? " h-full flex" : "h-0 hidden"}`}>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    We plan to hold a 24-hour open edition mint. Each token will cost of 0.05 ETH, and each mint will grant you one piece at random. Should you choose to mint several tokens, you will not receive a duplicate until you have minted more tokens than there are distinct pieces.
                   </span>
                 </div>
-
-                <div onClick={() => dropDownText4()} className='cursor-pointer text-white/60 hover:text-white bg-[#ffffff0d] backdrop-filter h-[76px] flex items-center justify-between px-[29px] py-[24px] font-bold text-[24px] mt-[10px]'>
-                  Where we can buy and sell NFts ?
+                <div onClick={() => dropDownText4()} className='cursor-pointer text-white/60 hover:text-white bg-[#ffffff0d] backdrop-filter h-[76px] flex items-center justify-between px-[32px] py-[24px] font-bold text-[24px] mt-[10px]'>
+                  What will happen to secondary royalties ?
                   <div className='text-[24px]'>
                     {currentDropDown4 ?
                       <FiMinus />
@@ -186,39 +150,10 @@ export default function About() {
                 </div>
                 <div className={`${currentDropDown4 ? "py-[24px]" : ""} px-[29px] text-start text-white/60 bg-[#ffffff0d] backdrop-filter duration-300`}>
                   <span className={`${currentDropDown4 ? " h-full flex" : "h-0 hidden"}`}>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Royalties from secondary sales will be paid back equally among the artists who so kindly joined us in our effort.
                   </span>
                 </div>
 
-                <div onClick={() => dropDownText5()} className='cursor-pointer text-white/60 hover:text-white bg-[#ffffff0d] backdrop-filter h-[76px] flex items-center justify-between px-[29px] py-[24px] font-bold text-[24px] mt-[10px]'>
-                  How secure is this token ?
-                  <div className='text-[24px]'>
-                    {currentDropDown5 ?
-                      <FiMinus />
-                      :
-                      <FiPlus />}
-                  </div>
-                </div>
-                <div className={`${currentDropDown5 ? "py-[24px]" : ""} px-[29px] text-start text-white/60 bg-[#ffffff0d] backdrop-filter duration-300`}>
-                  <span className={`${currentDropDown5 ? " h-full flex" : "h-0 hidden"}`}>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </span>
-                </div>
-
-                <div onClick={() => dropDownText6()} className='cursor-pointer text-white/60 hover:text-white bg-[#ffffff0d] backdrop-filter h-[76px] flex items-center justify-between px-[29px] py-[24px] font-bold text-[24px] mt-[10px]'>
-                  What is your contract address ?
-                  <div className='text-[24px]'>
-                    {currentDropDown6 ?
-                      <FiMinus />
-                      :
-                      <FiPlus />}
-                  </div>
-                </div>
-                <div className={`${currentDropDown6 ? "py-[24px]" : ""} flex px-[29px] text-start text-white/60 bg-[#ffffff0d] backdrop-filter duration-300`}>
-                  <span className={`${currentDropDown6 ? " h-full flex" : "hidden"}`}>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </span>
-                </div>
               </div>
             </div>
           </div>
