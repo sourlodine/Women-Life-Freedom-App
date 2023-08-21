@@ -1,30 +1,47 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { FaWallet, FaTwitter, FaDiscord } from "react-icons/fa";
 import { MdClose, MdOutlineAdd } from "react-icons/md";
 import { AiOutlineMenu } from "react-icons/ai"
-import { BiChevronRight } from "react-icons/bi"
+import { FiLogOut } from "react-icons/fi";
 import Logo from "../../assets/logo.png";
 import OpenSea from "../../pages/111_files/opensea.svg"
 import conentIamge from "../../pages/111_files/hov_shape_L_dark.svg"
-import MetaMask from "../../pages/111_files/MetaMask.svg"
-import Coinbase from "../../pages/111_files/Formatic.svg"
-import Trust from "../../pages/111_files/Trust_Wallet.svg"
-import WalletConnect from "../../pages/111_files/WalletConnect.svg"
+import MetamaskImg from "../../pages/111_files/MetaMask.svg"
+import CoinbaseImg from "../../pages/111_files/Formatic.svg"
+import TrustwalletImg from "../../pages/111_files/Trust_Wallet.svg"
+import WalletConnectImg from "../../pages/111_files/WalletConnect.svg"
 
-
+import { useWallet } from "../../contexts/WalletContext";
+import { getName, shortenAddress } from "../../utils";
+import { ConnectButton } from "../../components/Buttons";
 
 export default function Header() {
-  const [closeModal, setCloseModal] = useState(false);
+  const { connector, isActivating, handleConnect, handleDisconnect, accounts, isActive, ENSNames } = useWallet();
+  const name = getName(connector);
+  const [menuModal, setMenuModal] = useState(false);
   const [walletModal, setWalletModal] = useState(false);
+  const [logoutModal, setLogoutModal] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
 
   const menuDropdown = useRef(null);
+
+
+  useEffect(() => {
+    function handleScroll() {
+      const currentScrollPos = window.pageYOffset;
+      setPrevScrollPos(currentScrollPos);
+    }
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [prevScrollPos]);
 
   useEffect(() => {
     function handleClickOutside(event) {
       if (menuDropdown.current && !menuDropdown.current.contains(event.target)) {
-        setCloseModal(false);
+        setMenuModal(false);
         setWalletModal(false);
+        setLogoutModal(false);
       }
     }
     document.addEventListener('mousedown', handleClickOutside);
@@ -33,11 +50,64 @@ export default function Header() {
     };
   }, [menuDropdown]);
 
-  const walletBtn = async () => {
+  const handleWalletConnect = async () => {
     await setWalletModal(true);
-    await setCloseModal(false);
+    await setMenuModal(false);
   }
 
+  const logoutWallet = async () => {
+    console.log("here")
+    await handleDisconnect();
+    await setLogoutModal(!logoutModal);
+    await setMenuModal(false);
+  }
+
+  const WalletButton = useCallback(() => {
+    if (isActive) return (
+      <div className="p-2 justify-center text-white flex flex-col relative group " onClick={() => setLogoutModal(true)}>
+        <button className="flex min-w-[150px] h-[50px] buttonfx slideleft items-center justify-center">
+          <span className="w-[15px] h-[15px] absolute left-0 top-0 m-2"><img src={conentIamge} alt="conentIamge" /></span>
+          <div className="px-5 py-1 flex items-center justify-center  gap-3 text-sm font-bold">
+            <FaWallet /> {accounts?.length === 0
+              ? "None"
+              : shortenAddress(ENSNames?.[0] ?? accounts?.[0])}
+          </div>
+          <span className="group-hover:right-0 duration-300 -right-10 w-[15px] h-[15px] absolute  top-0 m-2 rotate-90"><img src={conentIamge} alt="conentIamge" /></span>
+        </button>
+
+      </div>
+    ); else return (
+      <div className="p-2 justify-center text-white flex group " onClick={() => handleWalletConnect()}>
+        <button className="flex min-w-[150px] h-[50px] buttonfx slideleft items-center justify-center">
+          <span className="w-[15px] h-[15px] absolute left-0 top-0 m-2"><img src={conentIamge} alt="conentIamge" /></span>
+          <div className="px-5 py-1 flex items-center justify-center  gap-3 text-sm font-bold">
+            <FaWallet /> CONNECT
+          </div>
+          <span className="group-hover:right-0 duration-300 -right-10 w-[15px] h-[15px] absolute  top-0 m-2 rotate-90"><img src={conentIamge} alt="conentIamge" /></span>
+        </button>
+      </div>
+    )
+  }, [accounts, isActive, ENSNames])
+
+  const LogoutButton = () => {
+    return <div ref={menuDropdown} className="bg-[#171C21] w-full max-w-[250px] z-[10] logoutModal absolute left-0 top-16 rounded-lg">
+      <div className="" >
+        <div className="pt-3">
+          <div
+            className="bg-[#ffffff0d] p-[15px] rounded-lg backdrop-filter-[10px] text-left flex text-white/90 items-center  justify-between hover:bg-[#ffffff5b] cursor-pointer"
+            onClick={() => logoutWallet()}
+          >
+            <div className="text-start w-[180px]">Logout</div>
+            <div className="text-xl">
+              <FiLogOut />
+            </div>
+          </div>
+        </div>
+        <span className="absolute bottom-3 left-3 -rotate-90"><img src={conentIamge} alt="conentIamge" className="w-4" /></span>
+        <span className="absolute bottom-3 right-3 rotate-180"><img src={conentIamge} alt="conentIamge" className="w-4" /></span>
+      </div>
+    </div>
+  }
 
   return (
     <div className="w-full z-[5] h-[90px] absolute">
@@ -60,37 +130,47 @@ export default function Header() {
               </div>
             </div>
           </div>
-          <div className="text-white lg:hidden text-3xl mr-5" onClick={() => setCloseModal(true)}>
+          <div className="text-white lg:hidden text-3xl mr-5 cursor-pointer" onClick={() => setMenuModal(true)}>
             <AiOutlineMenu />
           </div>
-          <div className="p-2 justify-center text-white md:flex group hidden" onClick={() => walletBtn()}>
-            <WalletButton />
+          <div className="relative">
+            <div className="hidden md:flex flex-col">
+              <WalletButton />
+              {
+                logoutModal &&
+                <LogoutButton />
+              }
+            </div>
           </div>
 
-          {closeModal &&
-            <div className="fixed z-50 w-full h-full min-h-screen top-0 bg-black/70 left-0">
-              <div className="bg-black min-h-screen absolute top-0 right-0 lg:hidden py-8 px-5 w-72">
+          {menuModal &&
+            <div className="fixed z-[8] w-full h-full min-h-screen top-0 bg-black/70 left-0">
+              <div ref={menuDropdown} className="bg-black min-h-screen absolute top-0 right-0 lg:hidden py-8 px-5 w-72">
                 <div className=" w-full flex justify-between items-center mb-10">
                   <div ><img src={Logo} alt="logo" className="w-20" /></div>
-                  <div className="text-white float-right text-2xl" onClick={() => setCloseModal(false)}>
+                  <div className="text-white float-right text-2xl cursor-pointer" onClick={() => setMenuModal(false)}>
                     <MdClose />
                   </div>
                 </div>
                 <div className="text-white font-bold text-start text-lg px-5 mb-5 flex flex-col">
-                  <Link to="/" className="cursor-pointer">HOME</Link>
-                  <Link to="/mint" className="cursor-pointer">MINT</Link>
-                  <Link to="/team" className="cursor-pointer">TEAM</Link>
-                  <Link to="/about" className="cursor-pointer">ABOUT</Link>
+                  <Link to="/" className="cursor-pointer" onClick={() => setMenuModal(false)}>HOME</Link>
+                  <Link to="/mint" className="cursor-pointer" onClick={() => setMenuModal(false)}>MINT</Link>
+                  <Link to="/team" className="cursor-pointer" onClick={() => setMenuModal(false)}>TEAM</Link>
+                  <Link to="/about" className="cursor-pointer" onClick={() => setMenuModal(false)}>ABOUT</Link>
                 </div>
                 <div className="w-full">
                   <div className="flex mx-auto my-8 text-white gap-5 justify-center">
-                    <div><Link className="text-2xl" to="https://opensea.io/" target="_blank"><img src={OpenSea} alt="opensea" /></Link></div>
-                    <div><Link className="text-2xl" to="https://twitter.com/0x_WLF" target="_blank"><FaTwitter /></Link></div>
-                    <div><Link className="text-2xl" to="https://discord.com/" target="_blank"><FaDiscord /></Link></div>
+                    <div><Link className="text-2xl" to="https://opensea.io/" target="_blank" onClick={() => setMenuModal(false)}><img src={OpenSea} alt="opensea" /></Link></div>
+                    <div><Link className="text-2xl" to="https://twitter.com/0x_WLF" target="_blank" onClick={() => setMenuModal(false)}><FaTwitter /></Link></div>
+                    <div><Link className="text-2xl" to="https://discord.com/" target="_blank" onClick={() => setMenuModal(false)}><FaDiscord /></Link></div>
                   </div>
-                  <div className="p-2 mt-6 justify-center w-full text-white flex group" onClick={() => walletBtn()}>
-                    <WalletButton />
-                  </div>
+                </div>
+                <div className="flex flex-col md:hidden relative justify-center">
+                  <WalletButton />
+                  {
+                    logoutModal &&
+                    <LogoutButton />
+                  }
                 </div>
               </div>
             </div>
@@ -101,7 +181,7 @@ export default function Header() {
         walletModal &&
         <div className="fixed z-50 w-full h-full min-h-screen top-0 bg-black/90 transition-opacity">
           <div className="w-full h-screen bg-cover flex md:px-8 py-20 justify-center items-center" >
-            <div className="bg-[#171C21] w-full max-w-[440px] metaMaskModal overflow-hidden relative mt-[50px] ">
+            <div ref={menuDropdown} className="bg-[#171C21] w-full max-w-[440px] metaMaskModal overflow-hidden relative mt-[50px] ">
               <div className="backdrop-filter-[5px] ">
                 <div className="" >
                   <button className="bg-[#ffffff1a] w-20 h-20 absolute -top-10 -right-10 text-white rotate-45">
@@ -117,60 +197,47 @@ export default function Header() {
                   <div className="modal_body text-center">
                     <p className="text-[#ffffffcc] text-[16px] leading-7 pb-6">Please select a wallet to connect for start Minting your NFTs</p>
                     <div className="connect-section">
-                      <div className="bg-[#ffffff0d] cursor-pointer px-[30px] py-[15px] backdrop-filter-[10px] text-left flex text-white/90 items-center mb-[20px] justify-between">
-                        <img src={MetaMask} alt="MetaMask" className="" />
-                        <div className="text-start w-[180px]">MetaMask</div>
-                        <div className="text-xl">
-                          <BiChevronRight />
-                        </div>
-                      </div>
-                      <div className="bg-[#ffffff0d] cursor-pointer px-[30px] py-[15px] backdrop-filter-[10px] text-left flex text-white/90 items-center mb-[20px] justify-between">
-                        <img src={Coinbase} alt="" />
-                        <div className="text-start w-[180px]">Coinbase</div>
-                        <div className="text-xl">
-                          <BiChevronRight />
-                        </div>
-                      </div>
-                      <div className="bg-[#ffffff0d] cursor-pointer px-[30px] py-[15px] backdrop-filter-[10px] text-left flex text-white/90 items-center mb-[20px] justify-between">
-                        <img src={Trust} alt="" />
-                        <div className="text-start w-[180px]">Trust Wallet</div>
-                        <div className="text-xl">
-                          <BiChevronRight />
-                        </div>
-                      </div>
-                      <div className="bg-[#ffffff0d] cursor-pointer px-[30px] py-[15px] backdrop-filter-[10px] text-left flex text-white/90 items-center mb-[20px] justify-between">
-                        <img src={WalletConnect} alt="" />
-                        <div className="text-start w-[180px]">WalletConnect</div>
-                        <div className="text-xl">
-                          <BiChevronRight />
-                        </div>
-                      </div>
+                      <ConnectButton
+                        name={name}
+                        isActivating={isActivating}
+                        modalFunc={setWalletModal}
+                        connectFunc={handleConnect}
+                        logo={MetamaskImg}
+                      />
+                      <ConnectButton
+                        name={"Coinbase"}
+                        isActivating={isActivating}
+                        modalFunc={setWalletModal}
+                        connectFunc={handleConnect}
+                        logo={CoinbaseImg}
+                      />
+                      <ConnectButton
+                        name={"Trust Wallet"}
+                        isActivating={isActivating}
+                        modalFunc={setWalletModal}
+                        connectFunc={handleConnect}
+                        logo={TrustwalletImg}
+                      />
+                      <ConnectButton
+                        name={"WalletConnect"}
+                        isActivating={isActivating}
+                        modalFunc={setWalletModal}
+                        connectFunc={handleConnect}
+                        logo={WalletConnectImg}
+                      />
                       <p className="text-[#ffffffcc] text-[16px] leading-7 text-center">
                         By connecting your wallet, you agree to our <a href="https://uigaint.com/demo/html/bithu/index5.html#"> Terms of Service </a> and our <a href="https://uigaint.com/demo/html/bithu/index5.html#"> Privacy Policy</a>.
                       </p>
                     </div>
                   </div>
-                  <span className="absolute bottom-3 left-3 -rotate-90"><img src={conentIamge} alt="" /></span>
-                  <span className="absolute bottom-3 right-3 rotate-180"><img src={conentIamge} alt="" /></span>
+                  <span className="absolute bottom-3 left-3 -rotate-90"><img src={conentIamge} alt="conentIamge" /></span>
+                  <span className="absolute bottom-3 right-3 rotate-180"><img src={conentIamge} alt="conentIamge" /></span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       }
-
     </div >
-  )
-}
-
-const WalletButton = () => {
-  return (
-    <button className="flex min-w-[150px] h-[50px] buttonfx slideleft items-center justify-center">
-      <span className="w-[15px] h-[15px] absolute left-0 top-0 m-2"><img src={conentIamge} alt="conentIamge" /></span>
-      <div className="px-5 py-1 flex items-center justify-center  gap-3 text-sm font-bold">
-        <FaWallet /> CONNECT
-      </div>
-      <span className="group-hover:right-0 duration-300 -right-10 w-[15px] h-[15px] absolute  top-0 m-2 rotate-90"><img src={conentIamge} alt="conentIamge" /></span>
-    </button>
   )
 }

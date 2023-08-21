@@ -67,6 +67,16 @@
   overflow: hidden;
 }
 
+.logoutModal{
+  background-image: url("https://uigaint.com/demo/html/bithu/assets/images/bg/modal_overlay.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 15px;
+  padding-bottom: 50px;
+  overflow: hidden;
+}
+
 
 /* Animation Button */
 

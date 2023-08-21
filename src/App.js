@@ -9,20 +9,24 @@ import Team from './pages/team.js';
 // import FAQ from './pages/faq.js';
 import Error from './pages/error.js';
 
+import { WalletProvider } from './contexts/WalletContext';
+
 function App() {
   return (
     <div className="App" >
-      <Router >
-        <Header />
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/mint" element={<MintPage />} />
-          <Route exact path="/team" element={<Team />} />
-          <Route exact path="/about" element={<About />} />
-          {/* <Route exact path="/faq" element={<FAQ />} /> */}
-          <Route exact path="/*" element={<Error />} />
-        </Routes>
-      </Router>
+      <WalletProvider>
+        <Router >
+          <Header />
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/mint" element={<MintPage />} />
+            <Route exact path="/team" element={<Team />} />
+            <Route exact path="/about" element={<About />} />
+            {/* <Route exact path="/faq" element={<FAQ />} /> */}
+            <Route exact path="/*" element={<Error />} />
+          </Routes>
+        </Router>
+      </WalletProvider>
     </div>
   );
 }
