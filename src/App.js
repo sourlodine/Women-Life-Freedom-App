@@ -6,7 +6,6 @@ import Home from './pages/home.js';
 import MintPage from './pages/mintPage.js';
 import About from './pages/about.js';
 import Team from './pages/team.js';
-// import FAQ from './pages/faq.js';
 import Error from './pages/error.js';
 
 import { WalletProvider } from './contexts/WalletContext';
@@ -22,7 +21,6 @@ function App() {
             <Route exact path="/mint" element={<MintPage />} />
             <Route exact path="/team" element={<Team />} />
             <Route exact path="/about" element={<About />} />
-            {/* <Route exact path="/faq" element={<FAQ />} /> */}
             <Route exact path="/*" element={<Error />} />
           </Routes>
         </Router>

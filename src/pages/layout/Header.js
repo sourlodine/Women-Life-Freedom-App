@@ -56,7 +56,6 @@ export default function Header() {
   }
 
   const logoutWallet = async () => {
-    console.log("here")
     await handleDisconnect();
     await setLogoutModal(!logoutModal);
     await setMenuModal(false);

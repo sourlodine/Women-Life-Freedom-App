@@ -1,12 +1,13 @@
 import '../App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Slider from "react-slick";
 import { MdOutlineAdd } from "react-icons/md";
-
+import abi from "../abi/abi.json"
+import { useWallet } from "../contexts/WalletContext"
+import { Contract, parseEther } from "ethers";
 
 import Shape1 from "./111_files/hov_shape_L_dark.svg";
 import conentIamge from "../pages/111_files/hov_shape_L_dark.svg"
-
 import MintBG from "../assets/mint-bg.png"
 import SliderImage1 from "../assets/nfts/nft01.png";
 import SliderImage2 from "../assets/nfts/nft02.png";
@@ -25,7 +26,6 @@ import SliderImage14 from "../assets/nfts/nft14.png";
 import SliderImage15 from "../assets/nfts/nft15.png";
 import SliderImage16 from "../assets/nfts/nft16.png";
 
-
 const settings = {
   slidesToShow: 7,
   slidesToScroll: 1,
@@ -40,8 +40,23 @@ export default function Mint() {
   const [numberValue, setNumberValue] = useState(1);
   const [mintModal, setMintModal] = useState(false);
   const [walletStyle, setWalletStyle] = useState("ETH")
-  const [budget, setBudget] = useState(0.15);
+  const [budget, setBudget] = useState(0.05);
   const [remaining, setRemaining] = useState(budget);
+  const { provider } = useWallet();
+  const [contract, setContract] = useState(null);
+  const nftMint = async () => {
+    if (contract) {
+      await contract.publicSaleMint(numberValue, { value: parseEther("0.005") });
+      await setMintModal(false);
+    }
+  }
+
+  useEffect(() => {
+    if (provider) {
+      const cont = new Contract("0xaD67b7a89e7fDa003557D47EE79345916a5490b3", abi, provider?.getSigner());
+      setContract(cont);
+    }
+  }, [provider])
 
   const closeMintModal = () => {
     setMintModal(false);
@@ -223,7 +238,7 @@ export default function Mint() {
 
 
                     <div className=" items-center w-full  font-bold justify-center flex sm:justify-start group overflow-hidden pt-5 sm:pt-0">
-                      <button className="flex min-w-[150px] w-full h-[50px] buttonfx1 slideleft1 text-black items-center justify-center" >
+                      <button className="flex min-w-[150px] w-full h-[50px] buttonfx1 slideleft1 text-black items-center justify-center" onClick={() => { nftMint() }} >
                         <span className="w-[15px] h-[15px] absolute left-0 top-0 m-2"><img src={Shape1} alt="Shape1" /></span>
                         <div className="px-5 py-1 flex items-center justify-center gap-3 text-sm font-bold">
                           MINT NOW

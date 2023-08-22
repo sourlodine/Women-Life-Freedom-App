@@ -1,9 +1,7 @@
 import {
-  // ReactNode,
   createContext,
   useCallback,
   useContext,
-  // useEffect,
   useState,
 } from "react";
 // import { MetaMask } from "@web3-react/metamask";
@@ -21,8 +19,8 @@ const {
   useAccounts,
   useIsActivating,
   useIsActive,
-  useProvider,
   useENSNames,
+  useProvider
 } = metamaskHooks;
 
 
@@ -47,12 +45,9 @@ export const WalletProvider = ({ children }) => {
   const chainId = useChainId();
   const accounts = useAccounts();
   const isActivating = useIsActivating();
-
   const isActive = useIsActive();
-
   const provider = useProvider();
   const ENSNames = useENSNames(provider);
-
   const [connector] = useState(metaMask);
   const [error, setError] = useState(undefined);
   const [desiredChainId, setDesiredChainId] = useState(
