@@ -1,10 +1,11 @@
 import '../App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Slider from "react-slick";
 import { MdOutlineAdd } from "react-icons/md";
 import abi from "../abi/abi.json"
 import { useWallet } from "../contexts/WalletContext"
 import { Contract, parseEther } from "ethers";
+import LoadingModal from '../components/Loading';
 
 import Shape1 from "./111_files/hov_shape_L_dark.svg";
 import conentIamge from "../pages/111_files/hov_shape_L_dark.svg"
@@ -25,6 +26,9 @@ import SliderImage13 from "../assets/nfts/nft13.png";
 import SliderImage14 from "../assets/nfts/nft14.png";
 import SliderImage15 from "../assets/nfts/nft15.png";
 import SliderImage16 from "../assets/nfts/nft16.png";
+import ImageGIF from "../assets/nfts/7wj17f.gif";
+
+const NFTImgs = [SliderImage1, SliderImage2, SliderImage3, SliderImage4, SliderImage5, SliderImage6, SliderImage7, SliderImage8, SliderImage9, SliderImage10, SliderImage11, SliderImage12, SliderImage13, SliderImage14, SliderImage15, SliderImage16]
 
 const settings = {
   slidesToShow: 7,
@@ -40,14 +44,26 @@ export default function Mint() {
   const [numberValue, setNumberValue] = useState(1);
   const [mintModal, setMintModal] = useState(false);
   const [walletStyle, setWalletStyle] = useState("ETH")
-  const [budget, setBudget] = useState(0.05);
+  const [budget, setBudget] = useState("0.05");
   const [remaining, setRemaining] = useState(budget);
-  const { provider } = useWallet();
+  const { provider, isActive } = useWallet();
   const [contract, setContract] = useState(null);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [progressMint, setProgressMint] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
+
   const nftMint = async () => {
     if (contract) {
-      await contract.publicSaleMint(numberValue, { value: parseEther("0.005") });
-      await setMintModal(false);
+      try {
+        setProgressMint(true);
+        setErrorMsg("");
+        await contract.publicSaleMint(numberValue, { value: parseEther(budget) });
+        setProgressMint(false);
+        setMintModal(false);
+      } catch (e) {
+        setErrorMsg(" User denied transaction signature.");
+        setProgressMint(false);
+      }
     }
   }
 
@@ -58,12 +74,40 @@ export default function Mint() {
     }
   }, [provider])
 
+
+  const menuDropdown = useRef(null);
+
+  useEffect(() => {
+    function handleScroll() {
+      const currentScrollPos = window.pageYOffset;
+      setPrevScrollPos(currentScrollPos);
+    }
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [prevScrollPos]);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (menuDropdown.current && !menuDropdown.current.contains(event.target)) {
+        setMintModal(false);
+        setNumberValue(1);
+        setErrorMsg("");
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [menuDropdown]);
+
+
   const closeMintModal = () => {
     setMintModal(false);
     setRemaining(budget);
     setNumberValue(1);
     setWalletStyle("ETH");
-    setBudget(0.15);
+    setBudget(0.05);
+    setErrorMsg("");
   }
 
   const incrementValue = (e) => {
@@ -111,12 +155,16 @@ export default function Mint() {
                   <span className="inline-block w-[60px] leading-[60px] text-white bg-[#ffffff0f] text-center font-bold cursor-pointer select-none" onClick={() => incrementValue(true)}>+</span>
                 </div>
                 <div className=" items-center font-bold justify-center flex sm:justify-start group overflow-hidden pt-5 sm:pt-0">
-                  <button className="flex min-w-[150px] h-[50px] buttonfx1 slideleft1 text-black items-center justify-center" onClick={() => setMintModal(true)} >
+                  <button className={`${isActive || progressMint ? "buttonfx2 slideleft1" : ""} flex min-w-[150px] h-[50px]  buttonfx1  text-black items-center justify-center disabled:cursor-not-allowed`} onClick={() => setMintModal(true)} disabled={!isActive || progressMint}>
                     <span className="w-[15px] h-[15px] absolute left-0 top-0 m-2"><img src={Shape1} alt="Shape1" /></span>
-                    <div className="px-5 py-1 flex items-center justify-center gap-3 text-sm font-bold">
-                      MINT NOW
-                    </div>
-                    <span className="group-hover:right-0 duration-300 -right-10 w-[15px] h-[15px] absolute  top-0 m-2 rotate-90"><img src={Shape1} alt="Shape1" /></span>
+                    {progressMint
+                      ? <LoadingModal />
+                      : <div className="px-5 py-1 flex items-center justify-center gap-3 text-sm font-bold">
+                        MINT NOW
+                      </div>}
+                    {isActive &&
+                      <span className="group-hover:right-0 duration-300 -right-10 w-[15px] h-[15px] absolute  top-0 m-2 rotate-90"><img src={Shape1} alt="Shape1" /></span>
+                    }
                   </button>
                 </div>
               </div>
@@ -128,61 +176,21 @@ export default function Mint() {
         </div>
         <div className='relative'>
           <Slider {...settings} className='items-center overflow-x-hidden flex justify-center'>
-            <div className='pt-2'>
-              <img className='w-32 rounded-sm mx-auto' src={SliderImage1} alt='SliderImage1' />
-            </div>
-            <div className='pt-2'>
-              <img className='w-32 rounded-sm mx-auto' src={SliderImage2} alt='SliderImage1' />
-            </div>
-            <div className='pt-2'>
-              <img className='w-32 rounded-sm mx-auto' src={SliderImage3} alt='SliderImage1' />
-            </div>
-            <div className='pt-2'>
-              <img className='w-32 rounded-sm mx-auto' src={SliderImage4} alt='SliderImage1' />
-            </div>
-            <div className='pt-2'>
-              <img className='w-32 rounded-sm mx-auto' src={SliderImage5} alt='SliderImage1' />
-            </div>
-            <div className='pt-2'>
-              <img className='w-32 rounded-sm mx-auto' src={SliderImage6} alt='SliderImage1' />
-            </div>
-            <div className='pt-2'>
-              <img className='w-32 rounded-sm mx-auto' src={SliderImage7} alt='SliderImage1' />
-            </div>
-            <div className='pt-2'>
-              <img className='w-32 rounded-sm mx-auto' src={SliderImage8} alt='SliderImage1' />
-            </div>
-            <div className='pt-2'>
-              <img className='w-32 rounded-sm mx-auto' src={SliderImage9} alt='SliderImage1' />
-            </div>
-            <div className='pt-2'>
-              <img className='w-32 rounded-sm mx-auto' src={SliderImage10} alt='SliderImage1' />
-            </div>
-            <div className='pt-2'>
-              <img className='w-32 rounded-sm mx-auto' src={SliderImage11} alt='SliderImage1' />
-            </div>
-            <div className='pt-2'>
-              <img className='w-32 rounded-sm mx-auto' src={SliderImage12} alt='SliderImage1' />
-            </div>
-            <div className='pt-2'>
-              <img className='w-32 rounded-sm mx-auto' src={SliderImage13} alt='SliderImage1' />
-            </div>
-            <div className='pt-2'>
-              <img className='w-32 rounded-sm mx-auto' src={SliderImage14} alt='SliderImage1' />
-            </div>
-            <div className='pt-2'>
-              <img className='w-32 rounded-sm mx-auto' src={SliderImage15} alt='SliderImage1' />
-            </div>
-            <div className='pt-2'>
-              <img className='w-32 rounded-sm mx-auto' src={SliderImage16} alt='SliderImage1' />
-            </div>
+            {NFTImgs.map((item, index) => {
+              return (
+                <div className='pt-2' key={index}>
+                  <img className='w-32 rounded-sm mx-auto' src={item} alt='SliderImage1' />
+                </div>
+              )
+            })
+            }
           </Slider>
         </div>
       </div >
       {mintModal &&
         <div className="fixed z-50 w-full h-full min-h-screen top-0 bg-black/90 transition-opacity">
           <div className="w-full h-screen bg-cover flex md:px-8 py-20 justify-center items-center" >
-            <div className="bg-[#171C21] w-full max-w-[440px] metaMaskModal overflow-hidden relative mt-[50px] ">
+            <div ref={menuDropdown} className="bg-[#171C21] w-full max-w-[440px] metaMaskModal overflow-hidden relative mt-[50px] ">
               <div className="backdrop-filter-[5px] ">
                 <div  >
                   <button className="bg-[#ffffff1a] w-20 h-20 absolute -top-10 -right-10 text-white rotate-45">
@@ -197,7 +205,7 @@ export default function Mint() {
                   </div>
                   <div className="modal_body text-center">
                     <div className='text-center'>
-                      <img src={SliderImage16} alt='SliderImage16' className='max-w-[200px] mx-auto' />
+                      <img src={ImageGIF} alt='SliderImage16' className='max-w-[200px] mx-auto' />
                     </div>
 
                     <div className='my-[30px] text-center'>
@@ -236,13 +244,14 @@ export default function Mint() {
                       </div>
                     </div>
 
-
                     <div className=" items-center w-full  font-bold justify-center flex sm:justify-start group overflow-hidden pt-5 sm:pt-0">
-                      <button className="flex min-w-[150px] w-full h-[50px] buttonfx1 slideleft1 text-black items-center justify-center" onClick={() => { nftMint() }} >
+                      <button className="flex min-w-[150px] w-full h-[50px] buttonfx1 buttonfx2 slideleft1 text-black items-center justify-center" onClick={() => { nftMint() }} >
                         <span className="w-[15px] h-[15px] absolute left-0 top-0 m-2"><img src={Shape1} alt="Shape1" /></span>
-                        <div className="px-5 py-1 flex items-center justify-center gap-3 text-sm font-bold">
-                          MINT NOW
-                        </div>
+                        {progressMint
+                          ? <LoadingModal />
+                          : <div className="px-5 py-1 flex items-center justify-center gap-3 text-sm font-bold">
+                            MINT NOW
+                          </div>}
                         <span className="group-hover:right-0 duration-300 -right-10 w-[15px] h-[15px] absolute  top-0 m-2 rotate-90"><img src={Shape1} alt="Shape1" /></span>
                       </button>
                     </div>
@@ -254,6 +263,11 @@ export default function Mint() {
                   <span className="absolute bottom-3 right-3 rotate-180"><img src={conentIamge} alt="" /></span>
                 </div>
               </div>
+              {errorMsg !== "" &&
+                <div className='text-rose-600 justify-center'>
+                  {errorMsg}
+                </div>
+              }
             </div>
           </div>
         </div>

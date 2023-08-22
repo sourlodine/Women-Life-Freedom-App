@@ -31,7 +31,7 @@ export default function Home() {
           A humanitarian effort to celebrate and support Iranian women across the globe through art and web3
         </p>
         <div className="flex items-center my-10 group">
-          <button className="flex min-w-[150px] h-[50px] buttonfx1 slideleft1 items-center justify-center" onClick={() => navigate("/mint")} >
+          <button className="flex min-w-[150px] h-[50px] buttonfx1 buttonfx2 slideleft1 items-center justify-center" onClick={() => navigate("/mint")} >
             <span className="w-[15px] h-[15px] absolute left-0 top-0 m-2"><img src={Shape1} alt="Shape1" /></span>
             <div className="px-5 py-1 flex items-center justify-center gap-3 text-sm font-bold">
               MINT NOW

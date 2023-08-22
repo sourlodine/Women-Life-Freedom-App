@@ -138,8 +138,8 @@
   transition: all .5s;
 }
 
-.buttonfx1:before,
-.buttonfx1:after{
+.buttonfx2:before,
+.buttonfx2:after{
   content: '';
   position: absolute;
   left: 0;
@@ -153,18 +153,18 @@
   transition: all .5s;
 }
 
-.buttonfx1:before{
+.buttonfx2:before{
   background: #ffffff99; /* button default background color */
   z-index: -2;
   transform: translate3D(0,0,0);
 }
 
-.buttonfx1:hover{
-  color: white;
+.buttonfx2:hover{
+  color: #ffffff99;
   background-color : #ffffff99;
 }
 
-.buttonfx1:hover:after{
+.buttonfx2:hover:after{
   transform: translate3D(0,0,0);
   transition: all .5s;
 }
