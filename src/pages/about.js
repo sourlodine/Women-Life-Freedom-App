@@ -59,27 +59,34 @@ export default function About() {
     <div className="w-full mx-auto py-5 lg:py-0 lg:h-screen max-w-[1200px]">
       <div className='gap-10 justify-center text-start flex flex-col lg:flex-row mt-44 px-6'>
         <div className='w-full lg:w-1/2 justify-start mb-12'>
-          <div className='w-full text-start flex ga-8 mb-10'>
+          <div className='w-full text-start flex ga-8 mb-8'>
             <div className='text-3xl text-white font-bold'>
               THE STORY
             </div>
           </div>
-          <div className='text-white font-bold text-5xl mb-10'>
+          <div className='text-white font-bold text-5xl mb-6'>
             About us
           </div>
-          <div className='text-lg text-white mb-6'>
-            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur cites of the word in classical literature.
-          </div>
-
-          <div className='text-lg text-white'>
-            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original a latin professor.
+          <div className='flex flex-col gap-5'>
+            <h3 className='text-lg text-white'>
+              As the one-year anniversary of Mahsa Amini’s death rapidly approaches, thoughts of the people of Iran, especially those in my family who remain there, have raced through my head every day. The more I meditated on these ideas, the greater my desire to help grew.
+            </h3>
+            <h3 className='text-lg text-white'>
+              Enter Project 0xWLF.
+            </h3>
+            <h3 className='text-lg text-white'>
+              Of all the avenues I could think of to help, this is the best way I know how. Leveraging blockchain technology - which I’m sure will change the world - to help Iranian women across the globe is how I hope to do my part in bringing the nation one step closer to being the wonderful place I’ve heard about in stories passed down by my family. This project is how I will be their voice.
+            </h3>
+            <h3 className='text-lg text-white'>
+              - Teymour Davoudi at block 17978257
+            </h3>
           </div>
         </div>
         <div className='w-full lg:w-1/2 justify-start gap-10 flex flex-col text-start mb-12'>
           <div className='text-3xl text-white font-bold'>FAQ</div>
           <div className="relative w-full mx-auto">
             <div onClick={() => dropDownText1()} className='cursor-pointer text-white/60 hover:text-white bg-[#ffffff0d] backdrop-filter flex items-center justify-between px-[30px] py-[24px] font-bold text-[18px] lg:text-[24px] mt-[10px] '>
-              Wen Drop?
+              When Drop?
               <div className='text-[24px]'>
                 {currentDropDown1 ?
                   <FiMinus />

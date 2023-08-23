@@ -9,7 +9,7 @@ import LoadingModal from '../components/Loading';
 
 import Shape1 from "./111_files/hov_shape_L_dark.svg";
 import conentIamge from "../pages/111_files/hov_shape_L_dark.svg"
-import MintBG from "../assets/mint-bg.png"
+import MintBG from "../assets/mint-bg-gif.gif"
 import SliderImage1 from "../assets/nfts/nft01.png";
 import SliderImage2 from "../assets/nfts/nft02.png";
 import SliderImage3 from "../assets/nfts/nft03.png";
@@ -128,8 +128,8 @@ export default function Mint() {
       <div className="w-full mx-auto h-full min-h-screen ">
         <div className="lg:flex mx-auto max-w-[1200px] items-center justify-center h-full min-h-[calc(100vh-142px)] relative pt-28">
           <div className="lg:w-1/2 w-full relative block">
-            <div className="z-[1] ">
-              <img src={MintBG} alt='MintBG' className='w-full px-10 sm:px-2 sm:w-[500px] mx-auto ImageB1' />
+            <div className="w-full z-[1] rounded-md overflow-hidden">
+              <img src={MintBG} alt='MintBG' className='w-full sm:w-[500px] mx-auto ImageB1 rounded-lg' />
             </div>
           </div>
           <div className="lg:w-1/2 w-full px-4 mx-auto">
