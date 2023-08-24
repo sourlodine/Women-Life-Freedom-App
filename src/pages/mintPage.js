@@ -50,18 +50,17 @@ export default function Mint() {
   const [contract, setContract] = useState(null);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [progressMint, setProgressMint] = useState(false);
-  const [errorMsg, setErrorMsg] = useState("");
+  const [mintMsg, setMintMsg] = useState("");
 
   const nftMint = async () => {
     if (contract) {
       try {
         setProgressMint(true);
-        setErrorMsg("");
         await contract.publicSaleMint(numberValue, { value: parseEther(budget) });
+        setMintMsg("It has been successfully minted.");
         setProgressMint(false);
-        setMintModal(false);
       } catch (e) {
-        setErrorMsg(" User denied transaction signature.");
+        setMintMsg(" User denied transaction signature.");
         setProgressMint(false);
       }
     }
@@ -91,7 +90,7 @@ export default function Mint() {
       if (menuDropdown.current && !menuDropdown.current.contains(event.target)) {
         setMintModal(false);
         setNumberValue(1);
-        setErrorMsg("");
+        setMintMsg("");
       }
     }
     document.addEventListener('mousedown', handleClickOutside);
@@ -107,7 +106,7 @@ export default function Mint() {
     setNumberValue(1);
     setWalletStyle("ETH");
     setBudget(0.05);
-    setErrorMsg("");
+    setMintMsg("");
   }
 
   const incrementValue = (e) => {
@@ -126,7 +125,7 @@ export default function Mint() {
   return (
     <>
       <div className="w-full mx-auto h-full min-h-screen ">
-        <div className="lg:flex mx-auto max-w-[1200px] items-center justify-center h-full min-h-[calc(100vh-142px)] relative pt-28">
+        <div className="lg:flex mx-auto max-w-[1200px] items-start justify-center h-full min-h-[calc(100vh-142px)] relative pt-52">
           <div className="lg:w-1/2 w-full relative block">
             <div className="w-full z-[1] rounded-md overflow-hidden">
               <img src={MintBG} alt='MintBG' className='w-full sm:w-[500px] mx-auto ImageB1 rounded-lg' />
@@ -134,33 +133,20 @@ export default function Mint() {
           </div>
           <div className="lg:w-1/2 w-full px-4 mx-auto">
             <div className="text-white justify-center lg:text-start lg:ml-10">
-              <h4 className="text-2xl font-bold mb-5">WHITELIST : <span className="text-rose-600">SOLDOUT</span></h4>
-              <h1 className="text-[60px] font-bold mb-8">MINT IS LIVE NOW</h1>
-              <div className="font-bold mb-10">
-                <h5 className="text-xl mb-2">PUBLIC MINT END IN</h5>
-                <div className=" text-3xl justify-center lg:justify-start flex items-center gap-2">
-                  <div className="days">-366</div>
-                  <span className='text-[#ffffff33] items-center'> : </span>
-                  <div className="hours">23</div>
-                  <span className='text-[#ffffff33] items-center'> : </span>
-                  <div className="minutes">41</div>
-                  <span className='text-[#ffffff33] items-center'> : </span>
-                  <div className="seconds">46</div>
-                </div>
-              </div>
-              <div className=" mx-auto block sm:flex justify-center lg:justify-start items-center ">
+              <h1 className="text-[60px] font-bold py-10">Coming Soon</h1>
+              <div className=" mx-auto sm:flex justify-center lg:justify-start items-center flex-col sm:flex-row  lg:pt-20">
                 <div className='items-center justify-center sm:justify-start flex sm:mr-[30px]'>
                   <span className="inline-block w-[60px] leading-[60px] text-white bg-[#ffffff0f] text-center font-bold cursor-pointer select-none" onClick={() => incrementValue(false)}>-</span>
                   <input className='px-3 w-20 h-[60px] outline-none text-center bg-transparent border-[#ffffff0f] border-t-2 border-b-2 border-r-0' type='umber' value={numberValue} onChange={(e) => setNumberValue(e.target.value)} />
                   <span className="inline-block w-[60px] leading-[60px] text-white bg-[#ffffff0f] text-center font-bold cursor-pointer select-none" onClick={() => incrementValue(true)}>+</span>
                 </div>
-                <div className=" items-center font-bold justify-center flex sm:justify-start group overflow-hidden pt-5 sm:pt-0">
+                <div className=" items-center font-bold justify-center flex sm:justify-start group overflow-hidden lg:py-5">
                   <button className={`${isActive || progressMint ? "buttonfx2 slideleft1" : ""} flex min-w-[150px] h-[50px]  buttonfx1  text-black items-center justify-center disabled:cursor-not-allowed`} onClick={() => setMintModal(true)} disabled={!isActive || progressMint}>
                     <span className="w-[15px] h-[15px] absolute left-0 top-0 m-2"><img src={Shape1} alt="Shape1" /></span>
                     {progressMint
                       ? <LoadingModal />
                       : <div className="px-5 py-1 flex items-center justify-center gap-3 text-sm font-bold">
-                        MINT NOW
+                        MINT ({remaining}ETH)
                       </div>}
                     {isActive &&
                       <span className="group-hover:right-0 duration-300 -right-10 w-[15px] h-[15px] absolute  top-0 m-2 rotate-90"><img src={Shape1} alt="Shape1" /></span>
@@ -168,9 +154,7 @@ export default function Mint() {
                   </button>
                 </div>
               </div>
-              <div className="text-white uppercase text-[18px] my-14 font-bold">
-                PUBLIC MINT 0.09 ETH + GAS <br /> FLOOR PRICE 2.08 ETH
-              </div>
+
             </div>
           </div>
         </div>
@@ -263,9 +247,13 @@ export default function Mint() {
                   <span className="absolute bottom-3 right-3 rotate-180"><img src={conentIamge} alt="" /></span>
                 </div>
               </div>
-              {errorMsg !== "" &&
+              {mintMsg !== "" && mintMsg === "It has been successfully minted." ?
+                <div className='text-lime-600 justify-center'>
+                  {mintMsg}
+                </div>
+                :
                 <div className='text-rose-600 justify-center'>
-                  {errorMsg}
+                  {mintMsg}
                 </div>
               }
             </div>

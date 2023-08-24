@@ -58,14 +58,9 @@ export default function About() {
   return (
     <div className="w-full mx-auto py-5 lg:py-0 lg:h-screen max-w-[1200px]">
       <div className='gap-10 justify-center text-start flex flex-col lg:flex-row mt-44 px-6'>
-        <div className='w-full lg:w-1/2 justify-start mb-12'>
-          <div className='w-full text-start flex ga-8 mb-8'>
-            <div className='text-3xl text-white font-bold'>
-              THE STORY
-            </div>
-          </div>
-          <div className='text-white font-bold text-5xl mb-6'>
-            About us
+        <div className='w-full lg:w-1/2 justify-start mb-12 gap-10 flex flex-col'>
+          <div className='text-white font-bold text-3xl'>
+            Our Story
           </div>
           <div className='flex flex-col gap-5'>
             <h3 className='text-lg text-white'>
