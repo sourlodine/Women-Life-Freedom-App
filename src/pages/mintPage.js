@@ -6,6 +6,7 @@ import abi from "../abi/abi.json";
 import { useWallet } from "../contexts/WalletContext";
 import { Contract, parseEther } from "ethers";
 import LoadingModal from "../components/Loading";
+import BgImage from "../assets/bg-woman.png";
 
 import MintBG from "../assets/mint-bg-gif.gif";
 import SliderImage1 from "../assets/nfts/nft01.png";
@@ -157,11 +158,14 @@ export default function Mint() {
             />
           </div>
         </div>
+        <div className="absolute justify-center w-full h-screen items-center pt-32">
+          <img src={BgImage} alt="BgImage" className="relative w-full max-w-[1120px] mx-auto opacity-20" />
+        </div>
         <div className="lg:flex mx-auto max-w-[1200px] items-start justify-center h-full min-h-[calc(100vh-142px)] relative pt-52">
-          <div className="lg:w-1/2 w-full px-4 mx-auto">
-            <div className="text-white justify-center lg:text-start lg:ml-10">
-              <h1 className="text-[60px] font-bold py-10">Coming Soon</h1>
-              <div className=" mx-auto sm:flex justify-center lg:justify-start items-center flex-col sm:flex-row  lg:pt-20">
+          <div className=" w-full px-4 mx-auto relative justify-center">
+            <div className="text-white justify-center text-center top-0 mx-auto relative">
+              <h1 className="text-[60px] font-bold pt-28 pb-10">Coming Soon</h1>
+              <div className=" mx-auto flex justify-center  items-center flex-col sm:flex-row gap-8 lg:pt-20">
                 <div className="items-center justify-center sm:justify-start flex sm:mr-[30px]">
                   <span
                     className="inline-block w-[60px] leading-[60px] text-white bg-[#ffffff0f] text-center font-bold cursor-pointer select-none"
@@ -184,9 +188,8 @@ export default function Mint() {
                 </div>
                 <div className=" items-center font-bold justify-center flex sm:justify-start group overflow-hidden lg:py-5">
                   <button
-                    className={`${
-                      isActive || progressMint ? "buttonfx2 slideleft1" : ""
-                    } flex min-w-[150px] h-[50px]  buttonfx1  text-black items-center justify-center disabled:cursor-not-allowed`}
+                    className={`${isActive || progressMint ? "buttonfx2 slideleft1" : ""
+                      } flex min-w-[150px] h-[50px]  buttonfx1  text-black items-center justify-center disabled:cursor-not-allowed`}
                     onClick={() => setMintModal(true)}
                     disabled={!isActive || progressMint}
                   >
@@ -348,7 +351,7 @@ export default function Mint() {
                 </div>
               </div>
               {mintMsg !== "" &&
-              mintMsg === "It has been successfully minted." ? (
+                mintMsg === "It has been successfully minted." ? (
                 <div className="text-lime-600 justify-center">{mintMsg}</div>
               ) : (
                 <div className="text-rose-600 justify-center">{mintMsg}</div>

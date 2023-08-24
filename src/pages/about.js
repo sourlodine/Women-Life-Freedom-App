@@ -81,7 +81,7 @@ export default function About() {
           <div className='text-3xl text-white font-bold'>FAQ</div>
           <div className="relative w-full mx-auto">
             <div onClick={() => dropDownText1()} className='cursor-pointer text-white/60 hover:text-white bg-[#ffffff0d] backdrop-filter flex items-center justify-between px-[30px] py-[24px] font-bold text-[18px] lg:text-[24px] mt-[10px] '>
-              When Drop?
+              Wen Drop?
               <div className='text-[24px]'>
                 {currentDropDown1 ?
                   <FiMinus />
