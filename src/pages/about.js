@@ -73,7 +73,7 @@ export default function About() {
               Of all the avenues I could think of to help, this is the best way I know how. Leveraging blockchain technology - which I’m sure will change the world - to help Iranian women across the globe is how I hope to do my part in bringing the nation one step closer to being the wonderful place I’ve heard about in stories passed down by my family. This project is how I will be their voice.
             </h3>
             <h3 className='text-lg text-white'>
-              - Teymour Davoudi at block 17978257
+              - Teymour Davoudi at Ethereum block 17978257
             </h3>
           </div>
         </div>

@@ -125,12 +125,12 @@ export default function Mint() {
   return (
     <>
       <div className="w-full mx-auto h-full min-h-screen ">
-        <div className="lg:flex mx-auto max-w-[1200px] items-start justify-center h-full min-h-[calc(100vh-142px)] relative pt-52">
-          <div className="lg:w-1/2 w-full relative block">
-            <div className="w-full z-[1] rounded-md overflow-hidden">
-              <img src={MintBG} alt='MintBG' className='w-full sm:w-[500px] mx-auto ImageB1 rounded-lg' />
-            </div>
+        <div className="lg:w-1/2 w-full relative  hidden">
+          <div className="w-full z-[1] rounded-md overflow-hidden">
+            <img src={MintBG} alt='MintBG' className='w-full sm:w-[500px] mx-auto ImageB1 rounded-lg' />
           </div>
+        </div>
+        <div className="lg:flex mx-auto max-w-[1200px] items-start justify-center h-full min-h-[calc(100vh-142px)] relative pt-52">
           <div className="lg:w-1/2 w-full px-4 mx-auto">
             <div className="text-white justify-center lg:text-start lg:ml-10">
               <h1 className="text-[60px] font-bold py-10">Coming Soon</h1>
@@ -158,7 +158,7 @@ export default function Mint() {
             </div>
           </div>
         </div>
-        <div className='relative'>
+        <div className='relative hidden'>
           <Slider {...settings} className='items-center overflow-x-hidden flex justify-center'>
             {NFTImgs.map((item, index) => {
               return (
