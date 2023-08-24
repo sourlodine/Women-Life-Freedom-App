@@ -1,28 +1,20 @@
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useState,
-} from "react";
+import { createContext, useCallback, useContext, useState } from "react";
 // import { MetaMask } from "@web3-react/metamask";
 import { Network } from "@web3-react/network";
 import { GnosisSafe } from "@web3-react/gnosis-safe";
 import { WalletConnect } from "@web3-react/walletconnect";
+import { useWeb3React } from "@web3-react/core";
 // import { CoinbaseWallet } from "@web3-react/coinbase-wallet";
 import { WalletConnect as WalletConnectV2 } from "@web3-react/walletconnect-v2";
 
-import { metaMask, hooks as metamaskHooks } from "../connectors/metaMask";
+// connectors
+import { metaMask } from "../connectors/metaMask";
+import { coinbaseWallet } from "../connectors/coinbaseWallet";
+import { walletConnect } from "../connectors/walletConnect";
+import { walletConnectV2 } from "../connectors/walletConnectV2";
+
 import { getAddChainParameters } from "../chains";
-
-const {
-  useChainId,
-  useAccounts,
-  useIsActivating,
-  useIsActive,
-  useENSNames,
-  useProvider
-} = metamaskHooks;
-
+import { SelectWalletHooks, CheckWallet } from "../utils";
 
 export const WalletContext = createContext({
   chainId: undefined,
@@ -33,38 +25,69 @@ export const WalletContext = createContext({
   ENSNames: [],
   connector: metaMask,
   error: undefined,
-  setError: () => { },
+  setError: () => {},
   desiredChainId: undefined,
-  setDesiredChainId: () => { },
-  handleConnect: () => { },
-  handleDisconnect: () => { },
-  handleSwitchChain: () => { },
+  setDesiredChainId: () => {},
+  handleConnect: () => {},
+  handleDisconnect: () => {},
+  handleSwitchChain: () => {},
+  metaMaskConnector: undefined,
+  coinbaseConnector: undefined,
+  trustwalletConnector: undefined,
+  walletconnectConnector: undefined,
 });
 
 export const WalletProvider = ({ children }) => {
+  const hook = SelectWalletHooks();
+  const { connector } = useWeb3React();
+
+  const {
+    useChainId,
+    useAccounts,
+    useIsActivating,
+    useIsActive,
+    useProvider,
+    useENSNames,
+  } = hook;
+
   const chainId = useChainId();
   const accounts = useAccounts();
   const isActivating = useIsActivating();
   const isActive = useIsActive();
   const provider = useProvider();
   const ENSNames = useENSNames(provider);
-  const [connector] = useState(metaMask);
   const [error, setError] = useState(undefined);
-  const [desiredChainId, setDesiredChainId] = useState(
-    undefined
+  const [desiredChainId, setDesiredChainId] = useState(undefined);
+
+  // Wallet Activate Function
+  const handleConnect = useCallback(
+    (connector, networkId = 5) => {
+      // Check Wallet Which is Connected and Set into the Local Storage
+      try {
+        CheckWallet(connector);
+        connector.activate(networkId);
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    [connector, chainId, CheckWallet]
   );
 
-  const handleConnect = () => {
-    handleSwitchChain(5);
-  }
-
+  //Wallet Deactivate Function
   const handleDisconnect = useCallback(() => {
-    if (connector?.deactivate) {
-      void connector.deactivate();
-    } else {
-      void connector.resetState();
+    // Check Deactivate Function is Present or Not in Connector
+    //If Yes then Call It and If No then Call Reset State Function
+
+    try {
+      if (connector?.deactivate) {
+        connector?.deactivate();
+      } else {
+        connector?.resetState();
+      }
+    } catch (error) {
+      console.log(error);
     }
-  }, [connector]);
+  }, []);
 
   const handleSwitchChain = useCallback(
     async (desiredChainId) => {
@@ -101,31 +124,6 @@ export const WalletProvider = ({ children }) => {
     [connector, chainId, setError]
   );
 
-  // function useBalances(
-  // 	provider?: ReturnType<Web3ReactHooks['useProvider']>,
-  // 	account?: string
-  // ): BigNumber[] | undefined {
-  // 	const [balance, setBalance] = useState<BigNumber | undefined>()
-
-  // 	useEffect(() => {
-  // 		if (provider && accounts?.length) {
-  // 			let stale = false
-
-  // 			void Promise.all((account) => provider.getBalance(account)).then((balance) => {
-  // 				if (stale) return
-  // 				setBalance(balance)
-  // 			})
-
-  // 			return () => {
-  // 				stale = true
-  // 				setBalance(undefined)
-  // 			}
-  // 		}
-  // 	}, [provider, accounts])
-
-  // 	return balance
-  // }
-
   return (
     <WalletContext.Provider
       value={{
@@ -143,6 +141,10 @@ export const WalletProvider = ({ children }) => {
         handleConnect,
         handleDisconnect,
         handleSwitchChain,
+        metaMaskConnector: metaMask,
+        coinbaseConnector: coinbaseWallet,
+        trustwalletConnector: walletConnect,
+        walletconnectConnector: walletConnectV2,
       }}
     >
       {children}

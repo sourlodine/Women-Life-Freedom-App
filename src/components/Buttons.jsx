@@ -1,13 +1,14 @@
-import { BiChevronRight } from "react-icons/bi"
+import { BiChevronRight } from "react-icons/bi";
 export const ConnectButton = ({
   name,
+  connector,
   isActivating,
   modalFunc,
   connectFunc,
   logo,
 }) => {
   const handleWalletConnect = () => {
-    connectFunc();
+    connectFunc(connector);
     modalFunc(false);
   };
 

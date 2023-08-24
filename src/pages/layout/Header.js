@@ -26,6 +26,10 @@ export default function Header() {
     accounts,
     isActive,
     ENSNames,
+    metaMaskConnector,
+    coinbaseConnector,
+    trustwalletConnector,
+    walletconnectConnector,
   } = useWallet();
   const name = getName(connector);
   const [menuModal, setMenuModal] = useState(false);
@@ -336,28 +340,32 @@ export default function Header() {
                     </p>
                     <div className="connect-section">
                       <ConnectButton
-                        name={name}
+                        name={getName(metaMaskConnector)}
+                        connector={metaMaskConnector}
                         isActivating={isActivating}
                         modalFunc={setWalletModal}
                         connectFunc={handleConnect}
                         logo={MetamaskImg}
                       />
                       <ConnectButton
-                        name={"Coinbase"}
+                        name={getName(coinbaseConnector)}
+                        connector={coinbaseConnector}
                         isActivating={isActivating}
                         modalFunc={setWalletModal}
                         connectFunc={handleConnect}
                         logo={CoinbaseImg}
                       />
                       <ConnectButton
-                        name={"Trust Wallet"}
+                        name={getName(trustwalletConnector)}
+                        connector={trustwalletConnector}
                         isActivating={isActivating}
                         modalFunc={setWalletModal}
                         connectFunc={handleConnect}
                         logo={TrustwalletImg}
                       />
                       <ConnectButton
-                        name={"WalletConnect"}
+                        name={getName(walletconnectConnector)}
+                        connector={walletconnectConnector}
                         isActivating={isActivating}
                         modalFunc={setWalletModal}
                         connectFunc={handleConnect}
