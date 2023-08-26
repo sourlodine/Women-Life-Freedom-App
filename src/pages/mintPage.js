@@ -148,7 +148,7 @@ export default function Mint() {
 
   return (
     <>
-      <div className="w-full mx-auto h-full min-h-screen ">
+      <div className="w-full mx-auto h-full min-h-screen pb-8">
         <div className="lg:w-1/2 w-full relative  hidden">
           <div className="w-full z-[1] rounded-md overflow-hidden">
             <img
@@ -158,7 +158,7 @@ export default function Mint() {
             />
           </div>
         </div>
-        <div className="absolute justify-center w-full h-screen items-center pt-32">
+        <div className="fixed justify-center w-full h-screen items-center flex flex-col">
           <img src={BgImage} alt="BgImage" className="relative w-full max-w-[1120px] mx-auto opacity-20" />
         </div>
         <div className="lg:flex mx-auto max-w-[1200px] items-start justify-center h-full min-h-[calc(100vh-142px)] relative pt-52">
