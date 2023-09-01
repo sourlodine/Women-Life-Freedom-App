@@ -335,8 +335,7 @@ export default function Header() {
                   </div>
                   <div className="modal_body text-center">
                     <p className="text-[#ffffffcc] text-[16px] leading-7 pb-6">
-                      Please select a wallet to connect for start Minting your
-                      NFTs
+                      Please connect your wallet with one of the options below to mint your NFTs.
                     </p>
                     <div className="connect-section">
                       <ConnectButton
@@ -371,19 +370,6 @@ export default function Header() {
                         connectFunc={handleConnect}
                         logo={WalletConnectImg}
                       />
-                      <p className="text-[#ffffffcc] text-[16px] leading-7 text-center">
-                        By connecting your wallet, you agree to our{" "}
-                        <a href="https://uigaint.com/demo/html/bithu/index5.html#">
-                          {" "}
-                          Terms of Service{" "}
-                        </a>{" "}
-                        and our{" "}
-                        <a href="https://uigaint.com/demo/html/bithu/index5.html#">
-                          {" "}
-                          Privacy Policy
-                        </a>
-                        .
-                      </p>
                     </div>
                   </div>
                   <span className="absolute bottom-3 left-3 -rotate-90">
