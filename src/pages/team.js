@@ -4,7 +4,6 @@ import { AiOutlineTwitter, AiOutlineInstagram } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 
 import Shape2 from "../assets/img/title_shapes2.svg";
-import conentIamge from "../assets/img/hov_shape_L_dark.svg";
 
 import Team1 from "../assets/teams/team1.png";
 import Team2 from "../assets/teams/team2.png";
@@ -55,12 +54,6 @@ export default function Team() {
                   className="w-full sm:w-1/2 md:w-1/2 xl:w-1/4 p-4"
                 >
                   <div className="bg-[#ffffff0d] backdrop-blur w-[270px] py-8 mx-auto relative flex items-center justify-center flex-col group rounded-lg">
-                    <span className="w-[24px] h-[24px] absolute left-0 top-0 m-2 group-hover:opacity-100 opacity-0 duration-500">
-                      <img src={conentIamge} alt="conentIamge" />
-                    </span>
-                    <span className="w-[24px] h-[24px] absolute right-0 top-0 m-2 rotate-90 group-hover:opacity-100 opacity-0 duration-500">
-                      <img src={conentIamge} alt="conentIamge" />
-                    </span>
                     <img
                       src={item.avatar}
                       alt="avartar"
@@ -75,7 +68,7 @@ export default function Team() {
                     <div className="font-semibold text-white text-sm px-3 flex mt-[10px] h-20 overflow-hidden">
                       {item.description}
                     </div>
-                    <div className="justify-center items-center absolute -bottom-2 gap-5 text-white text-xl flex group-hover:opacity-100 opacity-0 duration-500">
+                    <div className="justify-center items-center absolute -bottom-2 gap-5 text-white text-xl flex ">
                       {item.twitter !== "" && (
                         <Link
                           to={item.twitter}
