@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { FaWallet, FaTwitter, FaDiscord } from "react-icons/fa";
 import { MdClose, MdOutlineAdd } from "react-icons/md";
-import { AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineMenu, AiFillInstagram } from "react-icons/ai";
 import { FiLogOut } from "react-icons/fi";
 
 import { useWallet } from "../../contexts/WalletContext";
@@ -194,6 +194,15 @@ export default function Header() {
                 <div>
                   <Link
                     className="text-2xl"
+                    to="https://instagram.com/0x_wlf?igshid=NTc4MTIwNjQ2YQ=="
+                    target="_blank"
+                  >
+                    <AiFillInstagram />
+                  </Link>
+                </div>
+                <div>
+                  <Link
+                    className="text-2xl"
                     to="https://discord.com/"
                     target="_blank"
                   >
@@ -286,6 +295,16 @@ export default function Header() {
                         onClick={() => setMenuModal(false)}
                       >
                         <FaTwitter />
+                      </Link>
+                    </div>
+                    <div>
+                      <Link
+                        className="text-2xl"
+                        to="https://instagram.com/0x_wlf?igshid=NTc4MTIwNjQ2YQ=="
+                        target="_blank"
+                        onClick={() => setMenuModal(false)}
+                      >
+                        <AiFillInstagram />
                       </Link>
                     </div>
                     <div>
