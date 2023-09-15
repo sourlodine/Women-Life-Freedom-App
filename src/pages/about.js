@@ -171,7 +171,7 @@ export default function About() {
                   <span>
                     <Link
                       className="text-blue-600 underline decoration-sky-500/30 break-words"
-                      href="https://www.iraniandiasporacollective.com/connectivity"
+                      to="https://www.iraniandiasporacollective.com/connectivity/"
                       target="_blank"
                     >
                       iraniandiasporacollective.com
