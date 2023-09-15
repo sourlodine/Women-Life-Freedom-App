@@ -31,7 +31,7 @@ export default function Header() {
     trustwalletConnector,
     walletconnectConnector,
   } = useWallet();
-  const name = getName(connector);
+  // const name = getName(connector);
   const [menuModal, setMenuModal] = useState(false);
   const [walletModal, setWalletModal] = useState(false);
   const [logoutModal, setLogoutModal] = useState(false);
