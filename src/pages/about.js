@@ -82,15 +82,18 @@ export default function About() {
           </div>
           <div className='flex flex-col gap-5'>
             <h3 className='text-lg text-white'>
-              As the one-year anniversary of Mahsa Amini’s death rapidly approaches, thoughts of the people of Iran, especially those in my family who remain there, have raced through my head every day. The more I meditated on these ideas, the greater my desire to help grew.
+              As the one-year anniversary of Mahsa Amini’s death rapidly approaches, thoughts of the people of Iran, especially those in my family who remain there, have raced through my head every day.
             </h3>
             <h3 className='text-lg text-white'>
               Enter Project 0xWLF.
             </h3>
             <h3 className='text-lg text-white'>
-              Of all the avenues I could think of to help, this is the best way I know how. Leveraging blockchain technology - which I’m sure will change the world - to help Iranian women across the globe is how I hope to do my part in bringing the nation one step closer to being the wonderful place I’ve heard about in stories passed down by my family. This project is how I will be their voice.
+              Leveraging blockchain technology - which emphasizes the freedom to create and transact - is the best way I know how to help the people of Iran. 
             </h3>
             <h3 className='text-lg text-white'>
+              This project will be their voice. 
+            </h3>
+            <h3 className='text-lg text-white text italic'>
               - Teymour Davoudi at Ethereum block 17978257
             </h3>
           </div>
@@ -137,7 +140,9 @@ export default function About() {
             </div>
             <div className={`${currentDropDown3 ? "py-[24px]" : ""} px-[29px] text-start text-white/60 bg-[#ffffff0d] backdrop-filter duration-300`}>
               <span className={`${currentDropDown3 ? " h-full flex" : "h-0 hidden"}`}>
-                We plan to hold a 24-hour open edition mint. Each token will cost of 0.05 ETH, and each mint will grant you one piece at random. Should you choose to mint several tokens, you will not receive a duplicate until you have minted more tokens than there are distinct pieces.
+                We plan to hold a 24-hour open edition mint. Each token will cost 0.025  ETH, and each mint will grant you one piece at random. If you choose to mint several tokens, you will not receive a duplicate until you have minted more tokens than there are distinct pieces.
+                <br/>
+                Our genesis drop will feature 6 pieces.
               </span>
             </div>
             <div onClick={() => dropDownText4()} className='cursor-pointer text-white/60 hover:text-white bg-[#ffffff0d] backdrop-filter flex items-center justify-between px-[30px] py-[24px] font-bold text-[18px] lg:text-[24px] mt-[10px] '>

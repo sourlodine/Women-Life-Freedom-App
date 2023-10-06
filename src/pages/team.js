@@ -15,7 +15,7 @@ export default function Team() {
       avatar: Team1,
       title: "Creator",
       description:
-        "Iranian-American university student with a passion for web3 and blockchain technology",
+        "American-Iranian university student with a passion for web3 and blockchain technology",
       twitter: "https://x.com/txymour?s=21",
       instagram: "https://instagram.com/teyymour?igshid=MjEwN2IyYWYwYw==",
       linkedIn: "https://www.linkedin.com/in/teymour-davoudi-6332b7251",

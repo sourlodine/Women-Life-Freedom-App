@@ -58,11 +58,12 @@ const settings = {
   arrows: false,
 };
 
+const budget = "0.025";
+
 export default function Mint() {
   const [numberValue, setNumberValue] = useState(1);
   const [mintModal, setMintModal] = useState(false);
   const [walletStyle, setWalletStyle] = useState("ETH");
-  const [budget, setBudget] = useState("0.05");
   const [remaining, setRemaining] = useState(budget);
   const { provider, isActive } = useWallet();
   const [contract, setContract] = useState(null);
@@ -130,7 +131,6 @@ export default function Mint() {
     setRemaining(budget);
     setNumberValue(1);
     setWalletStyle("ETH");
-    setBudget(0.05);
     setMintMsg("");
   };
 
