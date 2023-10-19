@@ -2,7 +2,7 @@ import { CoinbaseWallet } from "@web3-react/coinbase-wallet";
 import { GnosisSafe } from "@web3-react/gnosis-safe";
 import { MetaMask } from "@web3-react/metamask";
 import { Network } from "@web3-react/network";
-import { WalletConnect as WalletConnect } from "@web3-react/walletconnect";
+import { WalletConnect } from "@web3-react/walletconnect";
 import { WalletConnect as WalletConnectV2 } from "@web3-react/walletconnect-v2";
 
 export function getName(connector) {
@@ -60,3 +60,7 @@ export function reportCoreWebVitals({ id, name, label, value }) {
 export const shortenAddress = (address = "", chars = 4) => {
   return `${address.slice(0, chars + 2)}...${address.slice(-chars)}`;
 };
+
+export function getRandomArbitrary(min, max) {
+  return Math.round(Math.random() * (max - min)) + min;
+}

@@ -34,17 +34,19 @@ export const wallets = {
   },
 };
 
-// Return CheckWallet Function for Set Wallet Id
 export const CheckWallet = (connector) => {
-  // Return Which Wallet is connected and Set into Local Storage
+  // Identify the connected wallet and store its ID in Local Storage
 
-  const connectorInstant = Object.values(wallets).filter((val) => {
+  const connectorInstant = Object.values(wallets).find((val) => {
     if (connector instanceof val?.connector) {
-      return val?.id;
+      return true;
     }
+    return false;
   });
 
-  localStorage.setItem("wallet", Number(connectorInstant[0]?.id).toString());
+  if (connectorInstant) {
+    localStorage.setItem("wallet", Number(connectorInstant?.id).toString());
+  }
 };
 
 // Return Selected Wallet Hooks

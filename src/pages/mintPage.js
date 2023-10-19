@@ -1,104 +1,80 @@
-import "../App.css";
-import React, { useState, useEffect, useRef } from "react";
-import Slider from "react-slick";
+import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { MdOutlineAdd } from "react-icons/md";
-import abi from "../abi/abi.json";
-import { useWallet } from "../contexts/WalletContext";
 import { Contract, parseEther } from "ethers";
+
+import { useWallet } from "../contexts/WalletContext";
 import LoadingModal from "../components/Loading";
+import { contractAddress, contractAbi, getRandomArbitrary } from "../utils";
+
 import BgImage from "../assets/bg-woman.png";
-
-import MintBG from "../assets/mint-bg-gif.gif";
-import SliderImage1 from "../assets/nfts/nft01.png";
-import SliderImage2 from "../assets/nfts/nft02.png";
-import SliderImage3 from "../assets/nfts/nft03.png";
-import SliderImage4 from "../assets/nfts/nft04.png";
-import SliderImage5 from "../assets/nfts/nft05.png";
-import SliderImage6 from "../assets/nfts/nft06.png";
-import SliderImage7 from "../assets/nfts/nft07.png";
-import SliderImage8 from "../assets/nfts/nft08.png";
-import SliderImage9 from "../assets/nfts/nft09.png";
-import SliderImage10 from "../assets/nfts/nft10.png";
-import SliderImage11 from "../assets/nfts/nft11.png";
-import SliderImage12 from "../assets/nfts/nft12.png";
-import SliderImage13 from "../assets/nfts/nft13.png";
-import SliderImage14 from "../assets/nfts/nft14.png";
-import SliderImage15 from "../assets/nfts/nft15.png";
-import SliderImage16 from "../assets/nfts/nft16.png";
-import ImageGIF from "../assets/nfts/7wj17f.gif";
-
+import MintBG from "../assets/mint-bg.gif";
+import ImageGIF from "../assets/mint.gif";
 import Shape1 from "../assets/img/hov_shape_L_dark.svg";
 
-const NFTImgs = [
-  SliderImage1,
-  SliderImage2,
-  SliderImage3,
-  SliderImage4,
-  SliderImage5,
-  SliderImage6,
-  SliderImage7,
-  SliderImage8,
-  SliderImage9,
-  SliderImage10,
-  SliderImage11,
-  SliderImage12,
-  SliderImage13,
-  SliderImage14,
-  SliderImage15,
-  SliderImage16,
-];
-
-const settings = {
-  slidesToShow: 7,
-  slidesToScroll: 1,
-  autoplay: true,
-  speed: 2000,
-  autoplaySpeed: 0,
-  cssEase: "linear",
-  arrows: false,
-};
-
-const budget = "0.025";
+const price = 0.025;
+const token = "ETH";
 
 export default function Mint() {
-  const [numberValue, setNumberValue] = useState(1);
+  const { provider, isActive, accounts } = useWallet();
+  const menuDropdown = useRef(null);
+
+  const [quantity, setQuantity] = useState(1);
+  const [totalPrice, setTotalPrice] = useState(price);
   const [mintModal, setMintModal] = useState(false);
-  const [walletStyle, setWalletStyle] = useState("ETH");
-  const [remaining, setRemaining] = useState(budget);
-  const { provider, isActive } = useWallet();
   const [contract, setContract] = useState(null);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [progressMint, setProgressMint] = useState(false);
   const [mintMsg, setMintMsg] = useState("");
+  const [link, setLink] = useState("");
+  const [pause, setPause] = useState(false);
 
   const nftMint = async () => {
     if (contract) {
       try {
+        const tokenIds = [];
+        const tokenAmounts = [];
+        for (let i = 0; i < quantity; i++) {
+          tokenIds.push(getRandomArbitrary(1, 6));
+          tokenAmounts.push(1);
+        }
         setProgressMint(true);
-        await contract.publicSaleMint(numberValue, {
-          value: parseEther(budget),
-        });
-        setMintMsg("It has been successfully minted.");
-        setProgressMint(false);
+        const res = await contract.mintBatch(
+          accounts[0],
+          tokenIds,
+          tokenAmounts,
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          {
+            value: parseEther(totalPrice.toString()),
+          }
+        );
+        console.log(res);
+        setMintMsg("It has been successfully minted");
+        setLink("https://goerli.etherscan.io/tx/" + res.hash);
       } catch (e) {
-        setMintMsg(" User denied transaction signature.");
+        setMintMsg(e.message);
+      } finally {
         setProgressMint(false);
       }
     }
   };
 
+  const getPause = async (contract) => {
+    const res = await contract.pause();
+    setPause(res);
+  };
+
   useEffect(() => {
     if (provider) {
       const cont = new Contract(
-        "0xaD67b7a89e7fDa003557D47EE79345916a5490b3",
-        abi,
+        contractAddress,
+        contractAbi,
         provider?.getSigner()
       );
       setContract(cont);
+      getPause(cont);
     }
   }, [provider]);
-
-  const menuDropdown = useRef(null);
 
   useEffect(() => {
     function handleScroll() {
@@ -116,7 +92,7 @@ export default function Mint() {
         !menuDropdown.current.contains(event.target)
       ) {
         setMintModal(false);
-        setNumberValue(1);
+        setQuantity(1);
         setMintMsg("");
       }
     }
@@ -128,22 +104,18 @@ export default function Mint() {
 
   const closeMintModal = () => {
     setMintModal(false);
-    setRemaining(budget);
-    setNumberValue(1);
-    setWalletStyle("ETH");
+    setQuantity(1);
     setMintMsg("");
   };
 
-  const incrementValue = (e) => {
-    let newNumber = 0;
-    let totalBudget = 0;
-    if (e === false) newNumber = numberValue - 1;
-    else newNumber = numberValue + 1;
+  const handleChangeQuantity = (action) => {
+    let newQuantity = 0;
+    if (action === false) newQuantity = quantity - 1;
+    else newQuantity = quantity + 1;
 
-    if (newNumber < 0) newNumber = 0;
-    totalBudget = Math.round(newNumber * budget * 100) / 100;
-    setNumberValue(newNumber);
-    setRemaining(totalBudget.toFixed(2));
+    setQuantity(newQuantity);
+
+    setTotalPrice(Math.floor(newQuantity * price * 1000) / 1000);
   };
 
   return (
@@ -159,7 +131,11 @@ export default function Mint() {
           </div>
         </div>
         <div className="fixed justify-center w-full h-screen items-center flex flex-col">
-          <img src={BgImage} alt="BgImage" className="relative w-full max-w-[1120px] mx-auto opacity-20" />
+          <img
+            src={BgImage}
+            alt="BgImage"
+            className="relative w-full max-w-[1120px] mx-auto opacity-20"
+          />
         </div>
         <div className="lg:flex mx-auto max-w-[1200px] items-start justify-center h-full min-h-[calc(100vh-142px)] relative pt-52">
           <div className=" w-full px-4 mx-auto relative justify-center">
@@ -167,31 +143,34 @@ export default function Mint() {
               <h1 className="text-[60px] font-bold pt-28 pb-10">Coming Soon</h1>
               <div className=" mx-auto flex justify-center  items-center flex-col sm:flex-row gap-8 lg:pt-20">
                 <div className="items-center justify-center sm:justify-start flex sm:mr-[30px]">
-                  <span
+                  <button
                     className="inline-block w-[60px] leading-[60px] text-white bg-[#ffffff0f] text-center font-bold cursor-pointer select-none"
-                    onClick={() => incrementValue(false)}
+                    onClick={() => handleChangeQuantity(false)}
+                    disabled={quantity < 2 || pause}
                   >
                     -
-                  </span>
+                  </button>
                   <input
                     className="px-3 w-20 h-[60px] outline-none text-center bg-transparent border-[#ffffff0f] border-t-2 border-b-2 border-r-0"
                     type="umber"
-                    value={numberValue}
-                    onChange={(e) => setNumberValue(e.target.value)}
+                    value={quantity}
+                    onChange={(e) => setQuantity(e.target.value)}
                   />
-                  <span
+                  <button
                     className="inline-block w-[60px] leading-[60px] text-white bg-[#ffffff0f] text-center font-bold cursor-pointer select-none"
-                    onClick={() => incrementValue(true)}
+                    onClick={() => handleChangeQuantity(true)}
+                    disabled={pause}
                   >
                     +
-                  </span>
+                  </button>
                 </div>
                 <div className=" items-center font-bold justify-center flex sm:justify-start group overflow-hidden lg:py-5">
                   <button
-                    className={`${isActive || progressMint ? "buttonfx2 slideleft1" : ""
-                      } flex min-w-[150px] h-[50px]  buttonfx1  text-black items-center justify-center disabled:cursor-not-allowed`}
+                    className={`${
+                      isActive || progressMint ? "buttonfx2 slideleft1" : ""
+                    } flex min-w-[150px] h-[50px]  buttonfx1  text-black items-center justify-center disabled:cursor-not-allowed`}
                     onClick={() => setMintModal(true)}
-                    disabled={!isActive || progressMint}
+                    disabled={!isActive || progressMint || pause}
                   >
                     <span className="w-[15px] h-[15px] absolute left-0 top-0 m-2">
                       <img src={Shape1} alt="Shape1" />
@@ -200,7 +179,7 @@ export default function Mint() {
                       <LoadingModal />
                     ) : (
                       <div className="px-5 py-1 flex items-center justify-center gap-3 text-sm font-bold">
-                        MINT ({remaining}ETH)
+                        MINT ({price} ETH)
                       </div>
                     )}
                     {isActive && (
@@ -214,31 +193,13 @@ export default function Mint() {
             </div>
           </div>
         </div>
-        <div className="relative hidden">
-          <Slider
-            {...settings}
-            className="items-center overflow-x-hidden flex justify-center"
-          >
-            {NFTImgs.map((item, index) => {
-              return (
-                <div className="pt-2" key={index}>
-                  <img
-                    className="w-32 rounded-sm mx-auto"
-                    src={item}
-                    alt="SliderImage1"
-                  />
-                </div>
-              );
-            })}
-          </Slider>
-        </div>
       </div>
       {mintModal && (
-        <div className="fixed z-50 w-full h-full min-h-screen top-0 bg-black/90 transition-opacity">
+        <div className="fixed z-50 w-full h-full min-h-screen top-0 bg-black/90 duration-300">
           <div className="w-full h-screen bg-cover flex md:px-8 py-20 justify-center items-center">
             <div
               ref={menuDropdown}
-              className="bg-[#171C21] w-full max-w-[440px] metaMaskModal overflow-hidden relative mt-[50px] "
+              className="bg-[#171C21] w-full max-w-[440px] metaMaskModal overflow-hidden relative mt-[50px]"
             >
               <div className="backdrop-filter-[5px] ">
                 <div>
@@ -269,48 +230,53 @@ export default function Mint() {
                     <div className="my-[30px] text-center">
                       <div>
                         <div className="flex items-center justify-between h-14 border-b-[1px] border-b-[#ffffff1a]">
-                          <div className="text-[16px] text-right text-white leading-5 font-semibold">
+                          <div className="text-[16px] text-start text-white leading-5 font-semibold">
                             Remaining
                           </div>
-                          <div className="text-[16px] text-right text-white leading-5 font-semibold">
+                          <div className="text-[16px] text-start text-white leading-5 font-semibold">
                             2341/9999
                           </div>
                         </div>
                         <div className="flex items-center justify-between h-14 border-b-[1px] border-b-[#ffffff1a]">
-                          <div className="text-[16px] text-right text-white leading-5 font-semibold">
+                          <div className="text-[16px] text-start text-white leading-5 font-semibold">
                             Price
                           </div>
-                          <div className="text-[16px] text-right text-white leading-5 font-semibold">
-                            {budget} {walletStyle}
+                          <div className="text-[16px] text-start text-white leading-5 font-semibold">
+                            {price} {token}
                           </div>
                         </div>
                         <div className="flex items-center justify-between h-14 border-b-[1px] border-b-[#ffffff1a]">
-                          <div className="text-[16px] text-right text-white leading-5 font-semibold">
-                            Remaining
+                          <div className="text-[16px] text-start text-white leading-5 font-semibold w-[30%]">
+                            Quantity
                           </div>
 
-                          <div className="max-w-[106px] w-full h-full items-center justify-between flex">
-                            <div
-                              className="bg-transparent select-none cursor-pointer p-0 font-semibold text-base leading-[22px] text-center uppercase text-white"
-                              onClick={() => incrementValue(false)}
+                          <div className="max-w-[106px] w-[40%] h-full flex items-center justify-between ">
+                            <button
+                              className="bg-transparent select-none cursor-pointer p-0 font-semibold text-base leading-[22px] text-center uppercase text-white disabled:cursor-not-allowed"
+                              onClick={() => handleChangeQuantity(false)}
+                              disabled={quantity < 2 || pause}
                             >
                               -
-                            </div>
+                            </button>
                             <input
-                              value={numberValue}
-                              onChange={(e) => setNumberValue(e.target.value)}
+                              value={quantity}
+                              onChange={(e) => setQuantity(e.target.value)}
                               className="max-w-[58px] w-full h-full border-l-[1px] border-l-[#ffffff1a] border-r-[1px] border-r-[#ffffff1a] flex items-center justify-center bg-transparent px-[19px] outline-none text-base leading-[22px] text-center uppercase text-white"
                             />
-                            <div
+                            <button
                               className="bg-transparent select-none cursor-pointer p-0 font-semibold text-base leading-[22px] text-center uppercase text-white"
-                              onClick={() => incrementValue(true)}
+                              onClick={() => handleChangeQuantity(true)}
+                              disabled={pause}
                             >
                               +
-                            </div>
+                            </button>
                           </div>
 
-                          <div className="text-[16px] text-right text-white leading-5 font-semibold gap-1">
-                            {remaining} {walletStyle}
+                          <div className="text-[16px] text-end text-white leading-5 font-semibold gap-1 w-[30%] flex">
+                            <span className="w-[70%] overflow-hidden">
+                              {totalPrice}
+                            </span>
+                            <span className="w-[30%]">{token}</span>
                           </div>
                         </div>
                       </div>
@@ -338,9 +304,6 @@ export default function Mint() {
                         </span>
                       </button>
                     </div>
-                    <p className="text-[#ffffffcc] text-[14px] leading-7 text-center py-2">
-                      Presale & Whitelist : Soldout
-                    </p>
                   </div>
                   <span className="absolute bottom-3 left-3 -rotate-90">
                     <img src={Shape1} alt="" />
@@ -351,10 +314,15 @@ export default function Mint() {
                 </div>
               </div>
               {mintMsg !== "" &&
-                mintMsg === "It has been successfully minted." ? (
+              mintMsg.includes("It has been successfully minted") ? (
                 <div className="text-lime-600 justify-center">{mintMsg}</div>
               ) : (
                 <div className="text-rose-600 justify-center">{mintMsg}</div>
+              )}
+              {link !== "" && (
+                <Link to={link} className="text-gray-500 justify-center">
+                  view on etherscan
+                </Link>
               )}
             </div>
           </div>

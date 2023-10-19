@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useCallback } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { FaWallet, FaTwitter, FaDiscord } from "react-icons/fa";
 import { MdClose, MdOutlineAdd } from "react-icons/md";
@@ -19,7 +19,6 @@ import WalletConnectImg from "../../assets/img/WalletConnect.svg";
 
 export default function Header() {
   const {
-    connector,
     isActivating,
     handleConnect,
     handleDisconnect,
@@ -354,7 +353,8 @@ export default function Header() {
                   </div>
                   <div className="modal_body text-center">
                     <p className="text-[#ffffffcc] text-[16px] leading-7 pb-6">
-                      Please connect your wallet with one of the options below to mint your NFTs.
+                      Please connect your wallet with one of the options below
+                      to mint your NFTs.
                     </p>
                     <div className="connect-section">
                       <ConnectButton
