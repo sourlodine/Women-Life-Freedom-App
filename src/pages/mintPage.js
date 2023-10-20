@@ -49,7 +49,7 @@ export default function Mint() {
           }
         );
         console.log(res);
-        setMintMsg("It has been successfully minted");
+        setMintMsg("Mint successful");
         // setLink("https://goerli.etherscan.io/tx/" + res.hash);
         setLink("https://etherscan.io/tx/" + res.hash);
       } catch (e) {
