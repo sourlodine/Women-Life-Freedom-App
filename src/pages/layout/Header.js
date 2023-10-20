@@ -175,7 +175,7 @@ export default function Header() {
                 <div>
                   <Link
                     className="text-2xl"
-                    to="https://opensea.io/"
+                    to="https://opensea.io/collection/project0xwlf"
                     target="_blank"
                   >
                     <img src={OpenSea} alt="opensea" />

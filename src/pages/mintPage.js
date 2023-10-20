@@ -317,7 +317,11 @@ export default function Mint() {
                 <div className="text-rose-600 justify-center">{mintMsg}</div>
               )}
               {link !== "" && (
-                <Link to={link} className="text-gray-500 justify-center">
+                <Link
+                  to={link}
+                  className="text-gray-500 justify-center"
+                  target="_blank"
+                >
                   view on etherscan
                 </Link>
               )}
