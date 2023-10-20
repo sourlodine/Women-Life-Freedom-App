@@ -179,7 +179,7 @@ export default function Mint() {
                       <LoadingModal />
                     ) : (
                       <div className="px-5 py-1 flex items-center justify-center gap-3 text-sm font-bold">
-                        MINT ({price} ETH)
+                        MINT ({totalPrice} ETH)
                       </div>
                     )}
                     {isActive && (
