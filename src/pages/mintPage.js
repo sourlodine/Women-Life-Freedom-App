@@ -143,7 +143,9 @@ export default function Mint() {
         <div className="lg:flex mx-auto max-w-[1200px] items-start justify-center h-full min-h-[calc(100vh-142px)] relative pt-52">
           <div className=" w-full px-4 mx-auto relative justify-center">
             <div className="text-white justify-center text-center top-0 mx-auto relative">
-              <h1 className="text-[60px] font-bold pt-28 pb-10">Coming Soon</h1>
+              <h1 className="text-[60px] font-bold pt-28 pb-10 uppercase">
+                Mint Live
+              </h1>
               <div className=" mx-auto flex justify-center  items-center flex-col sm:flex-row gap-8 lg:pt-20">
                 <div className="items-center justify-center sm:justify-start flex sm:mr-[30px]">
                   <button
