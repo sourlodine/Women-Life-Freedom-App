@@ -310,8 +310,7 @@ export default function Mint() {
                   </span>
                 </div>
               </div>
-              {mintMsg !== "" &&
-              mintMsg.includes("It has been successfully minted") ? (
+              {mintMsg !== "" && mintMsg.includes("Mint successful") ? (
                 <div className="text-lime-600 justify-center">{mintMsg}</div>
               ) : (
                 <div className="text-rose-600 justify-center">{mintMsg}</div>

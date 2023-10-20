@@ -162,10 +162,7 @@ export default function About() {
                 }`}
               >
                 We plan to hold a 11-day open edition mint. Each token will cost
-                0.025 ETH, and each mint will grant you one piece at random. If
-                you choose to mint several tokens, you will not receive a
-                duplicate until you have minted more tokens than there are
-                distinct pieces.
+                0.025 ETH, and each mint will grant you one piece at random.
                 <br />
                 Our genesis drop will feature 6 pieces.
               </span>
