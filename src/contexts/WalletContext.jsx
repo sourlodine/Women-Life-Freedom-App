@@ -13,8 +13,11 @@ import { coinbaseWallet } from "../connectors/coinbaseWallet";
 import { walletConnect } from "../connectors/walletConnect";
 import { walletConnectV2 } from "../connectors/walletConnectV2";
 
-import { getAddChainParameters } from "../chains";
-import { SelectWalletHooks, CheckWallet } from "../utils";
+import {
+  SelectWalletHooks,
+  CheckWallet,
+  getAddChainParameters,
+} from "../utils";
 
 export const WalletContext = createContext({
   chainId: undefined,
@@ -61,7 +64,7 @@ export const WalletProvider = ({ children }) => {
 
   // Wallet Activate Function
   const handleConnect = useCallback(
-    (connector, networkId = 5) => {
+    (connector, networkId = 1) => {
       // Check Wallet Which is Connected and Set into the Local Storage
       try {
         CheckWallet(connector);

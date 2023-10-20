@@ -50,9 +50,12 @@ export default function Mint() {
         );
         console.log(res);
         setMintMsg("It has been successfully minted");
-        setLink("https://goerli.etherscan.io/tx/" + res.hash);
+        // setLink("https://goerli.etherscan.io/tx/" + res.hash);
+        setLink("https://etherscan.io/tx/" + res.hash);
       } catch (e) {
-        setMintMsg(e.message);
+        if (e.message.includes("insufficient funds"))
+          setMintMsg("Insufficient funds");
+        else setMintMsg(e.message);
       } finally {
         setProgressMint(false);
       }
@@ -215,7 +218,7 @@ export default function Mint() {
                   </button>
                   <div className="modal_header">
                     <div className="text-white text-[24px] mb-[26px] max-w-[280px] text-center leading-7 uppercase mx-auto font-bold">
-                      COLLECT YOUR NFT BEFORE END
+                      Mint your NFTs
                     </div>
                   </div>
                   <div className="modal_body text-center">
@@ -229,14 +232,6 @@ export default function Mint() {
 
                     <div className="my-[30px] text-center">
                       <div>
-                        <div className="flex items-center justify-between h-14 border-b-[1px] border-b-[#ffffff1a]">
-                          <div className="text-[16px] text-start text-white leading-5 font-semibold">
-                            Remaining
-                          </div>
-                          <div className="text-[16px] text-start text-white leading-5 font-semibold">
-                            2341/9999
-                          </div>
-                        </div>
                         <div className="flex items-center justify-between h-14 border-b-[1px] border-b-[#ffffff1a]">
                           <div className="text-[16px] text-start text-white leading-5 font-semibold">
                             Price

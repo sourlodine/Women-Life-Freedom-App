@@ -1,4 +1,5 @@
-export const contractAddress = "0x914d28EE203B1c4feB6e83423b7f8B10aC716213";
+// export const contractAddress = "0x914d28EE203B1c4feB6e83423b7f8B10aC716213"; // testnet
+export const contractAddress = "0xC98f3dCB5733205951Fc99967308A1E428A2527A"; // mainnet
 
 export const contractAbi = [
   {
