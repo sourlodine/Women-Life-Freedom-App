@@ -161,6 +161,9 @@ export default function Header() {
                 <Link to="/" className="cursor-pointer">
                   HOME
                 </Link>
+                <Link to="/gallery" className="cursor-pointer">
+                  GALLERY
+                </Link>
                 <Link to="/mint" className="cursor-pointer">
                   MINT
                 </Link>
@@ -251,6 +254,13 @@ export default function Header() {
                     onClick={() => setMenuModal(false)}
                   >
                     HOME
+                  </Link>
+                  <Link
+                    to="/gallery"
+                    className="cursor-pointer"
+                    onClick={() => setMenuModal(false)}
+                  >
+                    GALLERY
                   </Link>
                   <Link
                     to="/mint"

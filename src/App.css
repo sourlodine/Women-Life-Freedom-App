@@ -10,7 +10,7 @@
 
 .App {
   text-align: center;
-  background-color: #040C12;
+  background-color: #040c12;
   width: 100%;
   background-size: cover;
   background-position: top center;
@@ -18,7 +18,6 @@
   display: flex;
   flex-direction: column;
 }
-
 
 .App-logo {
   height: 40vmin;
@@ -67,7 +66,7 @@
   overflow: hidden;
 }
 
-.logoutModal{
+.logoutModal {
   background-image: url("https://uigaint.com/demo/html/bithu/assets/images/bg/modal_overlay.png");
   background-size: cover;
   background-position: center center;
@@ -77,27 +76,26 @@
   overflow: hidden;
 }
 
-
 /* Animation Button */
 
-.buttonfx{
-  background-color:#ffffff33;
-  display:flex;
+.buttonfx {
+  background-color: #ffffff33;
+  display: flex;
   min-width: 150px;
-  height:50px;
+  height: 50px;
   outline: none;
   letter-spacing: 0.0625em;
   position: relative;
   cursor: pointer;
   overflow: hidden;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 /* //// Default effect: Slide from Top  //// */
 
 .buttonfx:before,
-.buttonfx:after{
-  content: '';
+.buttonfx:after {
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
@@ -106,41 +104,58 @@
   height: 100%;
   background: #ffffff33; /* onhover background color */
   z-index: -1;
-  transform: translate3D(0,-100%,0); /* move elements above button so they don't appear initially */
-  transition: all .5s;
+  transform: translate3D(
+    0,
+    -100%,
+    0
+  ); /* move elements above button so they don't appear initially */
+  transition: all 0.5s;
 }
 
-.buttonfx:before{
+.buttonfx:before {
   background: #ffffff33; /* button default background color */
   z-index: -2;
-  transform: translate3D(0,0,0);
+  transform: translate3D(0, 0, 0);
 }
 
-.buttonfx:hover{
+.buttonfx:hover {
   color: white;
 }
 
-.buttonfx:hover:after{
-  transform: translate3D(0,0,0);
-  transition: all .5s;
+.buttonfx:hover:after {
+  transform: translate3D(0, 0, 0);
+  transition: all 0.5s;
 }
 
-.buttonfx1{
-  background-color:#ffffff77;
-  display:flex;
+.buttonfx1 {
+  background-color: #ffffff77;
+  display: flex;
   min-width: 200px;
-  height:50px;
+  height: 50px;
   outline: none;
   letter-spacing: 0.0625em;
   position: relative;
   cursor: pointer;
   overflow: hidden;
-  transition: all .5s;
+  transition: all 0.5s;
+}
+
+.buttonfx1-1 {
+  background-color: #ffffff77;
+  display: flex;
+  min-width: 200px;
+  height: 50px;
+  outline: none;
+  letter-spacing: 0.0625em;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.5s;
 }
 
 .buttonfx2:before,
-.buttonfx2:after{
-  content: '';
+.buttonfx2:after {
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
@@ -149,73 +164,88 @@
   height: 100%;
   background: #ffffff77; /* onhover background color */
   z-index: -1;
-  transform: translate3D(0,-100%,0); /* move elements above button so they don't appear initially */
-  transition: all .5s;
+  transform: translate3D(
+    0,
+    -100%,
+    0
+  ); /* move elements above button so they don't appear initially */
+  transition: all 0.5s;
 }
 
-.buttonfx2:before{
+.buttonfx2:before {
   background: #ffffff99; /* button default background color */
   z-index: -2;
-  transform: translate3D(0,0,0);
+  transform: translate3D(0, 0, 0);
 }
 
-.buttonfx2:hover{
+.buttonfx2:hover {
   color: #ffffff99;
-  background-color : #ffffff99;
+  background-color: #ffffff99;
 }
 
-.buttonfx2:hover:after{
-  transform: translate3D(0,0,0);
-  transition: all .5s;
+.buttonfx2:hover:after {
+  transform: translate3D(0, 0, 0);
+  transition: all 0.5s;
 }
 
 /* //// Slide Left  //// */
 
-.slideleft:after{
+.slideleft:after {
   top: 0;
   z-index: -1;
-  transform: translate3D(-101%,0,0);
+  transform: translate3D(-101%, 0, 0);
 }
 
-.slideleft:hover:after{
-  transform: translate3D(0,0,0);
-  transition: all .4s;
+.slideleft:hover:after {
+  transform: translate3D(0, 0, 0);
+  transition: all 0.4s;
 }
 
-
-.slideleft1:after{
+.slideleft1:after {
   top: 0;
   z-index: -1;
-  transform: translate3D(-101%,0,0);
+  transform: translate3D(-101%, 0, 0);
 }
 
-.slideleft1:hover:after{
-  transform: translate3D(0,0,0);
-  transition: all .4s;
+.slideleft1:hover:after {
+  transform: translate3D(0, 0, 0);
+  transition: all 0.4s;
+}
+
+.slideleft2:after {
+  top: 0;
+  z-index: -1;
+  transform: translate3D(-101%, 0, 0);
+}
+
+.slideleft2:hover:after {
+  transform: translate3D(0, 0, 0);
+  transition: all 0.4s;
 }
 
 /* #### Bounce classes #### */
 
-
 /*  */
-.ImageB1{
+.ImageB1 {
   background-image: url("https://uigaint.com/demo/html/bithu/assets/images/bg/modal_overlay.png");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
-  }
+}
 
-  .animate-floating {
-    animation: floating 2.5s infinite;
+.animate-floating {
+  animation: floating 2.5s infinite;
 }
 
 .animate-shadow {
-    animation: shadow, 2.5s, infinite;
+  animation: shadow, 2.5s, infinite;
 }
 
 .blur-md {
-    --tw-blur: blur(12px);
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  --tw-blur: blur(12px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+    var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate)
+    var(--tw-sepia) var(--tw-drop-shadow);
 }

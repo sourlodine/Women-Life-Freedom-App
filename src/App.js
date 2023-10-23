@@ -4,12 +4,13 @@ import { Web3ReactProvider } from "@web3-react/core";
 
 import { connectors } from "./connectors";
 
-import Header from "./pages/layout/Header.js";
-import Home from "./pages/home.js";
-import MintPage from "./pages/mintPage.js";
-import About from "./pages/about.js";
-import Team from "./pages/team.js";
-import Error from "./pages/error.js";
+import Header from "./pages/layout/Header";
+import Home from "./pages/home";
+import Gallery from "./pages/gallery";
+import MintPage from "./pages/mintPage";
+import About from "./pages/about";
+import Team from "./pages/team";
+import Error from "./pages/error";
 
 import { WalletProvider } from "./contexts/WalletContext";
 
@@ -28,6 +29,7 @@ function App() {
             <Header />
             <Routes>
               <Route exact path="/" element={<Home />} />
+              <Route exact path="/gallery" element={<Gallery />} />
               <Route exact path="/mint" element={<MintPage />} />
               <Route exact path="/team" element={<Team />} />
               <Route exact path="/about" element={<About />} />

@@ -28,18 +28,32 @@ export default function Home() {
           A humanitarian effort to celebrate and support Iranian women across
           the globe through art and web3
         </p>
-        <div className="flex items-center my-10 group">
+        <div className="flex items-center my-10 gap-4">
           <button
-            className="flex min-w-[150px] h-[50px] buttonfx1 buttonfx2 slideleft1 items-center justify-center"
+            className="flex min-w-[150px] h-[50px] group buttonfx1 buttonfx2 slideleft1 items-center justify-center"
             onClick={() => navigate("/mint")}
           >
             <span className="w-[15px] h-[15px] absolute left-0 top-0 m-2">
               <img src={Shape1} alt="Shape1" />
             </span>
-            <div className="px-5 py-1 flex items-center justify-center gap-3 text-sm font-bold">
+            <div className="px-5 py-1 flex items-center justify-center gap-3 text-sm font-bold uppercase">
               MINT NOW
             </div>
-            <span className="group-hover:right-0 duration-300 -right-10 w-[15px] h-[15px] absolute  top-0 m-2 rotate-90">
+            <span className="group-hover:right-0 duration-300 -right-10 w-[15px] h-[15px] absolute top-0 m-2 rotate-90">
+              <img src={Shape1} alt="Shape1" />
+            </span>
+          </button>
+          <button
+            className="flex min-w-[150px] h-[50px] group buttonfx1-1 buttonfx2 slideleft2 items-center justify-center"
+            onClick={() => navigate("/gallery")}
+          >
+            <span className="w-[15px] h-[15px] absolute left-0 top-0 m-2">
+              <img src={Shape1} alt="Shape1" />
+            </span>
+            <div className="px-5 py-1 flex items-center justify-center gap-3 text-sm font-bold uppercase">
+              Go to Gallery
+            </div>
+            <span className="group-hover:right-0 duration-300 -right-10 w-[15px] h-[15px] absolute top-0 m-2 rotate-90">
               <img src={Shape1} alt="Shape1" />
             </span>
           </button>
