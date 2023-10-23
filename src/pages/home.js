@@ -51,7 +51,7 @@ export default function Home() {
               <img src={Shape1} alt="Shape1" />
             </span>
             <div className="px-5 py-1 flex items-center justify-center gap-3 text-sm font-bold uppercase">
-              Go to Gallery
+              Gallery
             </div>
             <span className="group-hover:right-0 duration-300 -right-10 w-[15px] h-[15px] absolute top-0 m-2 rotate-90">
               <img src={Shape1} alt="Shape1" />

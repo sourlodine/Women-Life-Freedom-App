@@ -64,7 +64,6 @@ export default function Gallery() {
                     />
                     <div className="w-full  py-4 text-white flex justify-between">
                       {item.name}
-                      <img src={CheckImg} alt="check" />
                     </div>
                     <div className="w-full text-[18px] text-white py-2 gap-2 flex justify-between items-center">
                       <span>Aritst: </span>
