@@ -144,8 +144,11 @@ export default function Mint() {
           <div className=" w-full px-4 mx-auto relative justify-center">
             <div className="text-white justify-center text-center top-0 mx-auto relative">
               <h1 className="text-[60px] font-bold pt-28 pb-10 uppercase">
-                Mint Live
+                Mint Closed
               </h1>
+              <span>
+                Thank you for supporting the people of Iran through Drop 1!
+              </span>
               <div className=" mx-auto flex justify-center  items-center flex-col sm:flex-row gap-8 lg:pt-20">
                 <div className="items-center justify-center sm:justify-start flex sm:mr-[30px]">
                   <button
